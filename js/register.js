@@ -13,18 +13,18 @@ $(document).ready(function(){
   });
 
   $(".day, .month, .year").change(function(){
-    if(checkAge(18) == false){
+    if(checkAge(18) === false){
       $("#acceptAge").fadeIn();
     } else { $("#acceptAge").fadeOut(); }
   });
 
-  function checkAge(allowedAge){
+  function checkAge(age){
     $day = $(".day").val();
     $month = $(".month").val();
     $year = $(".year").val();
-    $age = allowedAge;
+    $age = age;
     $mydate = new Date();
-    $mydate.setFullYear($year, $month-1, $day);
+    $mydate.setFullYear($year, $month - 1, $day);
     $currdate = new Date();
     $setDate = new Date();
     $setDate.setFullYear($mydate.getFullYear() + $age, $month-1, $day);

@@ -1,8 +1,7 @@
 $(document).ready(function(){
   // when a user tries to log in
   $("#lgn-btn").on("click", function(){
-      $inputHandling = new inputHandler();
-      if(validateLoginForm() == true){
+      if(validateLoginForm() === true){
         $("#username").prop("disabled", true);
         $("#password").prop("disabled", true);
         $("#lgn-btn").prop("disabled", true);

@@ -7,49 +7,51 @@
 ?>
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <title>Andalusier | Logboek</title>
+  <head>
+    <title>Andalusier | Logboek</title>
 
-  <?php
-    // Algemene resources
-    require "elements/resources.php";
-  ?>
-
-  <script src="js/ajax/log.ajax.js" charset="utf-8"></script>
-</head>
-<body>
-
-  <?php
-    require "elements/loader.php";
-    require "elements/popups.php";
-    require "optional/comments.php";
-  ?>
-
-  <div id="page-wrapper">
-    <script type="text/javascript">
-      // page config
-      $pageTitle = "Logboek";
-    </script>
-    <!-- header section -->
     <?php
-      require_once "elements/header.php";
+      // Algemene resources
+      require "elements/resources.php";
     ?>
 
-    <!-- content section -->
+    <script src="js/ajax/log.ajax.js" charset="utf-8"></script>
+  </head>
+  <body>
 
-    <div id="content-wrapper">
+    <?php
+      require "elements/loader.php";
+      require "elements/popups.php";
+      require "optional/comments.php";
+    ?>
+
+    <div id="page-wrapper">
+      <script type="text/javascript">
+        // page config
+        $pageTitle = "Logboek";
+      </script>
+      <!-- header section -->
+      <?php
+        require_once "elements/header.php";
+      ?>
+
+      <!-- content section -->
+
+      <div id="content-wrapper">
         <div id="side-menu">
-            <ul>
-
-            </ul>
+          <ul>
+              <!-- Hier komt het menu, ingeladen met AJAX -->
+          </ul>
         </div>
         <div id="content">
           <div id="members-table-head">
+
             <div id="members-table-button-section">
               <input type="button" id="downloadLogBtn" class="btn" value="Logboek downloaden (excel)">
             </div>
 
           </div>
+
           <div id="members-table" class="log-table">
             <div class="box-content">
               <div class="box-row">
@@ -67,7 +69,7 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

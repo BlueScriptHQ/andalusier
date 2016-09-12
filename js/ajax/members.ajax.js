@@ -10,7 +10,7 @@ $(document).ready(function(){
         alignMenu();
       }
     });
-  }
+  };
 
   $("#add-members-btn").on("click", function(){
     $day = ($("#add-day").val().length < 2) ? "0" + $("#add-day").val() : $("#add-day").val();
@@ -39,9 +39,9 @@ $(document).ready(function(){
       members_comment: $("#add-comment").val()
     };
     if($("#add-newsletter").is(':checked')){
-      $dataArray['members_newsletter'] = 1;
+      $dataArray.members_newsletter = 1;
     } else {
-      $dataArray['members_newsletter'] = 0;
+      $dataArray.members_newsletter = 0;
     }
     addMember($dataArray);
   });
@@ -73,67 +73,67 @@ $(document).ready(function(){
         alignMenu();
       }
     });
-  }
+  };
 
   function setInfoMembers(data){
-    $("#edit-members-id").val(data['members_id']);
+    $("#edit-members-id").val(data.members_id);
 
     // reset
     $("#edit-title").prop('selectedIndex','-1');
-    $('#edit-title option[value='+ data['members_titles_content'].toLowerCase()+']').attr('selected','selected');
+    $('#edit-title option[value='+ data.members_titles_content.toLowerCase()+']').attr('selected','selected');
 
-    $("#edit-name").val(data['members_name']);
-    $("#edit-prefix").val(data['members_tussenvoegsel']);
-    $("#edit-lastname").val(data['members_lastname']);
+    $("#edit-name").val(data.members_name);
+    $("#edit-prefix").val(data.members_tussenvoegsel);
+    $("#edit-lastname").val(data.members_lastname);
 
-    $streetName = data['members_residence_street'].replace(/[0-9]/g, '');
+    $streetName = data.members_residence_street.replace(/[0-9]/g, '');
     $("#edit-street").val($streetName);
-    $streetNr = data['members_residence_street'].match(/\d+$/)[0];
+    $streetNr = data.members_residence_street.match(/\d+$/)[0];
     $("#edit-streetnr").val($streetNr);
-    $("#edit-zip").val(data['members_residence_zip']);
+    $("#edit-zip").val(data.members_residence_zip);
 
-    $("#edit-place").val(data['members_residence_place']);
+    $("#edit-place").val(data.members_residence_place);
 
     $("#edit-country").prop('selectedIndex','-1');
-    $('#edit-country option[value='+ data['members_residence_country'].toLowerCase()+']').attr('selected','selected');
+    $('#edit-country option[value='+ data.members_residence_country.toLowerCase()+']').attr('selected','selected');
 
-    $("#edit-birthdate").val(data['members_birthdate']);
+    $("#edit-birthdate").val(data.members_birthdate);
 
-    $("#edit-phonenr").val(data['members_phonenr']);
-    $("#edit-phonenr2").val(data['members_phonenr2']);
-    $("#edit-mobnr").val(data['members_mobnr']);
+    $("#edit-phonenr").val(data.members_phonenr);
+    $("#edit-phonenr2").val(data.members_phonenr2);
+    $("#edit-mobnr").val(data.members_mobnr);
 
-    $("#edit-email").val(data['members_email']);
-    $("#edit-email2").val(data['members_email2']);
+    $("#edit-email").val(data.members_email);
+    $("#edit-email2").val(data.members_email2);
 
-    $("#edit-startdate").text(data['members_startdate']);
+    $("#edit-startdate").text(data.members_startdate);
 
     $("#edit-mem-type").prop('selectedIndex','-1');
-    $('#edit-mem-type option[value='+ data['members_types_id'].toLowerCase()+']').attr('selected','selected');
+    $('#edit-mem-type option[value='+ data.members_types_id.toLowerCase()+']').attr('selected','selected');
 
-    $("#edit-stable").val(data['members_stable']);
+    $("#edit-stable").val(data.members_stable);
 
-    $("#edit-bank").val(data['members_bank']);
+    $("#edit-bank").val(data.members_bank);
 
-    if(data['members_newsletter'] == 1){
+    if(data.members_newsletter == 1){
       $("#edit-newsletter").attr("checked", true);
     } else { $("#edit-newsletter").attr("checked", false); }
 
-    if(data['members_mail'] == 1){
+    if(data.members_mail == 1){
       $("#members-popup-edit input:radio[name=sendway]:not(:first)").prop('checked', true);
     } else { $("#members-popup-edit input:radio[name='sendway']:first").prop('checked', true); }
 
-    if(data['members_gift'] == 1){
+    if(data.members_gift == 1){
       $("#members-popup-edit #status_gift").attr("checked", true);
     } else { $("#members-popup-edit #status_gift").attr("checked", false); }
-    if(data['members_paid'] == 1){
+    if(data.members_paid == 1){
       $("#members-popup-edit #status_paid").attr("checked", true);
     } else { $("#members-popup-edit #status_paid").attr("checked", false); }
-    if(data['members_reminder'] == 1){
+    if(data.members_reminder == 1){
       $("#members-popup-edit #status_reminder").attr("checked", true);
     } else { $("#members-popup-edit #status_reminder").attr("checked", false); }
 
-    $("#edit-comment").val(data['members_comment']);
+    $("#edit-comment").val(data.members_comment);
   }
 
   $("#edit-members-btn").on("click", function(){
@@ -169,9 +169,9 @@ $(document).ready(function(){
       members_comment: $("#edit-comment").val()
     };
     if($("#edit-newsletter").is(':checked')){
-      $dataArray['members_newsletter'] = 1;
+      $dataArray.members_newsletter = 1;
     } else {
-      $dataArray['members_newsletter'] = 0;
+      $dataArray.members_newsletter = 0;
     }
     updateInfoMembers($dataArray);
   });

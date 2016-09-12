@@ -4,12 +4,135 @@
 
 */
 
-Functions.js
+JS
 
-    $ajax             // Deze variabele is het resultaat van een test of jQuery.ajax wordt ondersteunt.
-                      // Hij is true als het is ondersteunt en false als dit niet zo is.
+  Algemeen
 
-    $pageTitle        // Hier staat de naam van de huidige pagina in, deze wordt op elke pagina boven aan de pagina,
-                      // via een scriptje ingesteld en dan in de header gezet.
+      $ajax             // Deze variabele is het resultaat van een test of jQuery.ajax wordt ondersteunt.
+                        // Hij is true als het is ondersteunt en false als dit niet zo is.
+                        // Type: Boolean
+                        // Standaard: false
 
-    
+      $fileUpload       // Deze variabele is het resultaat van een test of fileUpload wordt ondersteunt.
+                        // Hij is true als het is ondersteunt en false als dit niet zo is.
+                        // Type: Boolean
+                        // Standaard: false
+
+      $pageTitle        // Hier staat de naam van de huidige pagina in, deze wordt op elke pagina boven aan de pagina,
+                        // via een scriptje ingesteld en dan in de header gezet.
+                        // Type: String
+                        // Standaard: Geen value
+
+  AJAX/general.ajax.js
+
+      loadAccName()
+
+        result          // Hier staat de naam van de ingelogde gebruiker in.
+                        // Type: String
+                        // Standaard: N/A
+
+      loadMenu()
+
+        result          // Hier staat het gecompileerde menu in, in HTML formaat.
+                        // Dit menu wordt via de server gegenereerd op basis van de rechten van de gebruiker.
+                        // En geretourneerd als HTML in een string.
+                        // Type: String, HTML
+                        // Standaard: N/A
+
+
+
+
+  AJAX/dashboard.ajax.js
+
+      formatAccData()
+
+        $result         // Hier staat alle informatie van de ingelogde gebruiker in.
+                        // De properties van dit object staan gelijk aan de velden in de database.
+                        // Type: Object
+                        // Standaard: N/A
+
+
+
+  AJAX/documents.ajax.js
+
+      loadDocuments()
+
+        result          // Hier staan alle documenten in, in HTML formaat. (mapjes gescheiden van bestanden)
+                        // Deze wordt gegeneerd op de server, op basis van de bestanden in /documents
+                        // Type: String met HTML
+                        // Standaard: N/A
+
+      openFolder()
+
+        fName           // Hier staat de naam van het mapje, waar op is geklikt. Deze wordt naar de server gestuurd,
+                        // en deze, op zijn beurt, veranderd dan de location van de bestandsnavigator
+                        // Type: String
+                        // Standaard: N/A
+
+      addAFolder()
+
+        fName           // Hier staat de gekozen naam , voor het nog niet aangemaakte mapje.
+                        // Deze variabele wordt meegestuurd de saveFolder() functie,
+                        // die deze variabele dan naar de server stuurt, die een mapje aanmaakt met de gekozen naam.
+                        // Type: String
+                        // Standaard: N/A
+
+      saveFolder()
+
+        fName           // Hier staat de gekozen naam , voor het nog niet aangemaakte mapje.
+                        // Deze wordt naar de server gestuurd, die een mapje aanmaakt met de gekozen naam.
+                        // Type: String
+                        // Standaard: N/A
+
+      renameFF()
+
+        name            // Dit is de naam van het bestand (of mapje) dat moet worden hernoemd.
+                        // Type: String
+                        // Standaard: N/A
+
+      #renameFF.click()
+
+        oud             // Dit is de huidige naam van het bestand (of mapje) dat moet worden hernoemd.
+                        // Dit wordt verstuurd naar de server, en in combinatie met nieuw, wordt het bestand hernoemd naar de nieuwe opgegeven naam.
+                        // Type: String
+                        // Standaard: N/A
+
+        nieuw           // Dit is de nieuwe opgegeven naam waar het bestand naar moet worden hernoemd.
+                        // Dit wordt verstuurd naar de server, en in combinatie met oud, wordt het bestand hernoemd naar de nieuwe opgegeven naam.
+                        // Type: String
+                        // Standaard: N/A
+
+      deleteFF()
+
+        name            // Dit is de naam van het bestand (of mapje) dat moet worden verwijderd.
+                        // Type: String
+                        // Standaard: N/A
+
+      #deleteFF.click()
+
+        fName           // Dit is de naam van het bestand (of mapje) dat moet worden hernoemd.
+                        // Dit wordt verstuurd naar de server, en de server verwijderd dan het bestand of mapje met deze naam.
+                        // Type: String
+                        // Standaard: N/A
+
+
+  AJAX/log.ajax.js
+
+      loadEvents()
+
+        result          // Hier staan alle gebeurtenissen van het logboek in.
+                        // Deze wordt gegeneerd op de server, en in HTML geretourneerd.
+                        // Type: String met HTML
+                        // Standaard: N/A
+
+
+
+  AJAX/login.ajax.js
+
+      lgn-btn.click()
+
+        result          // Dit geeft de status van het inloggen in.
+                        // Als alles goed is verlopen retourneerd het "loggedin",
+                        // Zoniet, dan retourneerd het wat er mis ging.
+                        // Type: String
+                        // Standaard: N/A

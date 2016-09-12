@@ -7,14 +7,8 @@ $(document).ready(function(){
       $.ajax({
         url: "php/functions.php",
         data: "logout=true",
-        method: "POST",
-        success: function(result){
-          location.href="login/";
-        },
-        error: function(){
-          location.href = "login/";
-        }
-      });
+        method: "POST"
+      }).promise().done(function(){ location.href = "login/"; });
     }, 1000);
   });
 
@@ -29,7 +23,7 @@ $(document).ready(function(){
         $("#welcome-box h3 span").fadeIn();
       }
     });
-  }
+  };
 
   window.loadMenu = function(){
     $.ajax({
@@ -44,5 +38,5 @@ $(document).ready(function(){
         handleActive();
       }
     });
-  }
+  };
 });

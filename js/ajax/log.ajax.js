@@ -11,10 +11,10 @@ $(document).ready(function(){
           alignMenu();
         }
       });
-  }
+  };
 
   $("#downloadLogBtn").on("click", function(){
     window.location.href = "php/events.php?requestEventsDownload=true";
   });
-  
+
 });
