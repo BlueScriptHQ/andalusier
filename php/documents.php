@@ -1,16 +1,19 @@
 <?php
-  // live mode
-  error_reporting(0);
 
   session_start();
-
-  require "connection.php";
+  // Libaries
+  require "assets/generals.php";
 
   require "assets/config/defaults.php";
 
   require "assets/classes/connection_class.php";
   require "assets/classes/user_class.php";
   require "assets/classes/input_class.php";
+
+  error_reporting(0);
+
+  // Allow ERRORS to be shown.
+  dev_mode(true);
 
   if(isset($_POST["requestDocuments"])){
 
@@ -23,17 +26,34 @@
   		else{$size=round($size/1073741824, 1)." GB";}
   		return $size;
   	}
-    $maindirectory = $_SERVER['DOCUMENT_ROOT']."/documents/";
+    $maindirectory = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
     $directory = $_SESSION["documentsURL"];
 
     if(!file_exists($directory)){
-      echo "<tr><td class='alignCenter'><a onclick='backAFolder();' style='cursor:pointer;'><img src='./img/content-section/documents-list/back.png' alt='' /></a>
-                    </td><td><a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a></td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
-                    <td></td>
-                    </tr>
-                    <tr><td class='alignCenter'><img src='./img/content-section/documents-list/sad.png' alt='' /></td><td>Bekijken van deze map is helaas niet mogelijk door een fout. Probeer het later opnieuw..</td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
-                                  <td></td>
-                                  </tr>";
+      echo "<tr>
+              <td class='alignCenter'>
+                <a onclick='backAFolder();' style='cursor:pointer;'>
+                  <img src='./img/content-section/documents-list/back.png' alt='' />
+                </a>
+              </td>
+              <td>
+                <a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a>
+              </td>
+              <td class='alignCenter'></td>
+              <td class='alignCenter'></td>
+              <td class='alignCenter'></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class='alignCenter'>
+                <img src='./img/content-section/documents-list/sad.png' alt='' />
+              </td>
+              <td>Bekijken van deze map is helaas niet mogelijk door een fout. Probeer het later opnieuw..</td>
+              <td class='alignCenter'></td>
+              <td class='alignCenter'></td>
+              <td class='alignCenter'></td>
+              <td></td>
+            </tr>";
       exit();
     }
 

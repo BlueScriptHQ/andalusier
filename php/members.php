@@ -1,14 +1,19 @@
 <?php
-  // live mode
-  error_reporting(0);
-  
+
   session_start();
+  // Libaries
+  require "assets/generals.php";
 
   require "assets/config/defaults.php";
 
   require "assets/classes/connection_class.php";
   require "assets/classes/user_class.php";
   require "assets/classes/input_class.php";
+
+  error_reporting(0);
+
+  // Allow ERRORS to be shown.
+  dev_mode(true);
 
   // when the members table is being requested
   if (isset($_POST["requestMembersTable"]) && $_POST["requestMembersTable"] == true) {

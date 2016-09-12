@@ -1,14 +1,18 @@
 <?php
-	// live mode
-	error_reporting(0);
-
 	session_start();
+	// Libaries
+	require "assets/generals.php";
 
 	require "assets/config/defaults.php";
 
 	require "assets/classes/connection_class.php";
 	require "assets/classes/user_class.php";
 	require "assets/classes/input_class.php";
+
+	error_reporting(0);
+
+	// Allow ERRORS to be shown.
+	dev_mode(true);
 
 	// when a user wants to logout
 	if (isset($_POST["logout"])) {
@@ -59,7 +63,7 @@
 					if($ajax == true) {
 						// here we need to update the time
 						$_SESSION["loggeduserid"] = $returnedData["accounts_id"];
-            $_SESSION["documentsURL"] = $_SERVER['DOCUMENT_ROOT']."/documents/";
+            $_SESSION["documentsURL"] = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
 						$sql = "UPDATE
 		        accounts
 		        SET
