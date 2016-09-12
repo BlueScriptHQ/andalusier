@@ -1,4 +1,6 @@
 <?php
+  // live mode
+  error_reporting(0);
 
   try {
      $user = "root";
@@ -9,7 +11,6 @@
      echo "Er is een probleem met de verbinding, probeer het later opnieuw.";
      die();
    }
-   
 ?>
 <?php
   /*try {
