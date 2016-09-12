@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  window.loadTable = function loadTable(string){
+  window.loadTable = function loadTable(){
     $.ajax({
       url: "php/members.php",
       data: "requestMembersTable=true",
@@ -51,7 +51,7 @@ $(document).ready(function(){
       url: "php/members.php",
       data: "requestMemberAdd=" + JSON.stringify(dataArray),
       method: "POST",
-      success: function(result){
+      success: function(){
         $("#page-overlay").fadeOut(500);
         $("#members-popup-add").fadeOut(500);
         loadTable();
@@ -181,7 +181,7 @@ $(document).ready(function(){
       url: "php/members.php",
       data: "requestMembersUpdate=" + JSON.stringify(dataArray),
       method: "POST",
-      success: function(result){
+      success: function(){
         $("#page-overlay").fadeOut(500);
         $("#members-popup-edit").fadeOut(500);
         loadTable();

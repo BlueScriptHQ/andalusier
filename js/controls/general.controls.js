@@ -6,7 +6,7 @@ $(document).ready(function(){
         $(this).parent().addClass("active");
       });
     }
-  }
+  };
 
   /*
     NOTE: General popup functions
@@ -46,7 +46,7 @@ $(document).ready(function(){
         $("#leden-dropdown-indicator").attr("src", "img/side-menu/arrow-up.png");
       }
     }
-  }
+  };
 
   window.fixMenuLeden = function fixMenuLeden(){
     if(typeof $membersActive != 'undefined'){
@@ -64,6 +64,6 @@ $(document).ready(function(){
       $('#leden-sub-menu').css({"height": $curHeight});
       $("#leden-dropdown-indicator").attr("src", "img/side-menu/arrow-up.png");
     }
-  }
+  };
 
 });

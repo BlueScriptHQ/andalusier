@@ -19,7 +19,7 @@ $(document).ready(function(){
       "accounts_phonenr2": $("#acc_telnr2").val(),
       "accounts_mobnr": $("#acc_mobnr").val(),
       "accounts_mobnr2": $("#acc_mobnr2").val()
-    }
+    };
 
     saveAccData($dataArray);
 

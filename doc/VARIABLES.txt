@@ -136,3 +136,48 @@ JS
                         // Zoniet, dan retourneerd het wat er mis ging.
                         // Type: String
                         // Standaard: N/A
+
+
+
+  AJAX/members.ajax.js
+
+      loadTable()
+
+        result          // Hierin staan alle leden in HTML formaat.
+                        // Dit wordt op de server gegeneerd en daarna geretourneerd als HTML.
+                        // Type: String, HTML
+                        // Standaard: N/A
+
+      addMember()
+
+        $dataArray      // Hierin staat alle informatie nodig om een nieuw lid aan te maken.
+                        // Dit wordt op de server gebruikt om een nieuw lid aan te maken.
+                        // Type: Array, Object
+                        // Standaard: N/A
+
+
+     editUser()
+
+        customerID      // Dit is het ID van het geselecteerde lid.
+                        // Dit wordt op de server gebruikt om de informatie van dit lid terug te sturen.
+                        // Type: Integer
+                        // Standaard: N/A
+
+        result          // Dit is lid informatie op basis van de opgegeven customerID
+                        // Dit server stuurt hier de informatie van het lid terug op basis van de eerder verstuurde customerID
+                        // Type: Object
+                        // Standaard: N/A
+
+     setInfoMembers()
+
+       data             // Dit is lid informatie, gekregen van de editUser() functie.
+                        // Type: Object
+                        // Standaard: N/A
+
+
+     updateInfoMembers()
+
+       dataArray        // Dit is de informatie die nodig is om een nieuw lid aan te maken.
+                        // De server leest dit uit, en maakt er een nieuw lid van.
+                        // Type: Object
+                        // Standaard: N/A

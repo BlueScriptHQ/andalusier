@@ -6,13 +6,13 @@ var inputHandler = function() {
       }
       else if ($inputs instanceof Object) {
         $.each($inputs, function(index, value) {
-          if(index.length == 0 || value.length == 0){
+          if(index.length === 0 || value.length === 0){
             return false;
           }
         });
         return true;
       } else {
-        if($inputs == ''){
+        if($inputs === ''){
           return false;
         } else { return true; }
       }

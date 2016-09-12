@@ -33,7 +33,7 @@ $(document).ready(function(){
   });
 
   $("#uploadFile").on("click", function(){
-    if($("#up_file").val() != ""){
+    if($("#up_file").val() !== ""){
       $("#fileUploadForm").submit();
     }
   });
