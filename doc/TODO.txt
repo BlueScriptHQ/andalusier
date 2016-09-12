@@ -23,6 +23,10 @@ Algemeen
       PRIO: Normaal
       Persoon(en): Iedereen
 
+    - Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
+      PRIO: Normaal
+      Persoon(en): Karin Kreeft
+
 PHP
 
     - Veiligheidsupdates en betere validatie op inkomende en uitgaande data. (Dus ook betere checks bij bestands mutaties)
