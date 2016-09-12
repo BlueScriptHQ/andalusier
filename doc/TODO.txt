@@ -1,0 +1,47 @@
+/*
+
+    Hier staan alle dingen die nog moeten worden gedaan, ondersteunt met de persoon(en) die dit gaan doen.
+    En de bestandsnaam. Is er geen bestandsnaam bekend, of is het te abstract, dan staat hier "Algemeen".
+    Ook wordt hier de prioriteit vermeld. Hoge prioriteit taken worden echter ook bovenaan het kopje geplaatst.
+*/
+
+Algemeen
+
+    - Betere documentatie bij stukken code
+      PRIO: Erg hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Data parser maken, zodat er maar één AJAX call hoeft worden gemaakt, in plaats van momenteel iets van 3.
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Invoeren van een rechtensysteem. Leden kunnen sommige pagina's wel lezen, data muteren of bekijken, anderen niet.
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Weekelijkse efficiency check
+      PRIO: Normaal
+      Persoon(en): Iedereen
+
+PHP
+
+    - Veiligheidsupdates en betere validatie op inkomende en uitgaande data. (Dus ook betere checks bij bestands mutaties)
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Log systeem inbouwen, die makkelijk overal kan worden aangeroepen.
+      PRIO: Laag
+      Persoon(en): Gerrit Luimstra
+
+
+documents.php
+
+    - Zorgen dat er geen map met een "\" er kan worden geupload, dit zorgt ervoor dat de bestands navigator zichzelf ophangt.
+      PRIO: Normaal
+      Persoon(en): Gerrit Luimstra
+
+Andalusier
+
+    - Uiteindelijk hun klanten toevoegen aan het systeem
+      PRIO: Laag
+      Persoon(en): Iedereen

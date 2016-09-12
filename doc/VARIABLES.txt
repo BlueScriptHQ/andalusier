@@ -1,0 +1,15 @@
+/*
+
+    Hier staan alle variabelen uitgelegd, ondersteunt met de bestandsnaam waarin deze wordt gebruikt.
+
+*/
+
+Functions.js
+
+    $ajax             // Deze variabele is het resultaat van een test of jQuery.ajax wordt ondersteunt.
+                      // Hij is true als het is ondersteunt en false als dit niet zo is.
+
+    $pageTitle        // Hier staat de naam van de huidige pagina in, deze wordt op elke pagina boven aan de pagina,
+                      // via een scriptje ingesteld en dan in de header gezet.
+
+    

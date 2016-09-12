@@ -15,7 +15,7 @@ $(document).ready(function(){
   window.validateLoginForm = function validateLoginForm(){
     $username = $("#username");
     $password = $("#password");
-    if($username.val() == "" || $password.val() == ""){
+    if($username.val() === "" || $password.val() === ""){
       $(".status-text").text("Velden mogen niet leeg zijn!");
       return false;
     }
@@ -26,22 +26,24 @@ $(document).ready(function(){
     else {
       return true;
     }
-  }
+  };
 
   window.clearForm = function clearForm(form){
     $(form + " input[type=text], input[type=password], textarea").each(function(){
         $(this).val("");
     });
-  }
+  };
+
   window.removeDisable = function removeDisable(form){
     $(form + " input[type=text], input[type=password], textarea").each(function(){
         $(this).attr("disabled", false);
     });
-  }
+  };
+
   window.addDisable = function addDisable(form){
     $(form + " input, textarea").each(function(){
         $(this).attr("disabled", "disabled");
     });
-  }
+  };
 
 });
