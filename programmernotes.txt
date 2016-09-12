@@ -1,0 +1,33 @@
+/*************************************************************************\
+*                                                                         *
+*             VERSION ONE POINT ZERO (BETA VERSION)                       *
+*                                                                         *
+***************************************************************************
+
+@PRESENTATION
+  Remove comment section completely
+  Add 21 members
+
+
+/*************************************************************************\
+*                                                                         *
+*                    VERSION ONE POINT ONE                                *
+*                                                                         *
+***************************************************************************
+
+@MEMBERS
+  New members (aanmeldingen)
+
+  Create search function
+  Create filter function
+  Pagination
+
+  Validation
+
+CODE OPTIMALIZATION
+SECURITY ENHANCEMENTS
+
+FUNCTIONS.JS
+
+  Move the validateLoginForm function into a class. <- CURRENT
+  Move the clearForm function into a class.

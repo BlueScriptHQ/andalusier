@@ -1,0 +1,2 @@
+$ajax = false;
+$fileUpload = false;
