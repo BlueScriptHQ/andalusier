@@ -1,27 +1,51 @@
 <?php
     // live mode
-    error_reporting(0);
 
     session_start();
 
     require "assets/config/defaults.php";
-
+    
     require "assets/classes/connection_class.php";
     require "assets/classes/user_class.php";
     require "assets/classes/input_class.php";
 
-    // load account name
-    if(isset($_POST["requestAccName"]) && $_POST["requestAccName"] == true) {
-    	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
-    		$userHandling = new userHandler();
-    		echo $userHandling->returnName($_SESSION["loggeduserid"]);
-    	} else { echo "Gebruiker"; exit(); }
-    }
+    /* NOTE: In development */
+    /*class Account {
 
-    // load the menu
-    if(isset($_POST["requestMenu"]) && $_POST["requestMenu"] == true) {
-      if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
-        require_once("connection.php");
+      private $account_id;
+      private $information;
+      private $receive;
+      private $conn;
+
+      public function __construct($method, $conn){
+        $this->account_id = $_SESSION["loggeduserid"];
+        $this->conn = $conn;
+        switch ($method) {
+          case 'AccName':
+            $this->getAccName();
+            break;
+
+          case 'Menu':
+            $this->getMenu();
+            break;
+
+          case 'AccData':
+            $this->getAccData();
+            break;
+        }
+      }
+
+      public function getAccID(){
+        return $this->account_id;
+      }
+
+      private function getAccName(){
+        $results = $this->conn->prepare("SELECT accounts_name FROM accounts WHERE accounts_id = :id");
+        $results->execute(array(':id' => $this->getAccID())); $results = $results->fetch();
+        $this->information = $results['accounts_name'];
+      }
+
+      private function getMenu(){
         $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
         INNER JOIN ranks
         ON acc_ranks.ranks_id = ranks.ranks_id
@@ -31,9 +55,9 @@
         ON ranks_pages.pages_id = pages.pages_id
         WHERE acc_ranks.accounts_id = :id
         ";
-        $results = $conn->prepare($sql);
+        $results = $this->conn->prepare($sql);
         $results->execute(array(
-          "id" => $_SESSION["loggeduserid"]
+          "id" => $this->account_id
         ));
         $fetchedResults = $results->fetchAll(PDO::FETCH_OBJ);
         $hierarchy = array();
@@ -80,8 +104,32 @@
           }
           echo "</div>";
         }
-      } else { echo "Interne fout. Probeer het later opnieuw."; exit(); }
-    }
+        $this->information = $hierarchy;
+      }
+
+      private function getAccData(){
+        $sql = "SELECT
+        accounts_name,accounts_tussenvoegsel,
+        accounts_lastname,
+        accounts_mobnr2,accounts_birthdate,
+        accounts_email,accounts_email2,
+        accounts_lastname,accounts_mobnr,
+        accounts_phonenr,accounts_phonenr2,
+        DATE_FORMAT(accounts_prev_loggedintime, '%d-%m-%Y %T') AS accounts_prev_loggedintime
+        FROM accounts
+        INNER JOIN accounts_contact_info
+        ON accounts.accounts_id = accounts_contact_info.accounts_id
+        WHERE accounts.accounts_id = :id";
+        $results = $this->conn->prepare($sql);
+        $results->execute(array(':id' => $this->getAccID())); $results = $results->fetchAll();
+        $this->information = $results;
+      }
+      public function getReturn(){
+        return $this->information;
+      }
+
+    }*/
+
     // load account data
     if(isset($_POST["requestAccData"]) && $_POST["requestAccData"] == true) {
     	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
