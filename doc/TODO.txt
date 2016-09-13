@@ -27,6 +27,10 @@ Algemeen
       PRIO: Normaal
       Persoon(en): Karin Kreeft
 
+    - Alle plaatjes comprimeren
+      PRIO: Laag
+      Persoon(en): Karin Kreeft
+
 PHP
 
     - Veiligheidsupdates en betere validatie op inkomende en uitgaande data. (Dus ook betere checks bij bestands mutaties)
