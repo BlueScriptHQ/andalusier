@@ -18,8 +18,8 @@
         alert(e);
       }
 
-      MethodParser.addCall("getName", getBlabla);
-      MethodParser.addCall("getAge", getAgeHandler);
+      MethodParser.addCall("getName", getBlabla, {name: 'test', age: 12});
+      MethodParser.addCall("getAge", getAgeHandler, {name: 'test', age: 12});
 
       // Aan het einde van de pagina
       MethodParser.execute();

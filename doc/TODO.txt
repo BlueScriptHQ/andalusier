@@ -7,6 +7,10 @@
 
 Algemeen
 
+    - Implementeer PHAJAX
+      PRIO: Sky-high
+      Persoon(en): Gerrit Luimstra
+
     - Betere documentatie bij stukken code
       PRIO: Erg hoog
       Persoon(en): Gerrit Luimstra
@@ -111,3 +115,8 @@ Andalusier
     - Uiteindelijk hun klanten toevoegen aan het systeem
       PRIO: Laag
       Persoon(en): Iedereen
+
+PARSER
+
+    - Requires toevoegen van alle pagina's.
+    - Functies toevoegen aan een array, zodat die kunnen worden gecalled.

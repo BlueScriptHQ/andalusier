@@ -1,19 +1,18 @@
 <?php
 
   require "assets/classes/parser.php";
-  $parser = new Parser();
+
+  function getName() {
+    return "test";
+  } $parser->addFunc("getName");
+
+  function getAge($params){
+    return $params->age;
+  } $parser->addFunc("getAge");
 
   if(isset($_POST["callArray"])){
     $callsArray = json_decode($_POST["callArray"]);
     $parser->parseCalls($callsArray);
-  }
-
-  function getName() {
-    return "test";
-  }
-
-  function getAge(){
-    return 20;
   }
 
   // Aan het einde van de pagina
