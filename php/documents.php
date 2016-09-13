@@ -27,9 +27,11 @@
   		return $size;
   	}
     $maindirectory = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
-    $directory = $_SESSION["documentsURL"];
+    $directory = $_SESSION["documentsURL"]; // Standaard $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/
 
     if(!file_exists($directory)){
+
+      // Echo dit als de directory niet valid is, en stop dan.
       echo "<tr>
               <td class='alignCenter'>
                 <a onclick='backAFolder();' style='cursor:pointer;'>
@@ -57,38 +59,66 @@
       exit();
     }
 
+
+    // Scan de directory en laadt alle file informatie in $files
     $files = scandir($directory);
+
     $directories = array();
     $exc = array(".", "..");
+
+    // Verwijder de niet gewilde bestanden uit de $files array
     $files = array_diff($files, $exc);
+
+    // Sorteer de bestanden opnieuw
     sort($files);
 
+    // Loop over de $files, als de entry een map is, stop deze in de $directories array
     for ($i=0; $i < count($files); $i++) {
       if(is_dir($directory.$files[$i])){
         $directories[] = $files[$i];
       }
     }
+
+    // Verwijderen uiteindelijk de mappen uit de bestandenlijst, deze horen hier niet thuis
     $files = array_diff($files, $directories);
+
+    // Sorteer alles nog een laatst keer
     sort($files);
     sort($directories);
 
+    // Hier staat straks alle HTML code in
     $structure = "";
 
-    // check if a back option is required..
+
+    // Geef een terug pijltje, als de directory niet gelijk is aan de root directory (het begin punt)
     if($directory != $maindirectory){
-      $structure.= "<tr><td class='alignCenter'><a onclick='backAFolder();' style='cursor:pointer;'><img src='./img/content-section/documents-list/back.png' alt='' /></a>
-                    </td><td><a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a></td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
+      $structure.= "<tr>
+                        <td class='alignCenter'>
+                          <a onclick='backAFolder();' style='cursor:pointer;'>
+                            <img src='./img/content-section/documents-list/back.png' alt='' />
+                          </a>
+                        </td>
+                        <td>
+                          <a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a></td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
                     <td></td>
                     </tr>";
     }
 
+    // Als er geen bestanden zijn gevonden in de opgegeven map locatie, geef dit aan
     if(count($files) == 0 && count($directories) == 0){
-      $structure.= "<tr><td class='alignCenter'><img src='./img/content-section/documents-list/sad.png' alt='' /></td><td>Er is hier helaas niets te zien..</td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
-                    <td></td>
+      $structure.= "<tr>
+                      <td class='alignCenter'>
+                        <img src='./img/content-section/documents-list/sad.png' alt='' />
+                      </td>
+                      <td>Er is hier helaas niets te zien..</td>
+                      <td class='alignCenter'></td>
+                      <td class='alignCenter'></td>
+                      <td class='alignCenter'></td>
+                      <td></td>
                     </tr>";
     }
 
-
+    // Loop nu over de $directories, mappen worden namelijk bovenaan laten zien
     for ($i=0; $i < count($directories); $i++) {
       $structure.= "
         <tr>
@@ -107,10 +137,15 @@
       ";
     }
 
+    // Loop nu over de $files, bestanden worden namelijk onderaan laten zien.
     for ($i=0; $i < count($files); $i++) {
       $extension = strtolower(substr(strrchr($files[$i], '.'), 1));
+
+      // Maak de bestandsgrootte leesbaar voor de gebruiken
       $size = pretty_filesize($directory.$files[$i]);
       $extn = '';
+
+      // Geef een duidelijke extensie naam
       switch ($extension){
 				case "png": $extn="PNG"; break;
 				case "jpg": $extn="JPEG"; break;
@@ -162,6 +197,7 @@
       ";
     }
 
+    // Echo $structure, hier zitten nu alle bestanden en mappen in HTML formaat in
     echo $structure;
   }
 
