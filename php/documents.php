@@ -112,12 +112,12 @@
       $size = pretty_filesize($directory.$files[$i]);
       $extn = '';
       switch ($extension){
-				case "png": $extn="PNG Afbeelding"; break;
-				case "jpg": $extn="JPEG Afbeelding"; break;
-				case "jpeg": $extn="JPEG Afbeelding"; break;
-				case "svg": $extn="SVG Afbeelding"; break;
-				case "gif": $extn="GIF Afbeelding"; break;
-				case "ico": $extn="Windows Afbeelding"; break;
+				case "png": $extn="PNG"; break;
+				case "jpg": $extn="JPEG"; break;
+				case "jpeg": $extn="JPEG"; break;
+				case "svg": $extn="SVG"; break;
+				case "gif": $extn="GIF"; break;
+				case "ico": $extn="ICOON"; break;
 
 				case "txt": $extn="Text Bestand"; break;
 				case "log": $extn="Log Bestand"; break;
@@ -126,20 +126,20 @@
 				case "xhtml": $extn="HTML Bestand"; break;
 				case "shtml": $extn="HTML Bestand"; break;
 				case "php": $extn="PHP Script"; break;
-				case "js": $extn="Javascript Bestand"; break;
+				case "js": $extn="Javascript"; break;
 				case "css": $extn="Stylesheet"; break;
-        case "mp3": $extn="Muziekbestand"; break;
+        case "mp3": $extn="MP3"; break;
 
-				case "pdf": $extn="PDF Document"; break;
+				case "pdf": $extn="PDF"; break;
 				case "xls": $extn="Spreadsheet"; break;
 				case "xlsx": $extn="Spreadsheet"; break;
-				case "doc": $extn="Microsoft Word Document"; break;
-				case "docx": $extn="Microsoft Word Document"; break;
+				case "doc": $extn="Word Document"; break;
+				case "docx": $extn="Word Document"; break;
 
 				case "zip": $extn="ZIP Archief"; break;
         case "rar": $extn="RAR Archief"; break;
-				case "htaccess": $extn="Apache Config Bestand"; break;
-				case "exe": $extn="Windows Executable"; break;
+				case "htaccess": $extn="Apache"; break;
+				case "exe": $extn="Executable"; break;
 
 				default: if($extn!=""){$extn=strtoupper($extn)." bestand";} else{$extn="Onbekend";} break;
 			}
