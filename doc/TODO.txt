@@ -11,6 +11,18 @@ Algemeen
       PRIO: Erg hoog
       Persoon(en): Gerrit Luimstra
 
+    - Cronjobs maken die de meldingen aan de managers genereert
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Notificaties koppelen aan een type gebruiker
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Paginatie
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra, Karin Kreeft
+
     - Data parser maken, zodat er maar één AJAX call hoeft worden gemaakt, in plaats van momenteel iets van 3.
       PRIO: Hoog
       Persoon(en): Gerrit Luimstra
@@ -24,6 +36,10 @@ Algemeen
       Persoon(en): Iedereen
 
     - Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
+      PRIO: Normaal
+      Persoon(en): Karin Kreeft
+
+    - Datepicker (flexibel formaat) (two way validation)
       PRIO: Normaal
       Persoon(en): Karin Kreeft
 
@@ -42,11 +58,53 @@ PHP
       Persoon(en): Gerrit Luimstra
 
 
+Design technisch
+
+    - Betere active handler bij sub menu's
+      PRIO: Normaal tot laag
+      Persoon(en): Gerrit Luimstra
+
 documents.php
+
+    - Bestanden kunnen verwijderen als er andere bestanden inzitten
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Melding geven als je meerdere bestanden gaat verwijderen
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Validatie bij uploaden
+      PRIO: Hoog
+      Persoon(en): Gerrit Luimstra
+
 
     - Zorgen dat er geen map met een "\" er kan worden geupload, dit zorgt ervoor dat de bestands navigator zichzelf ophangt.
       PRIO: Normaal
       Persoon(en): Gerrit Luimstra
+
+leden.php
+
+    - Validator voor inkomende en uitgaande data
+      PRIO: Erg hoog
+      Persoon(en): Gerrit Luimstra
+
+    - Aanhef bij toevoegen optimaliseren (maken :P)
+      PRIO: Erg hoog
+      Persoon(en): Karin Kreeft
+
+    - Zoek / filter functie
+      PRIO: Hoog
+      Persoon(en): Karin Kreeft
+
+    - Sorteer functie (en dus pijltjes)
+      PRIO: Hoog
+      Persoon(en): Karin Kreeft
+
+
+
+
+
 
 Andalusier
 
