@@ -1,4 +1,15 @@
+$(document).ready(function(){
+  // Overlay fix, zodat deze niet alleen 100vh heeft
+
+});
+
 $(window).load(function(){
+
+  $("#overlay").height($(document).height());
+  $(window).resize(function(){
+    $("#overlay").height($(document).height());
+  });
+
 
   $("#loading-box img").fadeOut(400);
   $("#loading-box").fadeOut(500);
