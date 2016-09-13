@@ -46,7 +46,7 @@ JS
 
       formatAccData()
 
-        $result         // Hier staat alle informatie van de ingelogde gebruiker in.
+        result         // Hier staat alle informatie van de ingelogde gebruiker in.
                         // De properties van dit object staan gelijk aan de velden in de database.
                         // Type: Object
                         // Standaard: N/A
