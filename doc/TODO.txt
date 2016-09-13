@@ -25,7 +25,7 @@ Algemeen
 
     - Data parser maken, zodat er maar één AJAX call hoeft worden gemaakt, in plaats van momenteel iets van 3.
       PRIO: Hoog
-      Persoon(en): Gerrit Luimstra, Djurn, Thom
+      Persoon(en): Gerrit Luimstra
 
     - Invoeren van een rechtensysteem. Leden kunnen sommige pagina's wel lezen, data muteren of bekijken, anderen niet.
       PRIO: Hoog
@@ -38,7 +38,6 @@ Algemeen
     - Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
       PRIO: Normaal
       Persoon(en): Karin Kreeft
-      PASSED
 
     - Datepicker (flexibel formaat) (two way validation)
       PRIO: Normaal
