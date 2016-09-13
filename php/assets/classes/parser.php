@@ -10,6 +10,9 @@
           case 'getName':
             $this->results[$callArray[$i]->call] = (object) ['result' => getName()];
             break;
+          case 'getAge':
+            $this->results[$callArray[$i]->call] = (object) ['result' => getAge()];
+            break;
         }
       }
     }

@@ -14,8 +14,12 @@
       function getBlabla(result){
         alert(result);
       }
+      function getAgeHandler(e){
+        alert(e);
+      }
 
       MethodParser.addCall("getName", getBlabla);
+      MethodParser.addCall("getAge", getAgeHandler);
 
       // Aan het einde van de pagina
       MethodParser.execute();
