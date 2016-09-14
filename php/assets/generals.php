@@ -7,4 +7,8 @@
       error_reporting(-1);
     }
   }
+
+  function valid($param){
+    return (isset($param) && !empty($param) ? true : false;
+  }
 ?>

@@ -7,6 +7,6 @@
    } catch (PDOException $e) {
      echo "Er is een probleem met de verbinding, probeer het later opnieuw.";
      die();
-   }
-   
+  }
+
 ?>

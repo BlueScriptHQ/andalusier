@@ -15,13 +15,11 @@
 
     require "assets/connection.php";
 
-    var_dump($conn);
-
     // All functions that can be used using the router
     require "functions/accounts.php";
-    //require "functions/members.php";
-    //require "functions/documents.php";
-    //require "functions/events.php";
+    require "functions/members.php";
+    require "functions/documents.php";
+    require "functions/events.php";
 
     // Optional, be sure to delete this later.
     //require "functions/optional.php";

@@ -8,9 +8,11 @@
       for ($i=0; $i < count($callArray); $i++) {
         if(function_exists($callArray[$i]->call)){
           if(property_exists($callArray[$i], 'callParameters')){
-            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $callArray[$i]->callParameters)];
+            global $conn;
+            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $conn, $callArray[$i]->callParameters)];
           } else {
-            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call)];
+            global $conn;
+            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $conn)];
           }
         } else {
           $this->results[$callArray[$i]->call] = (object) ['result' => null];

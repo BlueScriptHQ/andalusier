@@ -1,19 +1,18 @@
 <?php
+
     // load account name
-    function getAccountName(){
-      global $conn;
-      return "Gebruiker";
+    function getAccountName(PDO $e){
+      if(isset($_SESSION["loggeduserid"])){
+        $sql = "SELECT accounts_name FROM accounts WHERE accounts_id = :id";
+        $sth = $e->prepare($sql);
+        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
+        $res = $sth->fetch();
+        return $res['accounts_name'];
+      } else { return "Gebruiker"; }
     }
 
-    /*if(isset($_POST["requestAccName"]) && $_POST["requestAccName"] == true) {
-    	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] !== "") {
-    		$userHandling = new userHandler();
-    		echo $userHandling->returnName($_SESSION["loggeduserid"]);
-    	} else { echo "Gebruiker"; exit(); }
-    }
-
-    function getMenu(){
-      if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
+    /*function getMenu(){
+      if(valid($_SESSION["loggeduserid"]))) {
         $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
         INNER JOIN ranks
         ON acc_ranks.ranks_id = ranks.ranks_id
