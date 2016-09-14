@@ -9,6 +9,6 @@
   }
 
   function valid($param){
-    return (isset($param) && !empty($param) ? true : false;
+    return (isset($param) && !empty($param)) ? true : false;
   }
 ?>

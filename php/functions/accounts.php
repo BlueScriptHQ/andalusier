@@ -1,18 +1,18 @@
 <?php
 
     // load account name
-    function getAccountName(PDO $e){
+    function getAccountName(PDO $conn){
       if(isset($_SESSION["loggeduserid"])){
         $sql = "SELECT accounts_name FROM accounts WHERE accounts_id = :id";
-        $sth = $e->prepare($sql);
+        $sth = $conn->prepare($sql);
         $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
         $res = $sth->fetch();
         return $res['accounts_name'];
       } else { return "Gebruiker"; }
     }
 
-    /*function getMenu(){
-      if(valid($_SESSION["loggeduserid"]))) {
+    function getMenu(PDO $conn){
+      if(valid($_SESSION["loggeduserid"])) {
         $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
         INNER JOIN ranks
         ON acc_ranks.ranks_id = ranks.ranks_id
@@ -78,9 +78,8 @@
     }
 
     // load account data
-    if(isset($_POST["requestAccData"]) && $_POST["requestAccData"] == true) {
-    	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
-        $accountsHandling =  new connectionHandler();
+    function getAccountData(PDO $conn){
+      if(valid($_SESSION["loggeduserid"])){
         $sql = "SELECT
         accounts_name,accounts_tussenvoegsel,
         accounts_lastname,
@@ -93,14 +92,14 @@
         INNER JOIN accounts_contact_info
         ON accounts.accounts_id = accounts_contact_info.accounts_id
         WHERE accounts.accounts_id = :id";
-        $data = $accountsHandling->processQuery($sql, array(
-          ":id" => $_SESSION["loggeduserid"]
-        ));
-        echo json_encode($data);
-    	} else { exit(); }
+        $sth = $conn->prepare($sql);
+        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
+        $res = $sth->fetch(PDO::FETCH_ASSOC);
+        return $res;
+      }
     }
 
-    // save account data
+    //save account data
     if(isset($_POST["saveAccData"]) && !empty($_POST["saveAccData"])){
       if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
         $dataArray = json_decode($_POST["saveAccData"]);
@@ -139,7 +138,35 @@
       } else { exit(); }
     }
 
-    // load account notifications
+    function getNotifications(PDO $conn){
+      if(valid(isset($_SESSION["loggeduserid"]))){
+        $sql = "SELECT
+        notifications_content, notifications_time
+        FROM acc_notif
+        INNER JOIN notifications
+        ON acc_notif.notifications_id = notifications.notifications_id
+        WHERE acc_notif.accounts_id = :id ORDER BY notifications_time DESC";
+        $sth = $conn->prepare($sql);
+        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
+        $data = $sth->fetchAll(PDO::FETCH_OBJ);
+        $return = "";
+        if($data !== false){
+          foreach ($data as $key => $value) {
+            $return.= "<tr>
+                    <td>".$value->notifications_time."</td>
+                    <td>".$value->notifications_content."</td>
+                  </tr>";
+          }
+        } else {
+          $return.= "<tr>
+                    <td>".date("Y-m-d H:i:s")."</td>
+                    <td>Momenteel geen meldingen.</td>
+                </tr>";
+       }
+       return $return;
+      }
+
+    }
    if(isset($_POST["requestAccNotif"]) && $_POST["requestAccNotif"] == true) {
      $userHandling =  new connectionHandler();
      $sql = "SELECT
@@ -164,6 +191,6 @@
                  <td>Momenteel geen meldingen.</td>
              </tr>";
     }
-   }*/
+   }
 
 ?>
