@@ -10,7 +10,7 @@
 <script src="http://developers.bluescript.nl/libraries/requirements.min.js" charset="utf-8"></script>
 
 <script src="js/assets/config/variables.js" charset="utf-8"></script>
-<script src="js/assets/classes/input_class.js" charset="utf-8"></script>
+<script src="js/assets/validators/input_class.js" charset="utf-8"></script>
 
 <script src="js/layout/menu_structure.js" charset="utf-8"></script>
 

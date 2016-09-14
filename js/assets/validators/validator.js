@@ -1,3 +1,4 @@
+
 var inputHandler = function() {
 
     this.notEmpty = function($inputs) {

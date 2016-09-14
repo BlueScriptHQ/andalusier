@@ -19,7 +19,7 @@ $(document).ready(function(){
       $(".status-text").text("Velden mogen niet leeg zijn!");
       return false;
     }
-    if($username.val().length > 32 || $password.val().length > 48){
+    else if($username.val().length > 32 || $password.val().length > 48){
       $(".status-text").text("Ingevoerde data te lang!");
       return false;
     }

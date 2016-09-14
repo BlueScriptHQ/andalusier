@@ -12,7 +12,7 @@ $(document).ready(function(){
       $menuHeight = ($windowHeight - $headerHeight) + "px";
     }
     $("#side-menu").css("height", $menuHeight);
-  }
+  };
 
   alignMenu();
 
