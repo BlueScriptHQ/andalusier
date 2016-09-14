@@ -1,33 +1,19 @@
 <?php
-
-    session_start();
-    // Libaries
-    require "assets/generals.php";
-
-    require "assets/config/defaults.php";
-
-    require "assets/classes/connection_class.php";
-    require "assets/classes/user_class.php";
-    require "assets/classes/input_class.php";
-
-    error_reporting(0);
-
-    // Allow ERRORS to be shown.
-    dev_mode(true);
-
-
     // load account name
-    if(isset($_POST["requestAccName"]) && $_POST["requestAccName"] == true) {
-    	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
+    function getAccountName(){
+      global $conn;
+      return "Gebruiker";
+    }
+
+    /*if(isset($_POST["requestAccName"]) && $_POST["requestAccName"] == true) {
+    	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] !== "") {
     		$userHandling = new userHandler();
     		echo $userHandling->returnName($_SESSION["loggeduserid"]);
     	} else { echo "Gebruiker"; exit(); }
     }
 
-    // load the menu
-    if(isset($_POST["requestMenu"]) && $_POST["requestMenu"] == true) {
+    function getMenu(){
       if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
-        require_once("connection.php");
         $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
         INNER JOIN ranks
         ON acc_ranks.ranks_id = ranks.ranks_id
@@ -42,6 +28,7 @@
           "id" => $_SESSION["loggeduserid"]
         ));
         $fetchedResults = $results->fetchAll(PDO::FETCH_OBJ);
+        $structure = "";
         $hierarchy = array();
         $indexes = array();
         foreach($fetchedResults as $row){
@@ -70,24 +57,27 @@
         }
         foreach ($hierarchy as $parentKey => $parentValue) {
           if($hierarchy[$parentKey]["pages_iscontroller"] != 0){
-            echo "<li id='".strtolower($hierarchy[$parentKey]["pages_name"])."-toggler' onclick='openMenu".$hierarchy[$parentKey]["pages_name"]."()'>
+            $structure.= "<li id='".strtolower($hierarchy[$parentKey]["pages_name"])."-toggler' onclick='openMenu".$hierarchy[$parentKey]["pages_name"]."()'>
                   <img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'>
                   <a href='#'>".$hierarchy[$parentKey]["pages_name"]."</a>
                   <img id='".strtolower($hierarchy[$parentKey]["pages_name"])."-dropdown-indicator' src='img/side-menu/arrow-down.png'>
                   </li>";
           } else {
-            echo "<li><img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'><a href='".$hierarchy[$parentKey]["pages_url"]."'>".$hierarchy[$parentKey]["pages_name"]."</a></li>";
+            $structure.= "<li><img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'><a href='".$hierarchy[$parentKey]["pages_url"]."'>".$hierarchy[$parentKey]["pages_name"]."</a></li>";
           }
-          echo " <div id='".strtolower($hierarchy[$parentKey]["pages_name"])."-sub-menu'>";
+          $structure.= " <div id='".strtolower($hierarchy[$parentKey]["pages_name"])."-sub-menu'>";
           foreach ($hierarchy[$parentKey] as $key => $value) {
             if(is_array($value)){
-             echo "<li class='ischild'><a href='".strtolower($value['pages_url'])."'>".$value['pages_name']."</a></li>";
+             $structure.= "<li class='ischild'><a href='".strtolower($value['pages_url'])."'>".$value['pages_name']."</a></li>";
             }
           }
-          echo "</div>";
+          $structure.= "</div>";
         }
-      } else { echo "Interne fout. Probeer het later opnieuw."; exit(); }
+
+        return $structure;
+      } else { $structure.= "Interne fout. Probeer het later opnieuw."; return $structure; exit(); }
     }
+
     // load account data
     if(isset($_POST["requestAccData"]) && $_POST["requestAccData"] == true) {
     	if(isset($_SESSION["loggeduserid"]) && $_SESSION["loggeduserid"] != "") {
@@ -175,6 +165,6 @@
                  <td>Momenteel geen meldingen.</td>
              </tr>";
     }
-   }
+   }*/
 
 ?>

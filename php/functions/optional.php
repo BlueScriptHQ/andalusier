@@ -1,8 +1,5 @@
 <?php
 
-  // live mode
-  error_reporting(0);
-
   // comment handler, this will be removed later.
   if (isset($_POST["cmnttitle"])) {
     $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';

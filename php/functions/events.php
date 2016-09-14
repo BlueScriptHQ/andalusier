@@ -1,20 +1,5 @@
 <?php
 
-  session_start();
-  // Libaries
-  require "assets/generals.php";
-
-  require "assets/config/defaults.php";
-
-  require "assets/classes/connection_class.php";
-  require "assets/classes/user_class.php";
-  require "assets/classes/input_class.php";
-
-  error_reporting(0);
-
-  // Allow ERRORS to be shown.
-  dev_mode(true);
-
   if(isset($_POST["requestEvents"]) && $_POST["requestEvents"] == true){
     $eventsHandling =  new connectionHandler();
     $sql = "SELECT DATE_FORMAT(logs_date, '%d-%m-%Y %H:%i:%s') AS logs_date, logs_content FROM logs ORDER BY logs_date DESC LIMIT 100";

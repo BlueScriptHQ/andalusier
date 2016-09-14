@@ -1,6 +1,6 @@
-var MethodParser = (function () {
+var callHandler = (function () {
 
-  var phpLocation = "../../php/core.php";
+  var phpLocation = "php/core.php";
   var calls = [];
   var callBackFns = [];
 
@@ -16,6 +16,7 @@ var MethodParser = (function () {
   };
 
   var resultHandler = function(object){
+    console.log(object);
     var index = 0;
     for (var key in object) {
       if (object.hasOwnProperty(key)) {
