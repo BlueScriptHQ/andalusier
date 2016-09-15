@@ -4,7 +4,13 @@ var callHandler = (function () {
   var calls = [];
   var callBackFns = [];
 
-  var addCall = function (call, callbackFn, callParameters) {
+  var addCall = function (call, callbackFn, callParameters, callBackError, phpLocationParam) {
+    if(typeof callBackError !== "undefined"){
+      // do something awesome
+    }
+    if(typeof phpLocation !== "undefined"){
+      phpLocation = phpLocationParam;
+    }
     if(typeof callParameters !== "undefined"){
       calls.push({call: call, callParameters: callParameters});
     } else { calls.push({call: call}); }
@@ -12,7 +18,9 @@ var callHandler = (function () {
   };
 
   var execute = function(){
-    $.ajax({ url: phpLocation, method: "POST", data: "callArray=" + JSON.stringify(calls), success: function(e){ resultHandler(JSON.parse(e)); } });
+    if(calls.length !== 0){
+      $.ajax({ url: phpLocation, method: "POST", data: "callArray=" + JSON.stringify(calls), success: function(e){ resultHandler(JSON.parse(e)); } });
+    }
   };
 
   var resultHandler = function(object){

@@ -13,30 +13,19 @@ $(document).ready(function(){
           $username = $("#username").val();
           $password = $("#password").val();
 
-          // ajax call
-          $.ajax({
-            url: "../php/functions.php",
-            data: "username=" + $username + "&password=" + $password + "&ajax=true&loginrequest=true",
-            method: "POST",
-            success: function(result){
-              if(result == "loggedin"){
-                location.href = "../index.php";
-              } else {
-                $("#status img").css("display", "none");
-                $(".status-text").text(result);
+          var dataObject = {
+            username: $username,
+            password: $password
+          };
 
-                clearForm("form");
-
-                $("#username").prop("disabled", false);
-                $("#password").prop("disabled", false);
-                $("#lgn-btn").prop("disabled", false);
-
-                $("#username").focus();
-              }
-            },
-            error: function(){
+          callHandler.addCall("checkLogin", function(result){
+            if(result == "loggedin"){
+              location.href = "../index.php";
+            } else {
               $("#status img").css("display", "none");
-              $(".status-text").text("Er ging iets mis. Probeer het later opnieuw.");
+              $(".status-text").text(result);
+
+              clearForm("form");
 
               $("#username").prop("disabled", false);
               $("#password").prop("disabled", false);
@@ -44,7 +33,9 @@ $(document).ready(function(){
 
               $("#username").focus();
             }
-          });
+          }, dataObject, undefined, "../php/core.php");
+
+          callHandler.execute();
       } else {
         $('form').unbind('submit');
       }

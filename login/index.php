@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="../css/loginstyle.min.css" media="screen" charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="http://developers.bluescript.nl/libraries/requirements.min.js" charset="utf-8"></script>
-  <script src="../js/assets/config/variables.js" charset="utf-8"></script>
-  <script src="../js/assets/classes/input_class.js" charset="utf-8"></script>
-  <script src="../js/functions.js" charset="utf-8"></script>
+  <script src="../js/assets/variables.js" charset="utf-8"></script>
+  <script src="../js/assets/functions.js" charset="utf-8"></script>
+
+  <!-- AJAX handlers and events -->
+  <script src="../js/assets/callHandler.js" charset="utf-8"></script>
+  <script src="../js/ajax/general.ajax.js" charset="utf-8"></script>
+  <script src="../js/controls/general.controls.js" charset="utf-8"></script>
 
   <script src="../js/ajax/login.ajax.js" charset="utf-8"></script>
 
-
+  <script src="../js/start.js" charset="utf-8"></script>
 </head>
   <body>
     <div id="page-wrapper">
