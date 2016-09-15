@@ -1,15 +1,12 @@
 $(document).ready(function(){
   window.loadTable = function loadTable(){
-    $.ajax({
-      url: "php/members.php",
-      data: "requestMembersTable=true",
-      method: "POST",
-      success: function(result){
-        $(".members-tableHead").nextAll().remove();
-        $(result).insertAfter(".members-tableHead");
-        alignMenu();
-      }
+
+    callHandler.addCall("getMembersTable", function(result){
+      $(".members-tableHead").nextAll().remove();
+      $(result).insertAfter(".members-tableHead");
+      alignMenu();
     });
+    
   };
 
   $("#add-members-btn").on("click", function(){

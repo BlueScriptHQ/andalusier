@@ -19,7 +19,7 @@ var callHandler = (function () {
     callBackFns.push({call: call, callBackFn: callbackFn});
   };
 
-  var execute = function(){
+  var execute = function(callBackFn){
     if(calls.length !== 0){
       $.ajax({ url: phpLocation, method: "POST", data: "callArray=" + JSON.stringify(calls), success: function(e){
         if(e){
@@ -28,6 +28,7 @@ var callHandler = (function () {
           } catch(err){
             errorHandler(err);
           }
+          callBackFn();
           resultHandler(JSON.parse(e));
         }
       }, error: alert });

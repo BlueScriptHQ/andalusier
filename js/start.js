@@ -10,10 +10,6 @@ $(window).load(function(){
     $("#overlay").height($(document).height());
   });
 
-
-  $("#loading-box img").fadeOut(400);
-  $("#loading-box").fadeOut(500);
-
   //check if the members table exists
   if($(".members-table").length){
     loadTable();
@@ -27,5 +23,8 @@ $(window).load(function(){
     loadEvents();
   }
 
-  callHandler.execute();
+  callHandler.execute(function(){
+    $("#loading-box img").fadeOut(900);
+    $("#loading-box").fadeOut(1000);
+  });
 });

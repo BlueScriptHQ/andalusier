@@ -1,9 +1,8 @@
 <?php
 
   // when the members table is being requested
-  if (isset($_POST["requestMembersTable"]) && $_POST["requestMembersTable"] == true) {
-    // formatting table data.
-    $accountsHandling =  new connectionHandler();
+  function getMembersTable($dbHandler){
+
     $sql = "SELECT
     members.members_id, members_titles_content, members_name, members_tussenvoegsel,
     members_lastname, members_contribution_amount, members_email,
@@ -17,10 +16,11 @@
     ON members.members_id = members_status.members_id
     INNER JOIN members_types
     ON members.members_types_id = members_types.members_types_id";
-    $data = $accountsHandling->processQuery($sql);
 
+    $data = $dbHandler->handleQuery($sql, false, true);
+    $return = "";
     if(empty($data) || $data == 0){
-      echo "
+      $return.= "
       <tr>
           <td></td>
           <td>Momenteel geen leden in de database.</td>
@@ -39,7 +39,7 @@
       $reminder = ($value->members_reminder == 1 ? "<img src='img/content-section/members-list/reminder_received.png' alt='' />" : "<img src='img/content-section/members-list/reminder_notreceived.png' alt='' />");
       $spaceEnabled = (empty($value->titles_tussenvoegsel) ? '' : ' ');
       $name = "(".ucfirst($value->members_titles_content).") ".$value->members_name." ".$value->members_tussenvoegsel.$spaceEnabled.$value->members_lastname;
-      echo "
+      $return.= "
         <tr>
     				<td>".$value->members_id."</td>
     				<td>".$name."</td>
@@ -54,6 +54,16 @@
     				<td><input type='button' onclick='editUser(".$value->members_id.");'></td>
     		<tr>";
     }
+
+    return $return;
+
+  }
+
+  
+  if (isset($_POST["requestMembersTable"]) && $_POST["requestMembersTable"] == true) {
+    // formatting table data.
+    $accountsHandling =  new connectionHandler();
+
   }
 
   // when the members's information is being requested
