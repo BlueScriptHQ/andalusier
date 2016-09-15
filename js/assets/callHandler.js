@@ -8,9 +8,11 @@ var callHandler = (function () {
     if(typeof callBackError !== "undefined"){
       // do something awesome
     }
-    if(typeof phpLocation !== "undefined"){
+
+    if(typeof phpLocationParam !== "undefined"){
       phpLocation = phpLocationParam;
     }
+
     if(typeof callParameters !== "undefined"){
       calls.push({call: call, callParameters: callParameters});
     } else { calls.push({call: call}); }
@@ -19,7 +21,16 @@ var callHandler = (function () {
 
   var execute = function(){
     if(calls.length !== 0){
-      $.ajax({ url: phpLocation, method: "POST", data: "callArray=" + JSON.stringify(calls), success: function(e){ resultHandler(JSON.parse(e)); } });
+      $.ajax({ url: phpLocation, method: "POST", data: "callArray=" + JSON.stringify(calls), success: function(e){
+        if(e){
+          try {
+            var result = JSON.parse(e);
+          } catch(err){
+            errorHandler(err);
+          }
+          resultHandler(JSON.parse(e));
+        }
+      }, error: alert });
     }
   };
 
@@ -32,6 +43,11 @@ var callHandler = (function () {
         index++;
       }
     }
+  };
+
+  var errorHandler = function(){
+    $("#page-overlay").show();
+    $("#critical-error").fadeIn(300);
   };
 
   return {

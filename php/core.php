@@ -7,13 +7,14 @@
 
     // Requirements
     //require "assets/verifications.php";
-    //require "assets/defaults.php";
+    require "assets/defaults.php";
     require "assets/generals.php";
 
     // Allow ERRORS to be shown.
     //dev_mode(true);
 
     require "assets/connection.php";
+    require "assets/handlers/databaseHandler.php";
 
     // All functions that can be used using the router
     require "functions/authentications.php";
@@ -26,7 +27,7 @@
     //require "functions/optional.php";
 
     // This is the basic router for the data
-    require "assets/callHandler.php";
+    require "assets/handlers/callHandler.php";
 
     $callHandler->sendResult();
 

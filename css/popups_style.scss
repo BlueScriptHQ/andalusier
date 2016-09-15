@@ -147,7 +147,20 @@
   }
 }
 
-
+#critical-error {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #fff;
+  z-index: 9999;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: none;
+}
 
 #members-popup-edit, #members-popup-add {
   width: 600px;

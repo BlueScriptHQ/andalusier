@@ -1,5 +1,21 @@
 <div id="page-overlay"></div>
 
+<div id="critical-error">
+  <div class="popup-head">
+    <h2>Kritieke fout</h2>
+  </div>
+  <div class="popup-content">
+    <p>
+      De webpagina kan niet goed worden geladen door een kritieke fout in de server.
+      <br>
+      <br>
+      Als dit vaker voorkomt, neem dan contact met de systeembeheerder op.
+    </p>
+    <br>
+    <a href="index.php"><input id="add-members-btn" type="button" class="btn save" value="Haal mij hier weg."></a>
+  </div>
+</div>
+
 <div id="members-popup-add">
   <div class="popup-head">
     <h2>Nieuw lid toevoegen</h2>

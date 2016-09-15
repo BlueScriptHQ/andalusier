@@ -3,7 +3,7 @@
   error_reporting(0);
 
   session_start();
-  require "php/assets/verifications.php";
+  //require "php/assets/verifications.php";
 ?>
 <!DOCTYPE html>
 <html lang="nl">

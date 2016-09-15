@@ -1,32 +1,27 @@
 <?php
 
     // load account name
-    function getAccountName(PDO $conn){
-      if(isset($_SESSION["loggeduserid"])){
+    function getAccountName($dbHandler){
+      if(valid($_SESSION["loggeduserid"])){
         $sql = "SELECT accounts_name FROM accounts WHERE accounts_id = :id";
-        $sth = $conn->prepare($sql);
-        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
-        $res = $sth->fetch();
-        return $res['accounts_name'];
+        $res = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]));
+        return $res->accounts_name;
       } else { return "Gebruiker"; }
     }
 
-    function getMenu(PDO $conn){
+    function getMenu($dbHandler){
       if(valid($_SESSION["loggeduserid"])) {
-        $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
+        $sql = "
+        SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks
         INNER JOIN ranks
         ON acc_ranks.ranks_id = ranks.ranks_id
         INNER JOIN ranks_pages
         ON ranks.ranks_id = ranks_pages.ranks_id
         INNER JOIN pages
         ON ranks_pages.pages_id = pages.pages_id
-        WHERE acc_ranks.accounts_id = :id
-        ";
-        $results = $conn->prepare($sql);
-        $results->execute(array(
-          "id" => $_SESSION["loggeduserid"]
-        ));
-        $fetchedResults = $results->fetchAll(PDO::FETCH_OBJ);
+        WHERE acc_ranks.accounts_id = :id";
+
+        $fetchedResults = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]), true, PDO::FETCH_OBJ);
         $structure = "";
         $hierarchy = array();
         $indexes = array();
@@ -78,7 +73,7 @@
     }
 
     // load account data
-    function getAccountData(PDO $conn){
+    function getAccountData($dbHandler){
       if(valid($_SESSION["loggeduserid"])){
         $sql = "SELECT
         accounts_name,accounts_tussenvoegsel,
@@ -92,12 +87,11 @@
         INNER JOIN accounts_contact_info
         ON accounts.accounts_id = accounts_contact_info.accounts_id
         WHERE accounts.accounts_id = :id";
-        $sth = $conn->prepare($sql);
-        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
-        $res = $sth->fetch(PDO::FETCH_ASSOC);
-        return $res;
+        $data = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]));
+        return $data;
       }
     }
+
 
     //save account data
     if(isset($_POST["saveAccData"]) && !empty($_POST["saveAccData"])){
@@ -138,7 +132,7 @@
       } else { exit(); }
     }
 
-    function getNotifications(PDO $conn){
+    function getNotifications($dbHandler){
       if(valid(isset($_SESSION["loggeduserid"]))){
         $sql = "SELECT
         notifications_content, notifications_time
@@ -146,9 +140,7 @@
         INNER JOIN notifications
         ON acc_notif.notifications_id = notifications.notifications_id
         WHERE acc_notif.accounts_id = :id ORDER BY notifications_time DESC";
-        $sth = $conn->prepare($sql);
-        $sth->execute(array(':id' => $_SESSION["loggeduserid"]));
-        $data = $sth->fetchAll(PDO::FETCH_OBJ);
+        $data = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]), true, PDO::FETCH_OBJ);
         $return = "";
         if($data !== false){
           foreach ($data as $key => $value) {

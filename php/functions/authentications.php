@@ -7,19 +7,12 @@
 		echo "loggedout";
 	}
 
-	function checkLogin(PDO $conn, $params){
-
+	function checkLogin($dbHandler, $params){
 			// Wait a bit.
 			sleep(3);
 
 			// Reset the logged in status.
 			$_SESSION["verified"] = false;
-
-			$ajax = false;
-
-			if(isset($_POST["ajax"]) && $_POST["ajax"] == true){
-				$ajax = true;
-			}
 
 			$username = $params->username;
 			$password = $params->password;
@@ -35,51 +28,42 @@
 				exit();
 			}*/
 			if(1 == 2){
-
+				// validation
 			}
 			else {
 				$username = htmlentities(preg_replace('/\s+/', '', $username));
 				$password = htmlentities(preg_replace('/\s+/', '', $password));
 
 				$sql = "SELECT * FROM accounts WHERE accounts_username = :username";
-				$queryObject = array(
+				$data = $dbHandler->handleQuery($sql, array(
 					':username' => $username
-				);
+				));
+
+				if($data !== false){
+					$db_password = $data->accounts_password;
+					if(password_verify($password, $db_password)){
+						// here we need to update the time
+						$_SESSION["loggeduserid"] = $data->accounts_id;
+						$_SESSION["documentsURL"] = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
 
 
-				// connection handler
+						$sql = "
+						UPDATE
+						accounts
+						SET
+						accounts_prev_loggedintime = accounts_loggedintime,
+						accounts_loggedintime = now()
+						WHERE accounts_id = :id";
 
-				if($returnedData != false){
-					$db_password = $returnedData["accounts_password"];
-					if($inputHandling->compareHash($password, $db_password)){
-						if($ajax == true) {
-							// here we need to update the time
-							$_SESSION["loggeduserid"] = $returnedData["accounts_id"];
-	            $_SESSION["documentsURL"] = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
-							$sql = "UPDATE
-			        accounts
-			        SET
-			        accounts_prev_loggedintime = accounts_loggedintime,
-							accounts_loggedintime = now()
-			        WHERE accounts_id = :id";
-							$queryObject = array(
-								':id' => $_SESSION["loggeduserid"]
-							);
-							$connectionHandling->processQuery($sql, $queryObject);
+						$dbHandler->handleQuery($sql, array(
+							':id' => $_SESSION["loggeduserid"]
+						));
 
-							$_SESSION["verified"] = true;
-							echo "loggedin";
-							exit();
-						}
-						else { $_SESSION["verified"] = true; header("Location: ../index.php"); }
-					} else {
-						echo ($ajax == true) ? "Verkeerde gegevens. Probeer het opnieuw." : "";
-						exit();
+						$_SESSION["verified"] = true;
+						return "loggedin";
 					}
-				}
-				else {
-					echo ($ajax == true) ? "Verkeerde gegevens. Probeer het opnieuw." : "";
-					exit();
+				}	else {
+					return "Verkeerde gegevens. Probeer het opnieuw.";
 				}
 		}
 	}
