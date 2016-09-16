@@ -28,7 +28,7 @@ var callHandler = (function () {
           } catch(err){
             errorHandler(err);
           }
-          callBackFn();
+          if (typeof callBackFn == 'function') { callBackFn(); }
           resultHandler(JSON.parse(e));
         }
       }, error: alert });

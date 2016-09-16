@@ -42,8 +42,11 @@
 
         if($this->condition !== false){
           $this->return .= ' WHERE ';
+          foreach($this->condition as $key => $value){
+            $this->return.= $key.' = '.':'.$value." AND ";  
+          }
           for($i = 0; $i < count($this->condition); $i++){
-           $this->return.= $this->condition[$i].' = '.':'.$this->condition[$i]." AND ";
+
           }
           $this->return = substr($this->return, 0, -4);
         }
@@ -62,9 +65,8 @@
 
     $sequelHandler = new sequelHandler();
 
-    $sequelHandler->generateSequel("SELECT", array("build", 'name', 'id'),
-                                   "users", false, array('id', 'name'), "ASC");
+    //$sequelHandler->generateSequel("SELECT", array("build", 'name', 'id'),
+    //                               "users", false, array('id', 'name'), "ASC");
 
-    echo $sequelHandler->returnSequel();
 
 ?>
