@@ -7,7 +7,7 @@
 		echo "loggedout";
 	}
 
-	function checkLogin($dbHandler, $params){
+	function checkLogin($dbHandler, $sequelHandler, $params){
 			// Wait a bit.
 			sleep(3);
 

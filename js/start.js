@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 });
 
-$(window).load(function(){
+$(window).on("load", function(){
 
   $("#overlay").height($(document).height());
   $(window).resize(function(){

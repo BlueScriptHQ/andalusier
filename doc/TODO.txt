@@ -11,6 +11,10 @@ Algemeen
       PRIO: Sky-high
       Persoon(en): Gerrit Luimstra
 
+    - Fix window.onload animatie
+      PRIO: Erg hoog
+      Persoon(en): Gerrit Luimstra
+
     - Betere documentatie bij stukken code
       PRIO: Erg hoog
       Persoon(en): Gerrit Luimstra
