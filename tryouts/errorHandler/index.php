@@ -10,8 +10,11 @@
 
   <?php
 
+  function errorHandler($error_level, $error_message, $error_file, $error_line, $error_context){
+    echo"hoi";
+  }
 
-
+  errorHandler();
   ?>
 </body>
 </html>

@@ -1,0 +1,51 @@
+/*Variables, if possible
+  $darkgray: #4c505c;
+  $anda_red: #990909;
+  $lightgray:
+*/
+
+.cop_check_wrapper{
+  width: 80px;
+  height: 40px;
+  float:left;
+  margin-right: 30px;
+}
+.cop_container{
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 5px solid #4c505c;/*$darkgray*/
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+.cop_inner{
+  width: 20px;
+  height: 20px;
+  background-color: #990909; /*$anda_red*/
+  position: absolute;
+  top: 5px; bottom: 5px;
+  left: 5px; right: 5px;
+}
+.cop_in_check{
+  display: none;
+}
+.cop_check_wrapper img{
+  float: right;
+  margin-top: calc((40px - 32px) /2)
+}
+
+.op_option_wrapper{
+  width: 50px;
+  height: 50px;
+  float:left;
+  margin-right: 10px;
+}
+.op_con_option{
+  border-radius: 50%;
+}
+
+.op_in_option{
+  border-radius: 50%;
+  display: none;
+}
