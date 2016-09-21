@@ -36,6 +36,24 @@
             <input type="text" value="">
           </div>
         </div>
+        <div class="popup-section">
+          <div class="popup-section-head">
+            <img src="img/indicator-image-right.png" alt="" />
+            <h2>Klant contactgegevens</h2>
+          </div>
+          <div class="popup-section-content">
+            <input type="text" value="">
+          </div>
+        </div>
+        <div class="popup-section">
+          <div class="popup-section-head">
+            <img src="img/indicator-image-right.png" alt="" />
+            <h2>Klant contactgegevens</h2>
+          </div>
+          <div class="popup-section-content">
+            <input type="text" value="">
+          </div>
+        </div>
 
     </div>
   </body>
@@ -43,17 +61,19 @@
   <script type="text/javascript">
 
     function handlePopups(param){
-      var count = $(this).parent().find('.popup-section').length;
-      var height = $(".popup-head").height();
+      // reset all others
+      $(".popup-section-content").hide();
+      $(".popup-section-head img").attr("src", "img/indicator-image-right.png");
 
-      $(".popup-section-content").removeClass("open");
-      $(".popup-section .popup-section-content").hide();
-      var thisHeight = param.parent().height() - $('.popup-head').height() - (count * param.height());
-      param.height(thisHeight);
-      param.show();
-      $(this).parent().find(".popup-section-head img").attr("src", "img/indicator-image-down.png");
+      var self = param;
+      var count = self.parent().parent().find(".popup-section").length;
+      var thisHeight = (self.parent().parent().height() - $(".popup-head").height() - (count * $(".popup-section-head").height()));
+      self.height(thisHeight);
+      self.parent().find(".popup-section-head img").attr("src", "img/indicator-image-down.png");
+      self.show();
     }
 
+    // standaard staat de eerste open
     $(".popup-section:eq(0)").addClass("open");
 
     $(".popup-section").each(function(){
@@ -78,8 +98,6 @@
 
     function handleMenu(elem){
       var elem = elem;
-
-
     }
 
   </script>

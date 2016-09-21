@@ -25,8 +25,8 @@
     <div class="popup-row">
         <label for="">Naam</label>
         <select class="title" id="add-title" required="true" name="">
-          <option value="dhr">Dhr.</option>
-          <option value="mevr">Mevr.</option>
+          <option value="dhr">De heer</option>
+          <option value="mevr">Mevrouw</option>
         </select>
         <input id="add-name" required="true" type="text" class="name" placeholder="Klantnaam" value="">
         <input id="add-prefix" type="text" class="prefix" placeholder="TV" value="">
