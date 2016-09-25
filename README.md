@@ -23,7 +23,7 @@ Dit is de GitHub pagina voor de Andalusier website.
 ##### img
 ###### Hier staan alle plaatjes in voor de Andalusier Website. Let echter wel op, dit heeft zijn eigen structuur (!)
 ##### js
-###### Dit is een van de belangrijkste mapje samen het met PHP mapje. Hierin staat bijna alle client-side functionaliteit in opgeslagen.
+###### Dit is een van de belangrijkste map samen het met PHP mapje. Hierin staat bijna alle client-side functionaliteit in opgeslagen.
 
     assets            In deze map staan alle bestanden die de kern van Andalusier (client-side)
                       nodig heeft om de rest aan te sturen
@@ -38,11 +38,36 @@ Dit is de GitHub pagina voor de Andalusier website.
                       Denk hierbij aan onze toekomstige todolijst editor
     start.js          Een erg belangrijk bestand dat vereiste scripts uitvoert bij het laden van de pagina
 
-  login
-  optional
-  php
-  tryouts
-  index.php
+##### login
+###### In deze map leeft het inlogscherm. Als men uitlogt worden ze ook naar dit mapje omgeleid.
+##### optional
+######  In dit mapje leven componenten die bij de live-gang worden verwijderd.
+##### php
+######  In deze map leven alle PHP bestanden. Dit is de core van Andalusier.
+
+    assets
+                      Hierin staan alle vereiste bestanden om de kern van Andalusier (server-side) aan te sturen
+    functions
+                      Hierin staan alle functies voor de pagina's van Andalusier
+                      (ophalen van accountnaam, menu gegeneren, etc.)
+    core.php
+                      Belangrijkste bestand van de server kant van Andalusier.
+                      Hier worden alle functionaliteiten gebundelt.
+                      Dit is dan ook de enige ingang voor operaties met de server kant
+                      Door deze methode is alle inkomende data makkelijk te onderscheppen en te ontleden (valideren)
+
+##### tryouts
+######  Dit is een map waarin alle nog niet geimplementeerde functies in leven.
+######  Dit wordt veel gebruikt voor het uitwerken van een bedachte functie,
+######  en kan later in de kern worden geimplementeerd als alles goed is getest en uitgewerkt
+
+##### index.php
+######  Dit is pagina van Andalusier. Dit is het beginpunt van de website na het inloggen.
+######  Dingen die hier onder andere worden gedaan:
+######  Weergeven van account informatie
+######  Veranderen van account informatie
+######  Account gerichte notificaties inzien
+
   documents.php
   leden.php
   log.php

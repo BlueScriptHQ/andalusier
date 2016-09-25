@@ -41,7 +41,7 @@ Algemeen
 
     - Betere todo editor
       PRIO: Normaal
-      Persoon(en): Gerrit Kreeft
+      Persoon(en): Karin Kreeft
 
     - Alle plaatjes comprimeren
       PRIO: Laag
@@ -71,7 +71,7 @@ Design technisch
     - Hele website mag een "zoom-tick" kleiner.
       PRIO: Laag
       Persoon(en): ?
-      
+
 documents.php
 
     - Bestanden kunnen verwijderen als er andere bestanden inzitten
