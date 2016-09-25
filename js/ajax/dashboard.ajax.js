@@ -55,6 +55,7 @@ $(document).ready(function() {
             success: function() {
                 formatAccData();
                 loadAccName();
+                callHandler.execute();
                 $("#saveAccData").hide().attr("disabled", false);
                 $("#editAccData").show().attr("disabled", false);
                 $("#acc_settings_loader").hide();
