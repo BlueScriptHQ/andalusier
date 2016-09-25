@@ -22,8 +22,5 @@ $(document).ready(function() {
         };
 
         saveAccData($dataArray);
-
-        addDisable("#user-settings");
-        $("#acc_settings_loader").show();
     });
 });

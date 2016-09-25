@@ -7,7 +7,6 @@ $(document).ready(function() {
 
     function formatAccData() {
         callHandler.addCall("getAccountData", function($result) {
-
             if ($result.accounts_prev_loggedintime !== "00:00:00") {
                 $(".prev_loggedin").show();
                 $("#prev_loggedin").text($result.accounts_prev_loggedintime);
@@ -44,23 +43,23 @@ $(document).ready(function() {
 
     function saveAccData() {
 
+        addDisable("#user-settings");
+        $("#acc_settings_loader").show();
     }
 
     window.saveAccData = function saveAccData(dataArray) {
-        $.ajax({
-            url: "php/accounts.php",
-            data: "saveAccData=" + JSON.stringify(dataArray),
-            method: "POST",
-            type: 'JSON',
-            success: function() {
-                formatAccData();
-                loadAccName();
-                callHandler.execute();
-                $("#saveAccData").hide().attr("disabled", false);
-                $("#editAccData").show().attr("disabled", false);
-                $("#acc_settings_loader").hide();
-            }
-        });
+
+        callHandler.addCall("saveAccData", function() {
+            alert("callback");
+            //formatAccData();
+            //loadAccName();
+            //callHandler.execute();
+
+            $("#saveAccData").hide().attr("disabled", false);
+            $("#editAccData").show().attr("disabled", false);
+            $("#acc_settings_loader").hide();
+        }, dataArray);
+        callHandler.execute();
     };
 
     if ($("#notifications").length) {

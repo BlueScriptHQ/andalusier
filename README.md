@@ -12,7 +12,7 @@ Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opg
 * De programmeurs houden zich aan de bestands-structuur. Moet hier iets aan worden verandert, dan geeft hij/zij dit aan.
 * Als een programmeur een bestand gaat veranderen dient hij/zij eerst te overleggen of dit mogelijk is, zodat er geen GitHub conflicten ontstaan.
 * Er wordt eerst overlegt voordat er een nieuwe functionaliteit wordt toegevoegd.
-* Als er nieuwe code wordt geschreven en de programmeur denkt dat dit duidelijk genoeg is, dan dient de programmeur hierbij te documenteren.
+* Als er nieuwe code wordt geschreven en de programmeur denkt dat dit niet duidelijk genoeg is, dan dient de programmeur hierbij te documenteren.
 * Als de programmeur een nieuwe belangrijke variabele aanmaakt, die niet voorzich spreekt, dan dient de programmeur dit toe te voegen aan VARIABLES.txt
 * Programmeurs proberen zoveel mogelijk het MVC principe aan te houden. (code scheiden van markdown) En dus worden er geen onclicks en code in de HTML geplaatst en geen inline styles gebruikt.
 

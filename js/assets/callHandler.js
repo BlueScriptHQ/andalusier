@@ -4,6 +4,7 @@ var callHandler = (function() {
     var callBackFns = [];
 
     var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam) {
+
         if (typeof callBackError !== "undefined") {
             // do something awesome
         }
@@ -26,6 +27,11 @@ var callHandler = (function() {
             call: call,
             callBackFn: callbackFn
         });
+
+        alert("invoked!");
+        console.log(callBackFns);
+        console.log(calls);
+
     };
 
     var execute = function(callBackFn) {
@@ -53,15 +59,16 @@ var callHandler = (function() {
     };
 
     var resultHandler = function(object) {
-        console.log(object);
         var index = 0;
         for (var key in object) {
             if (object.hasOwnProperty(key)) {
-                if (typeof callBackFns[index].callBackFn == "function") {
-                    callBackFns[index].callBackFn(object[key].result);
+              for (var i = 0; i < callBackFns.length; i++) {
+                if(callBackFns[i].call == key){
+                  callBackFns[i].callBackFn(object[key].result);
                 }
-                index++;
+              }
             }
+            index++;
         }
         // reset everything
         calls = [];
