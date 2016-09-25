@@ -39,6 +39,10 @@ Algemeen
       PRIO: Normaal
       Persoon(en): Karin Kreeft
 
+    - Betere todo editor
+      PRIO: Normaal
+      Persoon(en): Gerrit Kreeft
+
     - Alle plaatjes comprimeren
       PRIO: Laag
       Persoon(en): Karin Kreeft
