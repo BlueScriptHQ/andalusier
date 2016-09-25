@@ -68,6 +68,10 @@ Design technisch
       PRIO: Normaal tot laag
       Persoon(en): Gerrit Luimstra
 
+    - Hele website mag een "zoom-tick" kleiner.
+      PRIO: Laag
+      Persoon(en): ?
+      
 documents.php
 
     - Bestanden kunnen verwijderen als er andere bestanden inzitten
