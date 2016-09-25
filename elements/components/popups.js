@@ -27,11 +27,11 @@ $(".popup-section").each(function() {
         $(this).find(".popup-section-head img").attr("src", "elements/components/img/indicator-image-down.png");
     }
 
-    $(this).find("input[type=text], textarea").each(function(){
-      var that = $(this);
-      if(typeof that.attr("optional") !== "undefined"){
-        that.parent().append("<div class='optional'>*</div>");
-      }
+    $(this).find("input[type=text], textarea").each(function() {
+        var that = $(this);
+        if (typeof that.attr("optional") !== "undefined") {
+            that.parent().append("<div class='optional'>*</div>");
+        }
     });
 
 });

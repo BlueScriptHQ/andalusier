@@ -1,49 +1,47 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-  if($ajax){
-    $("form:not(#fileUploadForm)").submit(function(e){
-      e.preventDefault();
-    });
-  }
-
-  if (typeof $pageTitle !== 'undefined') {
-    if($pageTitle !== undefined || $pageTitle !== ""){
-      $(".page-title").text($pageTitle);
+    if ($ajax) {
+        $("form:not(#fileUploadForm)").submit(function(e) {
+            e.preventDefault();
+        });
     }
-  }
 
-  window.validateLoginForm = function validateLoginForm(){
-    $username = $("#username");
-    $password = $("#password");
-    if($username.val() === "" || $password.val() === ""){
-      $(".status-text").text("Velden mogen niet leeg zijn!");
-      return false;
+    if (typeof $pageTitle !== 'undefined') {
+        if ($pageTitle !== undefined || $pageTitle !== "") {
+            $(".page-title").text($pageTitle);
+        }
     }
-    else if($username.val().length > 32 || $password.val().length > 48){
-      $(".status-text").text("Ingevoerde data te lang!");
-      return false;
-    }
-    else {
-      return true;
-    }
-  };
 
-  window.clearForm = function clearForm(form){
-    $(form + " input[type=text], input[type=password], textarea").each(function(){
-        $(this).val("");
-    });
-  };
+    window.validateLoginForm = function validateLoginForm() {
+        $username = $("#username");
+        $password = $("#password");
+        if ($username.val() === "" || $password.val() === "") {
+            $(".status-text").text("Velden mogen niet leeg zijn!");
+            return false;
+        } else if ($username.val().length > 32 || $password.val().length > 48) {
+            $(".status-text").text("Ingevoerde data te lang!");
+            return false;
+        } else {
+            return true;
+        }
+    };
 
-  window.removeDisable = function removeDisable(form){
-    $(form + " input[type=text], input[type=password], textarea").each(function(){
-        $(this).attr("disabled", false);
-    });
-  };
+    window.clearForm = function clearForm(form) {
+        $(form + " input[type=text], input[type=password], textarea").each(function() {
+            $(this).val("");
+        });
+    };
 
-  window.addDisable = function addDisable(form){
-    $(form + " input, textarea").each(function(){
-        $(this).attr("disabled", "disabled");
-    });
-  };
+    window.removeDisable = function removeDisable(form) {
+        $(form + " input[type=text], input[type=password], textarea").each(function() {
+            $(this).attr("disabled", false);
+        });
+    };
+
+    window.addDisable = function addDisable(form) {
+        $(form + " input, textarea").each(function() {
+            $(this).attr("disabled", "disabled");
+        });
+    };
 
 });

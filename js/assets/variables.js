@@ -8,12 +8,16 @@ $fileUpload = false;
 
 // is AJAX available?
 
-if(ajaxAvailable()){
-  $ajax = true;
-} else { $ajax = false; }
+if (ajaxAvailable()) {
+    $ajax = true;
+} else {
+    $ajax = false;
+}
 
 // are file uploads available
 
-if(fileUploadAvailable()){
-  $fileUpload = true;
-} else { $fileUpload = false; }
+if (fileUploadAvailable()) {
+    $fileUpload = true;
+} else {
+    $fileUpload = false;
+}

@@ -1,49 +1,49 @@
-$(document).ready(function(){
-  // when a user tries to log in
-  $("#lgn-btn").on("click", function(){
-      if(validateLoginForm() === true){
-        $("#username").prop("disabled", true);
-        $("#password").prop("disabled", true);
-        $("#lgn-btn").prop("disabled", true);
+$(document).ready(function() {
+    // when a user tries to log in
+    $("#lgn-btn").on("click", function() {
+        if (validateLoginForm() === true) {
+            $("#username").prop("disabled", true);
+            $("#password").prop("disabled", true);
+            $("#lgn-btn").prop("disabled", true);
 
-        if($ajax){
-          $("#status img").fadeIn();
-          $(".status-text").text("Aan het verwerken..");
+            if ($ajax) {
+                $("#status img").fadeIn();
+                $(".status-text").text("Aan het verwerken..");
 
-          $username = $("#username").val();
-          $password = $("#password").val();
+                $username = $("#username").val();
+                $password = $("#password").val();
 
-          var dataObject = {
-            username: $username,
-            password: $password
-          };
+                var dataObject = {
+                    username: $username,
+                    password: $password
+                };
 
-          callHandler.addCall("checkLogin", function(result){
-            if(result == "loggedin"){
-              location.href = "../index.php";
+                callHandler.addCall("checkLogin", function(result) {
+                    if (result == "loggedin") {
+                        location.href = "../index.php";
+                    } else {
+                        $("#status img").css("display", "none");
+                        $(".status-text").text(result);
+
+                        clearForm("form");
+
+                        $("#username").prop("disabled", false);
+                        $("#password").prop("disabled", false);
+                        $("#lgn-btn").prop("disabled", false);
+
+                        $("#username").focus();
+                    }
+                }, dataObject, undefined, "../php/core.php");
+
+                callHandler.execute();
             } else {
-              $("#status img").css("display", "none");
-              $(".status-text").text(result);
-
-              clearForm("form");
-
-              $("#username").prop("disabled", false);
-              $("#password").prop("disabled", false);
-              $("#lgn-btn").prop("disabled", false);
-
-              $("#username").focus();
+                $('form').unbind('submit');
             }
-          }, dataObject, undefined, "../php/core.php");
-
-          callHandler.execute();
-      } else {
-        $('form').unbind('submit');
-      }
-    }  else {
-      clearForm("form");
-      $("form").submit(function(e){
-        e.preventDefault();
-      });
-    }
-  });
+        } else {
+            clearForm("form");
+            $("form").submit(function(e) {
+                e.preventDefault();
+            });
+        }
+    });
 });

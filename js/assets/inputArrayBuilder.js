@@ -1,37 +1,37 @@
-var inputArrayBuilder = (function(){
+var inputArrayBuilder = (function() {
 
-  function build(parentElem){
-  	var array = [];
-  	parentElem.find("input, select").each(function(){
+    function build(parentElem) {
+        var array = [];
+        parentElem.find("input, select").each(function() {
 
-    	var optional = (typeof $(this).attr("optional") !== "undefined") ? true : false;
+            var optional = (typeof $(this).attr("optional") !== "undefined") ? true : false;
 
-    	var tempObject = {
-        name: $(this).attr("name")
-      };
+            var tempObject = {
+                name: $(this).attr("name")
+            };
 
 
-      if($(this).val() !== "on"){
-      	tempObject.val = $(this).val();
-      }
+            if ($(this).val() !== "on") {
+                tempObject.val = $(this).val();
+            }
 
-      if(typeof $(this).attr("optional") !== "undefined"){
-      	tempObject.optional = true;
-      }
+            if (typeof $(this).attr("optional") !== "undefined") {
+                tempObject.optional = true;
+            }
 
-      if(typeof $(this).attr("cop_checked") !== "undefined"){
-      	tempObject.checked = true;
-      }
+            if (typeof $(this).attr("cop_checked") !== "undefined") {
+                tempObject.checked = true;
+            }
 
-      array.push(tempObject);
+            array.push(tempObject);
 
-    });
+        });
 
-    return array;
-  }
+        return array;
+    }
 
-  return {
-     build: build
-  };
+    return {
+        build: build
+    };
 
 }());

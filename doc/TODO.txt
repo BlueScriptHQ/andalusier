@@ -43,6 +43,10 @@ Algemeen
       PRIO: Laag
       Persoon(en): Karin Kreeft
 
+    - Handleidings knop
+      PRIO: Laag
+      Persoon(en): Maaike
+
 PHP
 
     - Veiligheidsupdates en betere validatie op inkomende en uitgaande data. (Dus ook betere checks bij bestands mutaties)
