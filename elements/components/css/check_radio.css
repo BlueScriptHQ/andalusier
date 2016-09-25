@@ -1,0 +1,49 @@
+.cop_check_wrapper{
+  float:left;
+  margin-right: 30px;
+  margin: 12px 0;
+}
+.cop_container{
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border: 3px solid #222222;/*$darkgray*/
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+.cop_inner{
+  width: 10px;
+  height: 10px;
+  background-color: #990909; /*$anda_red*/
+  position: absolute;
+  top: 5px; bottom: 5px;
+  left: 5px; right: 5px;
+}
+.cop_in_check{
+  display: none;
+}
+.cop_check_wrapper img{
+  float: right;
+  margin-top: calc((40px - 32px) /2)
+}
+
+.op_option_wrapper{
+  width: auto;
+  float:left;
+  margin: 12px 0;
+  margin-right: 30px;
+}
+.op_option_wrapper .tag {
+  float:left;
+  line-height: 26px;
+  padding-left: 10px;
+}
+.op_con_option{
+  border-radius: 50%;
+}
+
+.op_in_option{
+  border-radius: 50%;
+  display: none;
+}

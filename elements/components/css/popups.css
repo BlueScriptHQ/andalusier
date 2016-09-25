@@ -7,8 +7,8 @@
 }
 
 #infoPopup {
-  width: 500px;
-  height: 540px;
+  width: 550px;
+  height: 600px;
   margin: auto;
   top: 0; left: 0; right: 0; bottom: 0;
   position: absolute;
@@ -90,6 +90,21 @@
   padding: 5px;
   font-size: 16px;
 }
+/* width fixes */
+.popup-section-content .row input[type=text][name=accounts_street] {
+  width: calc(50% - (85px - 9px));
+}
+.popup-section-content .row input[type=text][name=accounts_street_nr] {
+  width: 60px;
+}
+
+.popup-section-content .row input[type=text][name=accounts_place] {
+  width: calc(50% - (125px - 9px));
+}
+.popup-section-content .row input[type=text][name=accounts_zip] {
+  width: 100px;
+}
+
 .popup-section-content .row .optional {
   width: 20px;
   height: 20px;
@@ -110,9 +125,9 @@
 .popup-section-content .row input[type=button] {
   width: auto;
   height: 40px;
-  float: left;
+  float: right;
   margin: 5px 0;
-  margin-right: 5px;
+  margin-right: 10px;
   height: 40px;
   background-color: #990909;
   border: 0;

@@ -1,0 +1,8 @@
+- Data parser maken, zodat er maar één AJAX call hoeft worden gemaakt, in plaats van momenteel iets van 3.
+  PRIO: Hoog
+  Persoon(en): Gerrit Luimstra
+
+
+- Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
+  PRIO: Normaal
+  Persoon(en): Karin Kreeft

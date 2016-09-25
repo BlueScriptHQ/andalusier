@@ -31,10 +31,6 @@ Algemeen
       PRIO: Hoog
       Persoon(en): Gerrit Luimstra, Karin Kreeft
 
-    - Data parser maken, zodat er maar één AJAX call hoeft worden gemaakt, in plaats van momenteel iets van 3.
-      PRIO: Hoog
-      Persoon(en): Gerrit Luimstra
-
     - Invoeren van een rechtensysteem. Leden kunnen sommige pagina's wel lezen, data muteren of bekijken, anderen niet.
       PRIO: Hoog
       Persoon(en): Gerrit Luimstra
@@ -42,10 +38,6 @@ Algemeen
     - Weekelijkse efficiency check
       PRIO: Normaal
       Persoon(en): Iedereen
-
-    - Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
-      PRIO: Normaal
-      Persoon(en): Karin Kreeft
 
     - Datepicker (flexibel formaat) (two way validation)
       PRIO: Normaal
@@ -86,10 +78,9 @@ documents.php
       PRIO: Hoog
       Persoon(en): Gerrit Luimstra
 
-
     - Zorgen dat er geen map met een "\" er kan worden geupload, dit zorgt ervoor dat de bestands navigator zichzelf ophangt.
       PRIO: Normaal
-      Persoon(en): Gerrit Luimstra
+      Persoon(en): Gerrit Kreeft & Maaike
 
 leden.php
 
@@ -110,17 +101,18 @@ leden.php
       Persoon(en): Karin Kreeft
 
 
-
-
-
-
 Andalusier
 
     - Uiteindelijk hun klanten toevoegen aan het systeem
       PRIO: Laag
       Persoon(en): Iedereen
 
-PARSER
+Statistieken voor Andalusier
 
-    - Requires toevoegen van alle pagina's.
-    - Functies toevoegen aan een array, zodat die kunnen worden gecalled.
+    - Page views opslaan en sturen (opslaan) op bluescript.nl
+      PRIO: Normaal
+      Persoon(en): Gerrit Kreeft & Maaike
+
+    - Data uit errorHandler (KARIN) koppelen aan pagina's op bluescript.nl
+      PRIO: Normaal
+      Persoon(en): Gerrit Kreeft & Maaike
