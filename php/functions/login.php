@@ -1,12 +1,5 @@
 <?php
 
-	// when a user wants to logout
-	if (isset($_POST["logout"])) {
-		$connectionHandling = new connectionHandler();
-		$connectionHandling->killSession();
-		echo "loggedout";
-	}
-
 	function checkLogin($dbHandler, $sequelHandler, $params){
 			// Wait a bit.
 			sleep(3);
@@ -17,7 +10,6 @@
 			$username = $params->username;
 			$password = $params->password;
 
-			// $inputHandling = new inputHandler();
 
 			/*if($inputHandling->emptyCheck($data) == true){
 				echo ($ajax == true) ? "Velden mogen niet leeg zijn." : "";

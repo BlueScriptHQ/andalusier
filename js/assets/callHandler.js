@@ -39,10 +39,15 @@ var callHandler = (function () {
     var index = 0;
     for (var key in object) {
       if (object.hasOwnProperty(key)) {
-        callBackFns[index].callBackFn(object[key].result);
+        if(typeof callBackFns[index].callBackFn == "function"){
+          callBackFns[index].callBackFn(object[key].result);
+        }
         index++;
       }
     }
+    // reset everything
+    calls = [];
+    callBackFns = [];
   };
 
   var errorHandler = function(){

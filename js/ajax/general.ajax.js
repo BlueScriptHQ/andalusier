@@ -7,6 +7,7 @@ $(document).ready(function(){
       callHandler.addCall("handleLogout", function(){
         location.href = "login/";
       });
+      callHandler.execute();
     }, 1000);
   });
 
