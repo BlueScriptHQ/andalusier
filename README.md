@@ -2,6 +2,17 @@
 
 Dit is de GitHub pagina voor de Andalusier website.
 
+Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
+
+### Regels
+
+#### Algemeen
+Omdat de code leesbaarheid te verhogen, moet elke programmeur regelmatig zijn/haar code formatteren volgens atom-beautifier
+
+
+
+
+
 ## De site structuur
 
 ### Andalusier
@@ -62,19 +73,38 @@ Dit is de GitHub pagina voor de Andalusier website.
 ######  en kan later in de kern worden geimplementeerd als alles goed is getest en uitgewerkt
 
 ##### index.php
-######  Dit is pagina van Andalusier. Dit is het beginpunt van de website na het inloggen.
+######  Dit is de hoofdpagina van Andalusier. Dit is het beginpunt van de website na het inloggen.
 ######  Dingen die hier onder andere worden gedaan:
         * Weergeven van account informatie
         * Veranderen van account informatie
         * Account gerichte notificaties inzien
 
-  documents.php
-  leden.php
-  log.php
-  register.php
+##### documents.php
+######  Dit is een pagina van Andalusier.
+######  Dingen die hier onder andere worden gedaan:
+        * Inzien van alle geüploade documenten en mappen
+        * Mappen en bestanden uploaden/aanmaken
+        * Mappen en bestanden hernoemen
+        * Mappen en bestanden verwijderen
+        * Bestanden downloaden
 
+##### leden.php
+######  Dit is een pagina van Andalusier.
+######  Dingen die hier onder andere worden gedaan:
+        * Leden aanmaken
+        * Lidinformatie inzien
+        * Lidinformatie muteren
+        * Leden verwijderen
+        * UITEINDELIJK : Leden verplaatsen naar oud-leden
+        * UITEINDELIJK : Ledenlijst doorzoeken en filteren
 
+##### log.php
+######  Dit is een pagina van Andalusier.
+######  Dingen die hier onder andere worden gedaan:
+        * Inzien van alle mutaties in het systeem
+        * Lijst van mutaties downloaden
 
-Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
-
-### Regels
+##### register.php
+######  Dit is een pagina van Andalusier.
+######  Dingen die hier onder andere worden gedaan:
+        * Momenteel nog niet zo veel. ;)
