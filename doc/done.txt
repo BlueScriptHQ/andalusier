@@ -2,7 +2,10 @@
   PRIO: Hoog
   Persoon(en): Gerrit Luimstra
 
-
 - Stop de comment section in een aparte require. Hierdoor hoeft niet alles telkens geplakt te worden.
   PRIO: Normaal
   Persoon(en): Karin Kreeft
+
+- Fix window.onload animatie
+  PRIO: Erg hoog
+  Persoon(en): Gerrit Luimstra

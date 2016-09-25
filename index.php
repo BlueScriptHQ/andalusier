@@ -25,7 +25,6 @@
 
   <?php
     require "elements/loader.php";
-    require "elements/components/popups.php";
     require "optional/comments.php";
   ?>
 

@@ -12,7 +12,7 @@
   </div>
   <div id="header-row-bottom">
     <div id="welcome-box">
-      <h3>Welkom <span></span></h3>
+      <h3>Welkom <span id="account_name"></span></h3>
     </div>
     <div id="control-box">
       <form action="php/functions.php" method="post">
