@@ -14,9 +14,10 @@ Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opg
 * Er wordt eerst overlegt voordat er een nieuwe functionaliteit wordt toegevoegd.
 * Als er nieuwe code wordt geschreven en de programmeur denkt dat dit duidelijk genoeg is, dan dient de programmeur hierbij te documenteren.
 * Als de programmeur een nieuwe belangrijke variabele aanmaakt, die niet voorzich spreekt, dan dient de programmeur dit toe te voegen aan VARIABLES.txt
+* Programmeurs proberen zoveel mogelijk het MVC principe aan te houden. (code scheiden van markdown) En dus worden er geen onclicks en code in de HTML geplaatst en geen inline styles gebruikt.
 
 #### Javascript
-* In de bestanden in het mapje ajax mogen GEEN (.on etc) events worden gebruikt. Hier mogen alleen losse functies worden gemaakt!
+* In de bestanden in het mapje ajax mogen GEEN events (.on etc) worden gebruikt. Hier mogen alleen losse functies worden gemaakt!
 
 #### PHP
 * Er worden GEEN losse scripts toegevoegd aan core.php. Dit mag alleen requires bevatten (en vereiste scripts die er al staan)
