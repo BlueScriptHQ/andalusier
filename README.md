@@ -3,15 +3,29 @@
 Dit is de GitHub pagina voor de Andalusier website.
 
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
+(Dit klinkt misschien wat ernstig, maar het is wel handig om deze te hanteren)
 
 ### Regels
 
 #### Algemeen
-Omdat de code leesbaarheid te verhogen, moet elke programmeur regelmatig zijn/haar code formatteren volgens atom-beautifier
+* Om de code leesbaarheid te verhogen, moet elke programmeur regelmatig zijn/haar code formatteren met atom-beautifier.
+* De programmeurs houden zich aan de bestands-structuur. Moet hier iets aan worden verandert, dan geeft hij/zij dit aan.
+* Als een programmeur een bestand gaat veranderen dient hij/zij eerst te overleggen of dit mogelijk is, zodat er geen GitHub conflicten ontstaan.
+* Er wordt eerst overlegt voordat er een nieuwe functionaliteit wordt toegevoegd.
+* Als er nieuwe code wordt geschreven en de programmeur denkt dat dit duidelijk genoeg is, dan dient de programmeur hierbij te documenteren.
+* Als de programmeur een nieuwe belangrijke variabele aanmaakt, die niet voorzich spreekt. Dan dient de programmeur dit toe te voegen aan VARIABLES.txt
 
+#### Javascript
+* In de bestanden in het mapje ajax mogen GEEN (.on etc) events worden gebruikt. Hier mogen alleen losse functies worden gemaakt!
 
+#### PHP
+* Er worden GEEN losse scripts toegevoegd aan core.php. Dit mag alleen requires bevallen (en vereiste scripts die er al staan)
 
-
+#### Vereiste plugins
+Om het project zo goed mogelijk te laten verlopen zijn ook plugins erg belangrijk. Deze plugins moeten zijn geinstalleerd (als men Atom gebruikt).
+* atom-beautifier
+* jshint
+* sass-autocompile (en dus node.js)
 
 ## De site structuur
 

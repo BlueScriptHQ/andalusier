@@ -13,7 +13,6 @@ $(document).ready(function() {
         });
     };
 
-
     window.openFolder = function(fName) {
         $.ajax({
             url: "php/documents.php",
