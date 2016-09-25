@@ -64,9 +64,9 @@ Dit is de GitHub pagina voor de Andalusier website.
 ##### index.php
 ######  Dit is pagina van Andalusier. Dit is het beginpunt van de website na het inloggen.
 ######  Dingen die hier onder andere worden gedaan:
-######  Weergeven van account informatie
-######  Veranderen van account informatie
-######  Account gerichte notificaties inzien
+        * Weergeven van account informatie
+        * Veranderen van account informatie
+        * Account gerichte notificaties inzien
 
   documents.php
   leden.php
