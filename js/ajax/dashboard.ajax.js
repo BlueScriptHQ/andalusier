@@ -43,7 +43,7 @@ $(document).ready(function(){
   }
 
   function saveAccData(){
-    
+
   }
 
   window.saveAccData = function saveAccData(dataArray){

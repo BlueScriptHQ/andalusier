@@ -43,32 +43,23 @@
    <div class="popup-section">
       <div class="popup-section-head">
          <img src="elements/components/img/indicator-image-right.png" alt="" />
-         <h2>Contactgegevens</h2>
+         <h2>AW gegevens</h2>
       </div>
       <div class="popup-section-content">
         <div class="row">
-           <p class="label">Straatnaam + Nummer</p>
-           <input type="text" name="accounts_street">
+           <p class="label">Straatnaam</p>
+           <input type="text">
+        </div>
+        <div class="row">
+           <p class="label">Huisnummer</p>
            <input type="text" name="accounts_street_nr">
         </div>
         <div class="row">
-          <p class="label">Woonplaats + Postcode</p>
-          <input type="text" name="accounts_place">
-          <input type="text" name="accounts_zip">
+          <p class="label">Woonplaats</p>
+          <input type="text">
         </div>
         <div class="row">
-          <p class="label">Telefoon(s)</p>
-          <input type="text" name="accounts_phone">
-          <input type="text" name="accounts_phone">
-        </div>
-        <div class="row">
-          <p class="label">Woonplaats + Postcode</p>
-          <input type="text" name="accounts_place">
-          <input type="text" name="accounts_zip">
-        </div>
-        <div class="row">
-          <p class="label">Woonplaats + Postcode</p>
-          <input type="text" name="accounts_place">
+          <p class="label">Postcode</p>
           <input type="text" name="accounts_zip">
         </div>
         <div class="row">
@@ -77,6 +68,38 @@
             <option value="nederland">Nederland</option>
             <option value="belgie">België</option>
           </select>
+        </div>
+         <div class="row">
+            <p class="label">&nbsp;</p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Contactgegevens</h2>
+      </div>
+      <div class="popup-section-content">
+        <div class="row">
+           <p class="label">E-mailadres</p>
+           <input type="text">
+        </div>
+        <div class="row">
+           <p class="label">Extra e-mailadres</p>
+           <input type="text" optional="true">
+        </div>
+        <div class="row">
+           <p class="label">Telefoonnummer</p>
+           <input type="text">
+        </div>
+        <div class="row">
+           <p class="label">Extra telefoonnummer</p>
+           <input type="text" optional="true">
+        </div>
+        <div class="row">
+           <p class="label">Mobielnummer</p>
+           <input type="text" optional="true">
         </div>
          <div class="row">
             <p class="label">&nbsp;</p>
@@ -143,7 +166,14 @@
          <h2>Aanmaken</h2>
       </div>
       <div class="popup-section-content">
-         <input type="text" value="">
+        <div class="row flexible-height">
+           <p class="label">Opmerking</p><p class="label">&nbsp;</p>
+           <textarea placeholder="Dit vult u alleen in, als u het nodig acht."></textarea>
+        </div>
+        <div class="row">
+           <p class="label">&nbsp;</p>
+           <input type="button" value="Lid aanmaken">
+        </div>
       </div>
    </div>
 </div>

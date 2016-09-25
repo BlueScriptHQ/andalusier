@@ -1,9 +1,6 @@
 <?php
-  // live mode
-  error_reporting(0);
-
   session_start();
-  require "php/verifications.php";
+  require "php/assets/verifications.php";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -11,11 +8,18 @@
     <title>Andalusier | Logboek</title>
 
     <?php
+      // Vendor scripts (externe libraries: jQuery etc)
+      // Deze moeten bovenaan
+      require "elements/vendors.php";
+    ?>
+    <!-- page required scripts -->
+    <script src="js/ajax/log.ajax.js" charset="utf-8"></script>
+
+    <?php
       // Algemene resources
       require "elements/resources.php";
     ?>
 
-    <script src="js/ajax/log.ajax.js" charset="utf-8"></script>
   </head>
   <body>
 

@@ -1,5 +1,4 @@
 var callHandler = (function () {
-
   var phpLocation = "php/core.php";
   var calls = [];
   var callBackFns = [];

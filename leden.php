@@ -9,12 +9,19 @@
   <title>Andalusier | Leden</title>
 
   <?php
+    // Vendor scripts (externe libraries: jQuery etc)
+    // Deze moeten bovenaan
+    require "elements/vendors.php";
+  ?>
+  <!-- page required scripts -->
+  <script src="js/ajax/members.ajax.js" charset="utf-8"></script>
+  <script src="js/controls/members.controls.js" charset="utf-8"></script>
+
+  <?php
     // Algemene resources
     require "elements/resources.php";
   ?>
 
-  <script src="js/ajax/members.ajax.js" charset="utf-8"></script>
-  <script src="js/controls/members.controls.js" charset="utf-8"></script>
 </head>
 <body>
 

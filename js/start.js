@@ -1,9 +1,4 @@
 $(document).ready(function(){
-  // Overlay fix, zodat deze niet alleen 100vh heeft
-
-});
-
-$(window).on("load", function(){
 
   $("#overlay").height($(document).height());
   $(window).resize(function(){
@@ -23,8 +18,10 @@ $(window).on("load", function(){
     loadEvents();
   }
 
+
   callHandler.execute(function(){
     $("#loading-box img").fadeOut(900);
     $("#loading-box").fadeOut(1000);
   });
+  
 });
