@@ -5,11 +5,8 @@ Dit is de GitHub pagina voor de Andalusier website.
 ## De site structuur
 
 Andalusier
-  css                 Hierin staan alle stylesheets in die het basis framework nodig heeft. (exclusief de component stylesheets)
-
-  
-
-  doc                 Hierin staan alle belangrijke berichten en opmerkingen voor de ontwikkelaars van het project
+  ###### css                 Hierin staan alle stylesheets in die het basis framework nodig heeft. (exclusief de component stylesheets)
+  ###### doc                 Hierin staan alle belangrijke berichten en opmerkingen voor de ontwikkelaars van het project
 
     DONE.txt          Hierin staan alle dingen die al zijn gedaan (deze komen uit TODO.txt)
                       (liever niet verwijderen, hieraan kunnen we soms zien waar iets misging)
