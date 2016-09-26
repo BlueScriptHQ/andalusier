@@ -3,9 +3,10 @@
 Dit is de GitHub pagina voor de Andalusier website.
 
 ### Benodigheden
-* Atom (IDE)
-* XAMPP
-* GitHub Client
+* [Atom.io (IDE)](https://www.atom.io)
+* [XAMPP voor PHP 7+](https://www.apachefriends.org/download.html)
+* [GitHub Client](https://desktop.github.com/)
+* [GitHub Account](https://github.com/)
 * Leergierigheid
 
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
