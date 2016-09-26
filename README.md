@@ -9,6 +9,12 @@ Dit is de GitHub pagina voor de Andalusier website.
 * [GitHub Account](https://github.com/)
 * Leergierigheid
 
+### Programeertalen die worden gebruikt
+* PHP
+* Javascript (jQuery, AJAX)
+* HTML
+* CSS
+
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
 (Dit klinkt misschien wat ernstig, maar het is wel handig om deze te hanteren)
 
