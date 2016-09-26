@@ -2,6 +2,12 @@
 
 Dit is de GitHub pagina voor de Andalusier website.
 
+### Benodigheden
+* Atom (IDE)
+* XAMPP
+* GitHub Client
+* Leergierigheid
+
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
 (Dit klinkt misschien wat ernstig, maar het is wel handig om deze te hanteren)
 
