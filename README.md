@@ -10,10 +10,12 @@ Dit is de GitHub pagina voor de Andalusier website.
 * Leergierigheid
 
 ### Programeertalen die worden gebruikt
-* PHP
-* Javascript (jQuery, AJAX)
-* HTML
-* CSS
+* PHP 7
+* Javascript
+  * jQuery 3.x
+  * AJAX
+* HTML(5)
+* CSS(3)
 
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
 (Dit klinkt misschien wat ernstig, maar het is wel handig om deze te hanteren)
