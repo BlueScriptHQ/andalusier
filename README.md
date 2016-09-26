@@ -17,10 +17,9 @@ Dit is de GitHub pagina voor de Andalusier website.
 * HTML(5)
 * CSS(3)
 
+### Regels
 Om dit project zo goed mogelijk te laten verlopen, zijn er een aantal regels opgesteld.
 (Dit klinkt misschien wat ernstig, maar het is wel handig om deze te hanteren)
-
-### Regels
 
 #### Algemeen
 * Om de code leesbaarheid te verhogen, moet elke programmeur regelmatig zijn/haar code formatteren met atom-beautifier.
