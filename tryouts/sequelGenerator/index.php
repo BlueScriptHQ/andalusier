@@ -21,6 +21,13 @@
         return $this->buildSequel();
       }
 
+      /*
+
+        $sequelHandler->generateSequel("SELECT", array("build", 'name', 'id'),
+                                     "users", false, array('id', 'name'), "ASC");
+
+      */
+
       private function buildSequel(){
         $this->return .= $this->method.=" ";
 
@@ -61,6 +68,31 @@
     }
 
     $sequelHandler = new sequelHandler();
+
+
+    /*
+
+
+
+    $sql = $sequelHandler->generateSequel(
+    "SELECT",
+    array("pages.pages_id", "pages_name", "pages_parentid", "pages_iscontroller", "pages_url"),
+    "acc_ranks",
+    array("ranks" =>
+            "acc_ranks.ranks_id = ranks.ranks_id",
+          "ranks_pages"
+                 => "ranks.ranks_id = ranks_pages.ranks_id",
+          "pages"
+                 =>
+                    "ranks_pages.pages_id = pages.pages_id"),
+    array('acc_ranks.accounts_id' => 'id')
+    );
+
+
+
+    */
+
+
 
     $sequelHandler->generateSequel("SELECT", array("build", 'name', 'id'),
                                    "users", false, array('id', 'name'), "ASC");
