@@ -25,4 +25,5 @@ $(document).ready(function() {
     });
     // test commit (maaike)
     // test commit (gerrit)
+    // hoi mijn naam is gerrit
 });
