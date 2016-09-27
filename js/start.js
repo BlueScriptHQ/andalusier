@@ -23,5 +23,5 @@ $(document).ready(function() {
         $("#loading-box img").fadeOut(900);
         $("#loading-box").fadeOut(1000);
     });
-
+    // test commit
 });
