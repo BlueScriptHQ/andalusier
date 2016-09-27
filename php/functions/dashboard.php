@@ -20,6 +20,44 @@
     }
   }
 
+  function saveAccData($dbHandler, $sequelHandler, $param){
+    if(valid($param) && valid($_SESSION["loggeduserid"])){
+      $sql = "UPDATE
+      accounts acc
+      JOIN
+      accounts_contact_info acc_con
+      ON acc.accounts_id = acc_con.accounts_id
+      SET
+      acc.accounts_name = :accounts_name,
+      acc.accounts_tussenvoegsel = :accounts_tussenvoegsel,
+      acc.accounts_lastname = :accounts_lastname,
+      acc.accounts_birthdate = :accounts_birthdate,
+      acc_con.accounts_email = :accounts_email,
+      acc_con.accounts_email2 = :accounts_email2,
+      acc_con.accounts_phonenr = :accounts_phonenr,
+      acc_con.accounts_phonenr2 = :accounts_phonenr2,
+      acc_con.accounts_mobnr = :accounts_mobnr,
+      acc_con.accounts_mobnr2 = :accounts_mobnr2
+      WHERE acc.accounts_id = :id
+      ";
+      $data = $dbHandler->handleQuery($sql,
+        array(
+          ":accounts_name" => $param->accounts_name,
+          ":accounts_tussenvoegsel" => $param->accounts_tussenvoegsel,
+          ":accounts_lastname" => $param->accounts_lastname,
+          ":accounts_birthdate" => $param->accounts_birthdate,
+          ":accounts_email" => $param->accounts_email,
+          ":accounts_email2" => $param->accounts_email2,
+          ":accounts_phonenr" => $param->accounts_phonenr,
+          ":accounts_phonenr2" => $param->accounts_phonenr2,
+          ":accounts_mobnr" => $param->accounts_mobnr,
+          ":accounts_mobnr2" => $param->accounts_mobnr2,
+          ':id' => $_SESSION["loggeduserid"])
+      );
+      return true;
+
+    }
+  }
 
   //save account data
   if(isset($_POST["saveAccData"]) && !empty($_POST["saveAccData"])){

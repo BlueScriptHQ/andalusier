@@ -4,7 +4,7 @@ var callHandler = (function() {
     var callBackFns = [];
 
     var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam) {
-        console.log(call);
+
         if (typeof callBackError !== "undefined") {
             // do something awesome
         }
@@ -37,6 +37,7 @@ var callHandler = (function() {
                 method: "POST",
                 data: "callArray=" + JSON.stringify(calls),
                 success: function(e) {
+
                     if (e) {
                         try {
                             var result = JSON.parse(e);
@@ -54,16 +55,16 @@ var callHandler = (function() {
         }
     };
 
+    var index = 0;
     var resultHandler = function(object) {
-        console.log(object);
-        var index = 0;
+
         for (var key in object) {
             if (object.hasOwnProperty(key)) {
-              for (var i = 0; i < callBackFns.length; i++) {
-                if(callBackFns[i].call == key){
-                  callBackFns[i].callBackFn(object[key].result);
+                for (var i = 0; i < callBackFns.length; i++) {
+                    if (callBackFns[i].call == key) {
+                        callBackFns[i].callBackFn(object[key].result);
+                    }
                 }
-              }
             }
             index++;
         }

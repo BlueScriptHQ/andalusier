@@ -41,24 +41,25 @@ $(document).ready(function() {
         });
     }
 
-    function saveAccData() {
+    /*function saveAccData() {
 
-        addDisable("#user-settings");
-        $("#acc_settings_loader").show();
-    }
+
+    }*/
 
     window.saveAccData = function saveAccData(dataArray) {
 
-        callHandler.addCall("saveAccData", function() {
-            alert("callback");
-            //formatAccData();
-            //loadAccName();
-            //callHandler.execute();
-
-            $("#saveAccData").hide().attr("disabled", false);
-            $("#editAccData").show().attr("disabled", false);
-            $("#acc_settings_loader").hide();
+        callHandler.addCall("saveAccData", function(r) {
+            $("#acc_settings_loader").show();
+            formatAccData();
+            loadAccName();
+            callHandler.execute(function() {
+                addDisable("#user-settings");
+                $("#saveAccData").hide().attr("disabled", false);
+                $("#editAccData").show().attr("disabled", false);
+                $("#acc_settings_loader").hide();
+            });
         }, dataArray);
+
         callHandler.execute();
     };
 
