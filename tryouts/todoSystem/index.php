@@ -51,14 +51,7 @@
       </ul>
     </div>
 
-    <div id="content">
-      <div id="todo_content">
-        hoi
-      </div>
-      <div id="projects_content">
-        helelei
-      </div>
-    </div>
+    <iframe id="content" src="pages/todo.php"></iframe>
 
     <!--Vendor scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
