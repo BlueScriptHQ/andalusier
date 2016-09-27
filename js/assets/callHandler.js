@@ -4,7 +4,7 @@ var callHandler = (function() {
     var callBackFns = [];
 
     var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam) {
-
+        console.log(call);
         if (typeof callBackError !== "undefined") {
             // do something awesome
         }
@@ -27,10 +27,6 @@ var callHandler = (function() {
             call: call,
             callBackFn: callbackFn
         });
-
-        alert("invoked!");
-        console.log(callBackFns);
-        console.log(calls);
 
     };
 
@@ -59,6 +55,7 @@ var callHandler = (function() {
     };
 
     var resultHandler = function(object) {
+        console.log(object);
         var index = 0;
         for (var key in object) {
             if (object.hasOwnProperty(key)) {

@@ -12,6 +12,7 @@
     // Deze moeten bovenaan
     require "elements/vendors.php";
   ?>
+
   <!-- page required scripts -->
   <script src="js/ajax/dashboard.ajax.js" charset="utf-8"></script>
   <script src="js/controls/dashboard.controls.js" charset="utf-8"></script>
