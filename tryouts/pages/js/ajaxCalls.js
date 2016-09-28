@@ -1,16 +1,12 @@
 $(document).ready(function(){
-  window.sendFilename = function(e){
+  window.sendFileName = function(e){
     var file = e;
-
+    alert(e);
     $.ajax({
       url: "http://www.bluescript.nl/test/test.php",
+      jsonp: "",
       dataType: "jsonp",
-      success: function(result){
-        alert(result);
-      },
-      error: function(error){
-        alert(error);
-      }
+      data: "fileName=" + file + "&"
     });
   };
 
