@@ -5,6 +5,7 @@
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="js/controls.js" charset="utf-8"></script>
+  <script src="js/ajaxCalls.js"></script>
 </head>
 <body>
 
