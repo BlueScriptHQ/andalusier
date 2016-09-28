@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  sendFileName = function(e){
+  window.sendFilename = function(e){
     var file = e;
-    
+
     $.ajax({
       url: "http://www.bluescript.nl/test/test.php",
       dataType: "jsonp",
