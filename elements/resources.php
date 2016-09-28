@@ -7,6 +7,7 @@
 <!-- <link rel="stylesheet" href="css/popups_style.min.css" media="screen" charset="utf-8"> -->
 
 <!-- global requirements -->
+<script src="js/assets/statisticsHandler.js" charset="utf-8"></script>
 <script src="js/assets/checks.js" charset="utf-8"></script>
 <script src="js/assets/variables.js" charset="utf-8"></script>
 <script src="js/assets/validator.js" charset="utf-8"></script>

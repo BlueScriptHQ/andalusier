@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // load the account's data
     if ($("#user-settings").length) {
         $(".prev_loggedin").hide();
@@ -47,8 +48,14 @@ $(document).ready(function() {
     }*/
 
     window.saveAccData = function saveAccData(dataArray) {
-
+        console.log(" ");
+        console.log("STARTING.....");
+        console.log(" ");
         callHandler.addCall("saveAccData", function(r) {
+
+            console.log(" ");
+            console.log("STARTING.....");
+            console.log(" ");
             $("#acc_settings_loader").show();
             formatAccData();
             loadAccName();
