@@ -5,31 +5,13 @@ var callHandler = (function() {
 
     var clearArray = function() {
         // reset everything
-        console.log("INVOKED");
-        console.log(" ");
-        console.log("Before deletion:");
-        console.log(" ");
-        console.log("Calls:");
-        console.log(calls);
-        console.log("CallBack Functions:");
-        console.log(callBackFns);
         calls = [];
         callBackFns = [];
-        console.log(" ");
-        console.log("After deletion:");
-        console.log(" ");
-        console.log("Calls:");
-        console.log(calls);
-        console.log("CallBack Functions:");
-        console.log(callBackFns);
-        console.log(" ");
+
+        console.log("Invoked and cleared");
     };
 
-    var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam) {
-
-        if (typeof callBackError !== "undefined") {
-            // do something awesome
-        }
+    var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam, clear) {
 
         if (typeof phpLocationParam !== "undefined") {
             phpLocation = phpLocationParam;
@@ -51,15 +33,11 @@ var callHandler = (function() {
             callBackFn: callbackFn
         });
 
-        console.log("Current callBackFns:");
-        console.log(callBackFns);
-
-        console.log("Current calls:");
-        console.log(calls);
-        console.log("");
     };
 
     var execute = function(callBackFn) {
+
+
         if (calls.length !== 0) {
             $.ajax({
                 url: phpLocation,
@@ -76,7 +54,6 @@ var callHandler = (function() {
                         if (typeof callBackFn == 'function') {
                             callBackFn();
                         }
-                        console.log(e);
                         resultHandler(JSON.parse(e));
                     }
                 },
@@ -87,25 +64,20 @@ var callHandler = (function() {
 
 
     var resultHandler = function(object) {
-        console.log("");
-        console.log("STARTING ITERATION AND EXECUTION FUNCTIONS");
-        console.log(object);
-        alert("HAllo");
+
+        console.log("result:");
+
         for (var key in object) {
-          alert(key);
             if (object.hasOwnProperty(key)) {
                 for (var i = 0; i < callBackFns.length; i++) {
                     if (callBackFns[i].call == key) {
-                        console.log("Executing function: " + callBackFns[i].call);
                         callBackFns[i].callBackFn(object[key].result);
-                    } else {
-                      console.log(key);
+                        console.log("Executing function: " + key);
                     }
                 }
-            } else {
-              console.log("oops. key bestaat niet: " + key);
             }
         }
+
 
         clearArray();
 

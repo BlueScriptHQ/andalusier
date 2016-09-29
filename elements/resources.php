@@ -25,4 +25,4 @@
 <script src="js/optional/comment_optional.js" charset="utf-8"></script>
 
 <!-- and eventually -->
-<script src="js/start.js" charset="utf-8"></script>
+<script src="js/start.js" charset="utf-8" defer></script>

@@ -7,6 +7,9 @@ $(document).ready(function() {
     }
 
     function formatAccData() {
+
+        // hier gaat iets mis. Maar wat? Dat is een raadsel momenteel.
+
         callHandler.addCall("getAccountData", function($result) {
             if ($result.accounts_prev_loggedintime !== "00:00:00") {
                 $(".prev_loggedin").show();
@@ -42,29 +45,14 @@ $(document).ready(function() {
         });
     }
 
-    /*function saveAccData() {
-
-
-    }*/
-
     window.saveAccData = function saveAccData(dataArray) {
-        console.log(" ");
-        console.log("STARTING.....");
-        console.log(" ");
         callHandler.addCall("saveAccData", function(r) {
 
-            console.log(" ");
-            console.log("STARTING.....");
-            console.log(" ");
-            $("#acc_settings_loader").show();
             formatAccData();
-            loadAccName();
-            callHandler.execute(function() {
-                addDisable("#user-settings");
-                $("#saveAccData").hide().attr("disabled", false);
-                $("#editAccData").show().attr("disabled", false);
-                $("#acc_settings_loader").hide();
-            });
+
+            callHandler.execute();
+
+
         }, dataArray);
 
         callHandler.execute();

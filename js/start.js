@@ -1,26 +1,32 @@
 $(document).ready(function() {
 
-    $("#overlay").height($(document).height());
-    $(window).resize(function() {
-        $("#overlay").height($(document).height());
-    });
+    // very nasty fix to the async javascript loading...
+    setTimeout(function(){
 
-    //check if the members table exists
-    if ($(".members-table").length) {
-        loadTable();
-    }
+      $("#overlay").height($(document).height());
+      $(window).resize(function() {
+          $("#overlay").height($(document).height());
+      });
 
-    if ($(".documents-table").length) {
-        loadDocuments();
-    }
+      //check if the members table exists
+      if ($(".members-table").length) {
+          loadTable();
+      }
 
-    if ($(".log-table").length) {
-        loadEvents();
-    }
+      if ($(".documents-table").length) {
+          loadDocuments();
+      }
+
+      if ($(".log-table").length) {
+          loadEvents();
+      }
 
 
-    callHandler.execute(function() {
-        $("#loading-box img").fadeOut(900);
-        $("#loading-box").fadeOut(1000);
-    });
+      callHandler.execute(function() {
+          $("#loading-box img").fadeOut(900);
+          $("#loading-box").fadeOut(1000);
+      });
+
+    }, 100);
+
 });
