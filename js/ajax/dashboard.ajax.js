@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
     // load the account's data
@@ -48,7 +46,14 @@ $(document).ready(function() {
     }
 
     window.saveAccData = function saveAccData(dataArray) {
-        callHandler.addCall("saveAccData", location.reload, dataArray);
+        callHandler.addCall("saveAccData", function(r) {
+
+            formatAccData();
+
+            callHandler.execute();
+
+
+        }, dataArray);
 
         callHandler.execute();
     };

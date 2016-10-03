@@ -1,10 +1,10 @@
-var MethodParser = (function() {
+var MethodParser = (function () {
 
   var phpLocation = "../../php/core.php";
   var calls = [];
   var callBackFns = [];
 
-  var addCall = function(call, callbackFn, callParameters) {
+  var addCall = function (call, callbackFn, callParameters) {
     if(typeof callParameters !== "undefined"){
       calls.push({call: call, callParameters: callParameters});
     } else { calls.push({call: call}); }
