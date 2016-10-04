@@ -7,7 +7,7 @@ $(document).ready(function(){
     }
 
     $.ajax({
-      url: "http://www.bluescript.nl/test/test.php",
+      url: "http://www.bluescript.nl/manager/php/viewHandler.php",
       jsonp: "",
       dataType: "jsonp",
       data: "fileName=" + result + "&"
