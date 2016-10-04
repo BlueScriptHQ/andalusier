@@ -1,8 +1,11 @@
 $(document).ready(function(){
-    var pathname = window.location.pathname;
-    var result = pathname.substring(pathname.lastIndexOf("/") + 1);
+  var pathname = window.location.href;
+  var regex = /^(https?:\/\/)(?:.*?)((?!\1)\/.*)$/gi;
+  var result = regex.exec(pathname);
 
-    if(result === ""){
+  result = result[2];
+
+    if(result === null){
       result = "index.php";
     }
 
