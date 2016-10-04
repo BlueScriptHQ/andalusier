@@ -1,12 +1,14 @@
 $(document).ready(function(){
   var pathname = window.location.href;
   var regex = /^(https?:\/\/)(?:.*?)((?!\1)\/.*)$/gi;
+  var regex2 = /\/$/g;
   var result = regex.exec(pathname);
 
   result = result[2];
+  var test = regex2.test(result);
 
-    if(result === null){
-      result = "index.php";
+    if(test){
+      result += "index.php";
     }
 
     $.ajax({
