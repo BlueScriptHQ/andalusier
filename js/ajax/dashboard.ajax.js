@@ -46,11 +46,11 @@ $(document).ready(function() {
     }
 
     window.saveAccData = function saveAccData(dataArray) {
-        callHandler.addCall("saveAccData", function(r) {
+        callHandler.addCall("saveAccData", function() {
 
-            formatAccData();
-
-            callHandler.execute();
+            // Dit is een nasty fix, en moet worden verbeterd.
+            document.write(" "); // haal het document leeg, anders doet hij raar.
+            location.reload();
 
 
         }, dataArray);

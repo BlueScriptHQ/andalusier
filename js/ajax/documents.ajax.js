@@ -1,15 +1,11 @@
 $(document).ready(function() {
 
     window.loadDocuments = function loadDocuments() {
-        $.ajax({
-            url: "php/documents.php",
-            data: "requestDocuments=true",
-            method: "POST",
-            success: function(result) {
-                $(".documents-tableHead").nextAll().remove();
-                $(result).insertAfter(".documents-tableHead");
-                alignMenu();
-            }
+
+        callHandler.addCall("getDocuments", function(r) {
+            $(".documents-tableHead").nextAll().remove();
+            $(r).insertAfter(".documents-tableHead");
+            alignMenu();
         });
     };
 

@@ -1,7 +1,6 @@
 <?php
 
-  if(isset($_POST["requestDocuments"])){
-
+  function getDocuments(){
     // Adds pretty filesizes
   	function pretty_filesize($file) {
   		$size=filesize($file);
@@ -15,7 +14,7 @@
     $directory = $_SESSION["documentsURL"];
 
     if(!file_exists($directory)){
-      echo "<tr>
+      return "<tr>
               <td class='alignCenter'>
                 <a onclick='backAFolder();' style='cursor:pointer;'>
                   <img src='./img/content-section/documents-list/back.png' alt='' />
@@ -39,7 +38,6 @@
               <td class='alignCenter'></td>
               <td></td>
             </tr>";
-      exit();
     }
 
     $files = scandir($directory);
@@ -147,7 +145,12 @@
       ";
     }
 
-    echo $structure;
+    return $structure;
+  }
+
+  if(isset($_POST["requestDocuments"])){
+
+
   }
 
   if(isset($_POST["openFolder"])){

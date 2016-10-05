@@ -13,12 +13,13 @@ $(document).ready(function() {
           loadTable();
       }
 
-      if ($(".documents-table").length) {
-          loadDocuments();
-      }
-
       if ($(".log-table").length) {
           loadEvents();
+      }
+
+      if($(".documents-tableHead").length){
+        loadDocuments();
+        alert();
       }
 
 

@@ -8,7 +8,6 @@ var callHandler = (function() {
         calls = [];
         callBackFns = [];
 
-        console.log("Invoked and cleared");
     };
 
     var addCall = function(call, callbackFn, callParameters, callBackError, phpLocationParam, clear) {
@@ -65,21 +64,15 @@ var callHandler = (function() {
 
     var resultHandler = function(object) {
 
-        console.log("result:");
-
         for (var key in object) {
             if (object.hasOwnProperty(key)) {
                 for (var i = 0; i < callBackFns.length; i++) {
                     if (callBackFns[i].call == key) {
                         callBackFns[i].callBackFn(object[key].result);
-                        console.log("Executing function: " + key);
                     }
                 }
             }
         }
-
-
-        clearArray();
 
     };
 
