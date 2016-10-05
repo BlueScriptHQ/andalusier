@@ -3,10 +3,12 @@ $(document).ready(function() {
     window.loadDocuments = function loadDocuments() {
 
         callHandler.addCall("getDocuments", function(r) {
+            alert(r);
             $(".documents-tableHead").nextAll().remove();
             $(r).insertAfter(".documents-tableHead");
             alignMenu();
         });
+
     };
 
     window.openFolder = function(fName) {

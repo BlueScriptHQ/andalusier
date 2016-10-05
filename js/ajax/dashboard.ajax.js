@@ -46,8 +46,20 @@ $(document).ready(function() {
     }
 
     window.saveAccData = function saveAccData(dataArray) {
+
+        $("#acc_settings_loader").fadeIn(400);
+
         callHandler.addCall("saveAccData", function() {
-            
+
+          loadAccName();
+          formatAccData();
+
+          callHandler.execute(function(){
+            addDisable("#user-settings");
+            $("#saveAccData").hide();
+            $("#editAccData").show().attr("");
+            $("#acc_settings_loader").fadeOut(400);
+          });
 
 
 

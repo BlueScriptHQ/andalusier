@@ -33,7 +33,7 @@ $(document).ready(function() {
 
                         $("#username").focus();
                     }
-                }, dataObject, undefined, "../php/core.php");
+                }, dataObject, "../php/core.php");
 
                 callHandler.execute();
             } else {

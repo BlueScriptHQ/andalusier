@@ -26,9 +26,9 @@
 <body>
 
   <?php
-    require "elements/loader.php";
-    //require "elements/popups.php";
-    require "optional/comments.php";
+  require "elements/loader.php";
+  require "optional/comments.php";
+  // require "elements/components/popups.php";
   ?>
 
   <div id="page-wrapper">

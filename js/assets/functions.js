@@ -39,7 +39,7 @@ $(document).ready(function() {
     };
 
     window.addDisable = function addDisable(form) {
-        $(form + " input, textarea").each(function() {
+        $(form + " input[type=text], textarea").each(function() {
             $(this).attr("disabled", "disabled");
         });
     };

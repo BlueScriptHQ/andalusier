@@ -13,13 +13,22 @@
     <script type="text/javascript">
       callHandler.addCall("getRekt", function(r){
 
-          alert(r + "2");
+          alert("yay!!");
+
+          callHandler.addCall("hiya", function(){
+            alert("getRekt! :)");
+          });
+          callHandler.execute();
 
       });
 
-      callHandler.addCall("getAccountName", function(r){
-        alert(r);
+      callHandler.addCall("test", function(r){
+
+        alert("test");
+
       });
+
+
 
       callHandler.execute();
     </script>

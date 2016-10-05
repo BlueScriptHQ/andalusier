@@ -25,7 +25,6 @@ var callHandler = (function() {
             call: callName,
             callBackFn: callBackFn
         });
-
     };
 
     var addInvoked = function(callName, callBackFn, callParameters) {
@@ -64,74 +63,32 @@ var callHandler = (function() {
 
         calls = [];
 
+        for (var key in object) {
+            if (object.hasOwnProperty(key)) {
 
-        console.log(object);
-
-        for(var key in object){
-          if(object.hasOwnProperty(key)){
-
-            var find = function(array, key){
-              for(var i = 0; i < array.length; i++){
-                if(array[i].call === key){
-                  return array[i];
-                }
-              }
-            };
-
-            var arrayRow = find(callBackFns, key);
-
-          }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*for (var i = 0; i < callBackFns.length; i++) {
-            var tmp = callBackFns[i].callBackFn;
-
-            var index = 0;
-            for (var key in object) {
-                if (object.hasOwnProperty(key)) {
-                    if (callBackFns[index].call === key) {
-
-
-                        var r = object[key].result;
-                        tmp(r);
-                        //delete object[key];
-                        //callBackFns.splice(i, 1);
-                    } else {
-                      continue;
+                // function that returns the current array row in callBackFns with the objects key as a selector...
+                var find = function(array, key) {
+                    for (var i = 0; i < array.length; i++) {
+                        if (array[i].call === key) {
+                            return array[i];
+                        }
                     }
-                    index++;
-                }
-            }
+                };
 
-        }*/
+                var currCallback = find(callBackFns, key);
+                var temporaryFunction = currCallback.callBackFn;
+                var result = object[key].result;
+
+                // clean the functions..
+                var index = callBackFns.indexOf(currCallback);
+                delete object[key];
+                callBackFns.splice(index, 1);
+
+                // finally, execute the function with the correct parameters
+                temporaryFunction(result);
+
+            }
+        }
 
     };
 
