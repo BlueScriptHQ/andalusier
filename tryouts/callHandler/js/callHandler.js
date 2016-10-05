@@ -2,7 +2,7 @@ var callHandler = (function() {
 
     var calls = [];
     var callBackFns = [];
-    var phpLocation = "php/core.php";
+    var phpLocation = "../../php/core.php";
 
     var addCall = function(callName, callBackFn, callParameters, phpLocationParam) {
 
@@ -62,30 +62,76 @@ var callHandler = (function() {
 
     var resultHandler = function(object) {
 
-        console.log(object);
-        console.log(callBackFns);
-
         calls = [];
 
-        for (var i = 0; i < callBackFns.length; i++) {
+
+        console.log(object);
+
+        for(var key in object){
+          if(object.hasOwnProperty(key)){
+
+            var find = function(array, key){
+              for(var i = 0; i < array.length; i++){
+                if(array[i].call === key){
+                  return array[i];
+                }
+              }
+            };
+
+            var arrayRow = find(callBackFns, key);
+
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*for (var i = 0; i < callBackFns.length; i++) {
             var tmp = callBackFns[i].callBackFn;
-            var r;
 
             var index = 0;
             for (var key in object) {
                 if (object.hasOwnProperty(key)) {
                     if (callBackFns[index].call === key) {
-                        r = object[key].result;
-                        delete object[key];
+
+
+                        var r = object[key].result;
+                        tmp(r);
+                        //delete object[key];
+                        //callBackFns.splice(i, 1);
+                    } else {
+                      continue;
                     }
                     index++;
                 }
             }
 
-            callBackFns.splice(i, 1);
-
-            tmp(r);
-        }
+        }*/
 
     };
 
