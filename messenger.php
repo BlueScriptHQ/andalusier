@@ -7,6 +7,8 @@
 <html lang="nl">
   <head>
     <title>Andalusier | BerichtenCentrum</title>
+    <link rel="stylesheet" href="css/chatbox.min.css">
+
 
     <?php
       // Vendor scripts (externe libraries: jQuery etc)
@@ -51,13 +53,42 @@
               </ul>
           </div>
           <div id="content">
+            <div id="chatbox">
+             <div id="graybar"></div>
+             <div id="usersmenu">
+                <ul>
+                  <li>Algemene groep</li>
+                  <li>dummyuser1</li>
+                  <li>dummyuser2</li>
+                  <li>dummyuser3</li>
+                  <li>dummyuser4</li>
+                  <li>dummyuser5</li>
+                  <li>dummyuser6</li>
+                  <li>dummyuser7</li>
+                  <li>dummyuser8</li>
+                  <li>dummyuser9</li>
+                  <li>dummyuser10</li>
+                  <li>dummyuser11</li>
+                  <li>dummyuser12</li>
+                  <li>dummyuser13</li>
+                  <li>dummyuser14</li>
+                </ul>
+             </div>
+             <div id="messagebox">
+               <div id="chat">
 
+               </div>
 
-            <!-- HIER KAN JE WERKEN! -->
+                <textarea id="message" placeholder="Uw bericht..."></textarea>
+                <button id="send"><img src="img/chat/send-button.png" alt="Send" /></button>
 
-
-          </div>
+             </div>
+           </div>
       </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="js/chat/controls.js" charset="utf-8"></script>
+    <script src="js/chat/ajax.js" charset="utf-8"></script>
   </body>
 </html>
