@@ -45,7 +45,6 @@
     				<td>".$name."</td>
     				<td>&euro;".$value->members_contribution_amount.",-</td>
     				<td>".$value->members_email."</td>
-    				<td>".$value->members_phonenr."</td>
     				<td>
     					".$package."
     					".$paid."

@@ -5,7 +5,7 @@
     height: 100vh;
     z-index: 9998;
     background-color: rgba(0,0,0,0.5);
-    position: absolute;
+    position: fixed;
     display: none;
 }
 
@@ -165,7 +165,7 @@
 #critical-error {
     width: 400px;
     height: 200px;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -181,7 +181,7 @@
 #members-popup-edit {
     width: 600px;
     height: 615px; //change for higher content
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;

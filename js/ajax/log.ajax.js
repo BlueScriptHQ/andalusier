@@ -9,7 +9,7 @@ $(document).ready(function() {
     };
 
     $("#downloadLogBtn").on("click", function() {
-        window.location.href = "php/events.php?requestEventsDownload=true";
+        window.location.href = "php/core.php?requestEventsDownload=true";
     });
 
 });
