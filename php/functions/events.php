@@ -1,26 +1,24 @@
 <?php
 
-  if(isset($_POST["requestEvents"]) && $_POST["requestEvents"] == true){
-    $eventsHandling =  new connectionHandler();
+  function getEvents($dbHandler){
+    $structure = "";
     $sql = "SELECT DATE_FORMAT(logs_date, '%d-%m-%Y %H:%i:%s') AS logs_date, logs_content FROM logs ORDER BY logs_date DESC LIMIT 100";
-    $data = $eventsHandling->processQuery($sql);
-
-    if(empty($data) || $data == 0){
-      echo "
-      <tr>
+    $data = $dbHandler->handleQuery($sql, false, true, PDO::FETCH_OBJ);
+    if(empty($data) || $data === 0){
+      return "<tr>
           <td></td>
           <td>Momenteel geen gebeurtenissen in de database.</td>
       <tr>";
-      die();
     }
 
     foreach ($data as $key => $value) {
-      echo "
+      $structure.= "
         <tr>
     				<td>".$value->logs_date."</td>
     				<td>".$value->logs_content."</td>
     		<tr>";
     }
+    return $structure;
   }
 
   if(isset($_GET["requestEventsDownload"])){

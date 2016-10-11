@@ -1,5 +1,22 @@
 <?php
 
+  // required functions
+
+  function makeUTF8($d) {
+    if (is_array($d)){
+        foreach ($d as $k => $v)
+            $d[$k] = makeUTF8($v);
+    }
+    else if(is_object($d)){
+        foreach ($d as $k => $v)
+            $d->$k = makeUTF8($v);
+    }
+   else {
+     return utf8_encode($d);
+   }
+   return $d;
+ }
+
   class callHandler {
 
     public $results = [];
@@ -21,7 +38,8 @@
     }
 
     public function sendResult(){
-      echo json_encode($this->results);
+      $UTF8ConvertedResults = makeUTF8($this->results);
+      echo json_encode($UTF8ConvertedResults);
     }
 
   }

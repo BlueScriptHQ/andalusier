@@ -151,11 +151,8 @@
       ";
     }
 
-    $object = (object) [
-      'HTMLContents' => $structure
-    ];
 
-    return $object;
+    return $structure;
   }
 
 ?>

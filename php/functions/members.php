@@ -43,7 +43,7 @@
         <tr>
     				<td>".$value->members_id."</td>
     				<td>".$name."</td>
-    				<td>€".$value->members_contribution_amount.",-</td>
+    				<td>&euro;".$value->members_contribution_amount.",-</td>
     				<td>".$value->members_email."</td>
     				<td>".$value->members_phonenr."</td>
     				<td>
@@ -59,7 +59,7 @@
 
   }
 
-  
+
   if (isset($_POST["requestMembersTable"]) && $_POST["requestMembersTable"] == true) {
     // formatting table data.
     $accountsHandling =  new connectionHandler();
