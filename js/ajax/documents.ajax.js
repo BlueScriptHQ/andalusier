@@ -1,35 +1,38 @@
 $(document).ready(function() {
 
-    window.loadDocuments = function loadDocuments() {
+    window.loadDocuments = function loadDocuments(invoked) {
 
-        callHandler.addCall("getDocuments", function(r) {
-            $(".documents-tableHead").nextAll().remove();
-            $(r).insertAfter(".documents-tableHead");
-            alignMenu();
-        });
+        if (typeof invoked === "undefined") {
+            callHandler.addCall("getDocuments", function(r) {
+                $(".documents-tableHead").nextAll().remove();
+                $(r).insertAfter(".documents-tableHead");
+                alignMenu();
+            });
+        } else {
+            callHandler.addInvoked("getDocuments", function(r) {
+                $(".documents-tableHead").nextAll().remove();
+                $(r).insertAfter(".documents-tableHead");
+                alignMenu();
+            });
+        }
+
 
     };
 
     window.openFolder = function(fName) {
-        $.ajax({
-            url: "php/documents.php",
-            data: "openFolder=" + fName,
-            method: "POST",
-            success: function() {
-                loadDocuments();
-            }
-        });
+
+        callHandler.addInvoked("openFolder", function() {
+            loadDocuments(true);
+        }, fName);
+
     };
 
     window.backAFolder = function() {
-        $.ajax({
-            url: "php/documents.php",
-            data: "requestFolderBack=true",
-            method: "POST",
-            success: function() {
-                loadDocuments();
-            }
+
+        callHandler.addInvoked("backFolder", function() {
+            loadDocuments(true);
         });
+
     };
 
     $("#addAFolder").on("click", function() {

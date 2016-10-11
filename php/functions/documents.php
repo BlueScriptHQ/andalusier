@@ -1,23 +1,41 @@
 <?php
 
+  /*
+    Open een map, door achter de sessie "documentsURL" de geselecteerde map naam te plakken.
+  */
 
-  // Adds pretty filesizes
-  function pretty_filesize($file) {
-    $size=filesize($file);
-    if($size<1024){$size=$size." Bytes";}
-    elseif(($size<1048576)&&($size>1023)){$size=round($size/1024, 1)." KB";}
-    elseif(($size<1073741824)&&($size>1048575)){$size=round($size/1048576, 1)." MB";}
-    else{$size=round($size/1073741824, 1)." GB";}
-    return $size;
+  function openFolder($dbHandler, $sequelHandler, $param){
+    if(valid($_SESSION["documentsURL"])){
+      $_SESSION["documentsURL"] .= $param . "/";
+    }
   }
 
+  /*
+    Ga een map terug, door van de sessie "documentsURL", de laatste map er af te strippen.
+  */
 
+  function backFolder(){
+    if(valid($_SESSION["documentsURL"])){
+      $_SESSION["documentsURL"] = substr($_SESSION["documentsURL"], 0, strrpos( $_SESSION["documentsURL"], '/'));
+      $_SESSION["documentsURL"] = substr($_SESSION["documentsURL"], 0, strrpos( $_SESSION["documentsURL"], '/')) . "/";
+    }
+  }
+
+  /*
+    Haal alle bestanden op in de huidige map (uit documentsURL sessie variabele)
+  */
 
   function getDocuments(){
 
-
+    /*
+      Haal de benodige variabelen op
+    */
     $maindirectory = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
     $directory = $_SESSION["documentsURL"];
+
+    /*
+      Kijk of de map bestaat. Zo nee, laat een melding aan de gebruiker zien.
+    */
 
     if(!file_exists($directory)){
       return "<tr>
@@ -46,6 +64,9 @@
             </tr>";
     }
 
+    /*
+      Lees alle bestanden en mappen uit de huidige map. Scheidt daarna alle mappen van bestanden.
+    */
     $files = scandir($directory);
     $directories = array();
     $exc = array(".", "..");
@@ -63,7 +84,9 @@
 
     $structure = '';
 
-    // check if a back option is required..
+    /*
+      Kijk of een terugknop nodig is. Als we op de root map zitten, hoeft dit namelijk niet.
+    */
     if($directory != $maindirectory){
       $structure.= "<tr><td class='alignCenter'><a onclick='backAFolder();' style='cursor:pointer;'><img src='./img/content-section/documents-list/back.png' alt='' /></a>
                     </td><td><a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a></td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
@@ -71,6 +94,9 @@
                     </tr>";
     }
 
+    /*
+      Kijk of er bestanden of mappen in de huidige map zitten. Zo niet, laat dan een melding aan de gebruiker zien.
+    */
     if(count($files) == 0 && count($directories) == 0){
       $structure.= "<tr><td class='alignCenter'><img src='./img/content-section/documents-list/sad.png' alt='' /></td><td>Er is hier helaas niets te zien..</td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
                     <td></td>
@@ -78,6 +104,9 @@
     }
 
 
+    /*
+      Loop over alle mappen in de huidige map. Deze komen namelijk bovenaan te staan.
+    */
     for ($i=0; $i < count($directories); $i++) {
       $structure.= "
         <tr>
@@ -96,10 +125,19 @@
       ";
     }
 
+    /*
+      Loop over alle bestanden in de huidige map. Deze komen namelijk bovenaan te staan.
+    */
+
     for ($i=0; $i < count($files); $i++) {
       $extension = strtolower(substr(strrchr($files[$i], '.'), 1));
       $size = pretty_filesize($directory.$files[$i]);
       $extn = '';
+
+      /*
+        Laat een duidelijke extensie zien. Dus een die voor de gebruiker duidelijk is.
+      */
+
       switch ($extension){
 				case "png": $extn="PNG"; break;
 				case "jpg": $extn="JPEG"; break;
@@ -151,8 +189,12 @@
       ";
     }
 
-
+    /*
+      Geef als resultaat de genereerde HTML terug.
+    */
     return $structure;
   }
+
+
 
 ?>
