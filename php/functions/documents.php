@@ -199,6 +199,9 @@
     return $structure;
   }
 
+  function hallo(){
+    echo "hi";
+  }
 
 
 ?>
