@@ -1,5 +1,9 @@
 <?php
 
+ function test(){
+  return "test";
+ }
+
   /*
     Open een map, door achter de sessie "documentsURL" de geselecteerde map naam te plakken.
   */
