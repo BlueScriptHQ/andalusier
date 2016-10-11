@@ -2,6 +2,7 @@
 
   session_start();
   require "php/assets/verifications.php";
+  require "php/chat/chatConn.php";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
