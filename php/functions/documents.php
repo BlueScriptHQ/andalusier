@@ -85,9 +85,9 @@
     $structure = '';
 
     /*
-      Kijk of een terugknop nodig is. Als we op de root map zitten, hoeft dit namelijk niet.
+      Kijk of een terug knop nodig is. Als we op de root map zitten, hoeft dit namelijk niet.
     */
-    if($directory != $maindirectory){
+    if($directory !== $maindirectory){
       $structure.= "<tr><td class='alignCenter'><a onclick='backAFolder();' style='cursor:pointer;'><img src='./img/content-section/documents-list/back.png' alt='' /></a>
                     </td><td><a onclick='backAFolder();' style='cursor:pointer;'>Een mapje terug..</a></td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
                     <td></td>
@@ -97,7 +97,7 @@
     /*
       Kijk of er bestanden of mappen in de huidige map zitten. Zo niet, laat dan een melding aan de gebruiker zien.
     */
-    if(count($files) == 0 && count($directories) == 0){
+    if(count($files) === 0 && count($directories) === 0){
       $structure.= "<tr><td class='alignCenter'><img src='./img/content-section/documents-list/sad.png' alt='' /></td><td>Er is hier helaas niets te zien..</td><td class='alignCenter'></td><td class='alignCenter'></td><td class='alignCenter'></td>
                     <td></td>
                     </tr>";
@@ -126,7 +126,7 @@
     }
 
     /*
-      Loop over alle bestanden in de huidige map. Deze komen namelijk bovenaan te staan.
+      Loop over alle bestanden in de huidige map.
     */
 
     for ($i=0; $i < count($files); $i++) {
