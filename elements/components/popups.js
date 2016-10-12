@@ -1,4 +1,5 @@
 function handlePopups(param) {
+
     // reset all others
     $(".popup-section-content").hide();
     $(".popup-section-head img").attr("src", "elements/components/img/indicator-image-right.png");
@@ -16,12 +17,17 @@ $(".popup-section:eq(0)").addClass("open");
 
 $(".popup-section").each(function() {
 
+
+
     var count = $(this).parent().find('.popup-section').length;
     var height = $(".popup-head").height();
-
+    $(this).parent().show();
+    var selfHeight = $(this).height();
+    $(this).parent().hide();
     if ($(this).hasClass("open")) {
         $(".popup-section .popup-section-content").hide();
-        var thisHeight = $(this).parent().height() - $('.popup-head').height() - (count * $(this).height());
+        var thisHeight = $(this).parent().height() - $('.popup-head').height() - (count * selfHeight);
+
         $(this).find(".popup-section-content").height(thisHeight);
         $(this).find(".popup-section-content").show();
         $(this).find(".popup-section-head img").attr("src", "elements/components/img/indicator-image-down.png");

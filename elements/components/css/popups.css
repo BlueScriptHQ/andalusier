@@ -1,4 +1,5 @@
 #page-overlay {
+  display: none;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0, 0.8);
@@ -6,7 +7,8 @@
   z-index: 2;
 }
 
-#infoPopup {
+#infoPopup, #editPopup {
+  display: none;
   width: 550px;
   height: 600px;
   margin: auto;
@@ -18,7 +20,81 @@
 
 
 
+#critical-error {
+	width: 400px;
+	height: 200px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background-color: #fff;
+	z-index: 9999;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	display: none;
+}
 
+.documents-popup-FolderFile {
+	width: 536px;
+	height: 156px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background-color: #fff;
+	z-index: 9999;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	display: none;
+}
+
+.documents-popup-FolderFile .popup-content-h2 {
+	margin-top: 10px;
+}
+.documents-popup-FolderFile input[type=text] {
+	float: left;
+	margin: 10px 5px 10px 10px;
+	height: 30px;
+	width: 400px;
+	border: 2px solid #990909;
+	padding: 5px;
+}
+
+.documents-popup-FolderFile input[type=button] {
+	float: left;
+	margin-top: 10px;
+	background-color: #990909;
+	color: white;
+	width: 110px;
+	height: 30px;
+	border: 0;
+	text-transform: uppercase;
+}
+
+.documents-popup-FolderFile input[type=button].delete {
+	float: right;
+	margin-right: 20px;
+	margin-left: 10px;
+	width: 120px;
+}
+
+
+/* Bootstrap for all popups */
+.status_container {
+	height: 35px;
+	width: 60px;
+	float: left;
+	margin-right: 30px;
+}
+
+.status_container img {
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-left: -5px;
+}
 
 .popup-head {
   width: 100%;

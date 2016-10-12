@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 
       callHandler.execute(function() {
-          $("#loading-box img").fadeOut(900);
-          $("#loading-box").fadeOut(1000);
+          $("#loading-box img").fadeOut(800);
+          $("#loading-box").fadeOut(400);
       });
 
 });

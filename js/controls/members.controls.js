@@ -8,5 +8,8 @@ $(document).ready(function() {
         $("#infoPopup").fadeIn(500);
     });
 
+    function editUser(userID){
+      alert(userID);
+    }
 
 });

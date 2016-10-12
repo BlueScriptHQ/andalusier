@@ -58,13 +58,26 @@
 
   }
 
-
-  if (isset($_POST["requestMembersTable"]) && $_POST["requestMembersTable"] == true) {
-    // formatting table data.
-    $accountsHandling =  new connectionHandler();
-
+  function getMembersInfo($dbHandler, $sequelHandler, $param){
+    $sql = "SELECT
+    members.members_id, members_titles_content, members_name, members_tussenvoegsel, members_lastname, members_residence_street,
+    members_residence_zip, members_residence_place, members_residence_country, DATE_FORMAT(members_birthdate, '%d-%m-%Y') AS members_birthdate, members_phonenr, members_phonenr2,
+    members_mobnr, members_mobnr2, members_email, members_email2, DATE_FORMAT(members_startdate, '%d-%m-%Y') AS members_startdate, members_types.members_types_id,
+    members_stable, members_bank, members_newsletter, members_comment, members_mail, members_gift, members_paid, members_reminder
+    FROM members
+    INNER JOIN members_residence_info
+    ON members.members_id = members_residence_info.members_id
+    INNER JOIN members_contact_info
+    ON members.members_id = members_contact_info.members_id
+    INNER JOIN members_status
+    ON members.members_id = members_status.members_id
+    INNER JOIN members_titles
+    ON members.members_id = members_titles.members_id
+    INNER JOIN members_types
+    ON members.members_types_id = members_types.members_types_id
+    WHERE members.members_id = :id";
+    return $dbHandler->handleQuery($sql, array(":id" => $param), false, PDO::FETCH_OBJ);
   }
-
   // when the members's information is being requested
   if (isset($_POST["requestMembersInfo"]) && $_POST["requestMembersInfo"] != "") {
     $accountsHandling =  new connectionHandler();

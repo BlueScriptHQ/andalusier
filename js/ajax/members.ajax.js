@@ -58,18 +58,11 @@ $(document).ready(function() {
 
 
     window.editUser = function editUser(customerID) {
-        $.ajax({
-            url: "php/members.php",
-            data: "requestMembersInfo=" + customerID,
-            method: "POST",
-            success: function(result) {
-                $result = JSON.parse(result);
-                setInfoMembers($result);
-                $("#page-overlay").fadeIn(500);
-                $("#members-popup-edit").fadeIn(500);
-                alignMenu();
-            }
-        });
+
+      callHandler.addInvoked("getMembersInfo", function(r){
+        console.log(r);
+      }, customerID);
+
     };
 
     function setInfoMembers(data) {
