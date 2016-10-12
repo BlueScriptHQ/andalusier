@@ -3,6 +3,7 @@
   session_start();
   require "php/assets/verifications.php";
   require "php/chat/chatConn.php";
+  require "php/chat/userHandler.php";
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -30,7 +31,7 @@
 
     <?php
       require "elements/loader.php";
-      require "optional/comments.php";
+      //require "optional/comments.php";
       // require "elements/components/popups.php";
     ?>
 
@@ -59,20 +60,17 @@
              <div id="usersmenu">
                 <ul>
                   <li>Algemene groep</li>
-                  <li>dummyuser1</li>
-                  <li>dummyuser2</li>
-                  <li>dummyuser3</li>
-                  <li>dummyuser4</li>
-                  <li>dummyuser5</li>
-                  <li>dummyuser6</li>
-                  <li>dummyuser7</li>
-                  <li>dummyuser8</li>
-                  <li>dummyuser9</li>
-                  <li>dummyuser10</li>
-                  <li>dummyuser11</li>
-                  <li>dummyuser12</li>
-                  <li>dummyuser13</li>
-                  <li>dummyuser14</li>
+                  <?php
+
+                    foreach($result as $current){
+                      $id = $current["users_id"];
+                      $name = $current["users_name"];
+
+                      echo "
+                      <li>".$name."<input type='hidden' value=".$id."></li>
+                      ";
+                    }
+                  ?>
                 </ul>
              </div>
              <div id="messagebox">
@@ -82,7 +80,7 @@
 
                 <textarea id="message" placeholder="Uw bericht..."></textarea>
                 <button id="send"><img src="img/chat/send-button.png" alt="Send" /></button>
-
+                <p id="status"></p>
              </div>
            </div>
       </div>

@@ -51,7 +51,7 @@
       position: absolute;
       bottom: 0px;
       height: 50px;
-      width: 867px;
+      width: 100%;
       left: 0px;
       overflow: hidden;
     }
@@ -65,5 +65,11 @@
       border: 0;
       background-color: #990909;
     }
+   }
+
+   #status {
+     position: absolute;
+     bottom: 60px;
+
    }
 }
