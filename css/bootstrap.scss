@@ -1,101 +1,177 @@
 .btn {
-  height: 30px;
-  width: auto;
-  background-color: $main-color;
-  color: white;
-  border: 0;
-  cursor: pointer;
-  text-transform: uppercase;
+    height: 30px;
+    width: auto;
+    background-color: $main-color;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-
 .box-head {
-  width: 100%;
-  float: left;
-  height: 40px;
-
-  img {
-    height: 25px;
-    width: 25px;
+    width: 100%;
     float: left;
-    margin: 7.5px;
-  }
+    height: 40px;
 
-  h2 {
-    line-height: 40px;
-    float: left;
-    font-weight: bold;
-    color: #151515;
-  }
+    img {
+        height: 25px;
+        width: 25px;
+        float: left;
+        margin: 7.5px;
+    }
+
+    h2 {
+        line-height: 40px;
+        float: left;
+        font-weight: bold;
+        color: #151515;
+    }
 }
 
 .box-content {
-  width: 100%;
-  float: left;
-  height: auto;
-  padding: 10px;
-
-  .box-row {
     width: 100%;
-    height: 40px;
     float: left;
+    height: auto;
+    padding: 10px;
 
-    label {
-      width: 50%;
-      float: left;
-      line-height: 40px;
-      font-size: 14px;
-    }
-    input[type=text]{
-      width: 50%;
-      float: left;
-      border: 2px solid #222222;
-      padding: 7.6px;
-      height: 30px;
-      margin: 5px 0px;
-    }
-    p {
-      width: 50%;
-      line-height: 40px;
-      float: left;
-      font-size: 14px;
-    }
-
-    table {
-      margin: 0;
-      width: 100%;
-      float: left;
-      height: auto;
-      border-collapse: collapse;
-
-      th {
-        //width: 50%;
+    .box-row {
+        width: 100%;
         height: 40px;
-        line-height: 40px;
-        text-align: left;
+        float: left;
+
+        label {
+            width: 50%;
+            float: left;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        input[type=text] {
+            width: 50%;
+            float: left;
+            border: 2px solid #222222;
+            padding: 7.6px;
+            height: 30px;
+            margin: 5px 0;
+        }
+
+        p {
+            width: 50%;
+            line-height: 40px;
+            float: left;
+            font-size: 14px;
+        }
+
+        table {
+            margin: 0;
+            width: 100%;
+            float: left;
+            height: auto;
+            border-collapse: collapse;
+
+            th {
+                //width: 50%;
+                height: 40px;
+                line-height: 40px;
+                text-align: left;
+                background-color: $secondary-color;
+                color: white;
+                padding-left: 20px;
+                font-size: 14px;
+            }
+
+            tr {
+                background-color: #F1F2F7;
+
+                &:nth-child(even) {
+                    background-color: #fff;
+                }
+
+                &:hover {
+                    background-color: #ccc;
+                }
+            }
+
+            td {
+                height: 40px;
+                line-height: 40px;
+                text-align: left;
+                color: white;
+                padding-left: 20px;
+                font-size: 14px;
+                color: #151515;
+            }
+        }
+    }
+}
+
+.tableHead {
+    width: calc(100% - 56px);
+    height: 60px;
+    float: left;
+    margin: 25px 25px 0;
+    position: relative;
+    .button-box {
+      height: 100%;
+      float: left;
+
+      input[type=button] {
+          height: 40px;
+          margin: 0;
+          padding-left: 40px;
+
+          &#addMemberBtn {
+              background: url("../img/content-section/members-list/add_new.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+          }
+
+          &#addFolderBtn {
+              background: url("../img/content-section/documents-list/add_folder.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+          }
+
+          &#addFileBtn {
+              background: url("../img/content-section/documents-list/add_file.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+              margin-right: 10px;
+          }
+
+          &#downloadLogBtn {
+              background: url("../img/content-section/log-list/download_log.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+              margin-right: 10px;
+          }
+      }
+    }
+
+
+    .search-bar {
+        height: 50px;
+        width: 300px;
+        position: absolute;
+        right: 0;
+        bottom: -3px;
+        border-top: 3px solid $main-color;
+        border-right: 3px solid $main-color;
+        border-left: 3px solid $main-color;
         background-color: $secondary-color;
-        color: white;
-        padding-left: 20px;
-        font-size: 14px;
-      }
-      tr {
-        background-color: #F1F2F7;
-        &:nth-child(even)  {
-          background-color: #fff;
+
+        input[type=text] {
+            height: 35px;
+            margin: 7.5px 0 7.5px 7.5px;
+            width: 235px;
+            padding: 5px;
+            float: left;
         }
-        &:hover {
-          background-color: #ccc;
+
+        input[type=button] {
+            border: 0;
+            width: 50px;
+            height: 40px;
+            float: left;
+            margin: 5px 0;
+            background: url("../img/content-section/members-list/filter.png") no-repeat scroll center center $secondary-color;
+            background-size: 25px 25px;
         }
-      }
-      td {
-        height: 40px;
-        line-height: 40px;
-        text-align: left;
-        color: white;
-        padding-left: 20px;
-        font-size: 14px;
-        color: #151515;
-      }
     }
-  }
 }

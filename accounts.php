@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <title>Andalusier | Logboek</title>
+    <title>Andalusier | Accounts</title>
 
     <?php
       // Vendor scripts (externe libraries: jQuery etc)
@@ -13,7 +13,7 @@
       require "elements/vendors.php";
     ?>
     <!-- page required scripts -->
-    <script src="js/ajax/log.ajax.js" charset="utf-8"></script>
+    <script src="js/ajax/log.accounts.js" charset="utf-8"></script>
 
     <?php
       // Algemene resources
@@ -32,7 +32,7 @@
     <div id="page-wrapper">
       <script type="text/javascript">
         // page config
-        $pageTitle = "Logboek";
+        $pageTitle = "Accounts";
       </script>
       <!-- header section -->
       <?php
@@ -52,23 +52,30 @@
           <div class="tableHead">
 
             <div class="button-box">
-              <input type="button" id="downloadLogBtn" class="btn" value="Logboek downloaden (excel)">
+              <input type="button" class="btn" value="Account toevoegen">
             </div>
 
           </div>
 
-          <div id="members-table" class="log-table">
+          <div id="members-table">
             <div class="box-content">
               <div class="box-row">
                 <table>
-                    <tr class="log-tableHead">
-                      <th class="lDateTime">Datum en Tijd</th>
-                      <th class="lEvent">Gebeurtenis</th>
+                    <tr>
+                      <th>Gebruikersnaam</th>
+                      <th>Type</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>admin</td>
+                      <td>Administrator</td>
+                      <td>Edit</td>
                     </tr>
                 </table>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

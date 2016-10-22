@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 okt 2016 om 15:20
+-- Gegenereerd op: 22 okt 2016 om 19:57
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -43,9 +43,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
-(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-22 12:45:30', '2016-10-12 11:33:13'),
+(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-22 17:56:36', '2016-10-22 14:45:30'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
-(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator', '', 'Geen', '2016-10-11', '2016-10-22 13:03:04', '2016-10-22 14:59:09');
+(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator', '', 'Geen', '2016-10-11', '2016-10-22 17:56:49', '2016-10-22 18:44:38');
 
 -- --------------------------------------------------------
 
@@ -488,7 +488,9 @@ INSERT INTO `pages` (`pages_id`, `pages_name`, `pages_url`, `pages_parentid`, `p
 (4, 'Nieuwe aanmeldingen', 'aanmeldingen.php', 2, 0),
 (5, 'Oud leden', 'oudleden.php', 2, 0),
 (6, 'Documenten', 'documents.php', NULL, 0),
-(7, 'Logboek', 'log.php', NULL, 0);
+(7, 'Logboek', 'log.php', NULL, 0),
+(8, 'Accounts', 'accounts.php', NULL, 1),
+(9, 'Overzicht', 'accounts.php', 8, 0);
 
 -- --------------------------------------------------------
 
@@ -534,6 +536,8 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (1, 3, 1),
 (1, 6, 1),
 (1, 7, 1),
+(1, 8, 1),
+(1, 9, 1),
 (2, 1, 1),
 (2, 2, 1),
 (2, 3, 1),
@@ -707,7 +711,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT voor een tabel `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT voor een tabel `ranks`
 --

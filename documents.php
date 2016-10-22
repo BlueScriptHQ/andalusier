@@ -50,11 +50,12 @@
             </ul>
         </div>
           <div id="content">
-            <div id="members-table-head">
-              <div id="members-table-button-section">
+            <div class="tableHead">
+
+              <div class="button-box">
                 <input type="button" id="addFileBtn" class="btn" value="Uploaden">
               </div>
-              <div id="members-table-button-section">
+              <div class="button-box">
                 <input type="button" id="addFolderBtn" class="btn" value="Aanmaken">
               </div>
 

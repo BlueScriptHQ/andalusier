@@ -276,7 +276,7 @@ body {
     width: 100%;
     float: left;
 
-    #leden-sub-menu {
+    .sub-menu {
       display: none;
       float: left;
       width: 100%;
@@ -308,7 +308,7 @@ body {
         margin: 5px 0px 5px 25px;
       }
 
-      #leden-dropdown-indicator {
+      .dropdown-indicator {
         position: absolute;
         float: right;
         right: 0;

@@ -65,12 +65,12 @@
           $structure.= "<li id='".strtolower($hierarchy[$parentKey]["pages_name"])."-toggler' onclick='openMenu".$hierarchy[$parentKey]["pages_name"]."()'>
                 <img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'>
                 <a href='#'>".$hierarchy[$parentKey]["pages_name"]."</a>
-                <img id='".strtolower($hierarchy[$parentKey]["pages_name"])."-dropdown-indicator' src='img/side-menu/arrow-down.png'>
+                <img id='".strtolower($hierarchy[$parentKey]["pages_name"])."-dropdown-indicator' class='dropdown-indicator' src='img/side-menu/arrow-down.png'>
                 </li>";
         } else {
           $structure.= "<li><img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'><a href='".$hierarchy[$parentKey]["pages_url"]."'>".$hierarchy[$parentKey]["pages_name"]."</a></li>";
         }
-        $structure.= " <div id='".strtolower($hierarchy[$parentKey]["pages_name"])."-sub-menu'>";
+        $structure.= " <div id='".strtolower($hierarchy[$parentKey]["pages_name"])."-sub-menu' class='sub-menu'>";
         foreach ($hierarchy[$parentKey] as $key => $value) {
           if(is_array($value)){
            $structure.= "<li class='ischild'><a href='".strtolower($value['pages_url'])."'>".$value['pages_name']."</a></li>";
