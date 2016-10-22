@@ -70,9 +70,8 @@
                     <tr class="members-tableHead">
                       <th>#</th>
                       <th>Naam</th>
-                      <th class="contr">Contributie</th>
+                      <th>Type</th>
                       <th>Email</th>
-                      <th class="phonenr">Telefoonnummer</th>
                       <th class="status">Status</th>
                       <th class="controls"></th>
                     </tr>
