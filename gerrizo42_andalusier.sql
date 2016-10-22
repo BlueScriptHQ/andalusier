@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 10.3.0.102
--- Gegenereerd op: 12 sep 2016 om 15:41
--- Serverversie: 5.6.29
--- PHP-versie: 5.5.31
+-- Host: 127.0.0.1
+-- Gegenereerd op: 22 okt 2016 om 15:20
+-- Serverversie: 10.1.16-MariaDB
+-- PHP-versie: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,8 +43,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
-(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert', 'Test', 'Account', '2016-03-06', '2016-09-05 15:19:33', '2016-09-05 01:10:18'),
-(2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Lekkerding', '', 'Kreeft', '1996-09-05', '2016-06-17 11:15:34', '2016-06-17 13:14:52');
+(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-22 12:45:30', '2016-10-12 11:33:13'),
+(2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
+(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator', '', 'Geen', '2016-10-11', '2016-10-22 13:03:04', '2016-10-22 14:59:09');
 
 -- --------------------------------------------------------
 
@@ -67,8 +68,9 @@ CREATE TABLE `accounts_contact_info` (
 --
 
 INSERT INTO `accounts_contact_info` (`accounts_id`, `accounts_email`, `accounts_email2`, `accounts_phonenr`, `accounts_phonenr2`, `accounts_mobnr`, `accounts_mobnr2`) VALUES
-(1, 'testditmaareens@iets.nl', '', '05245812892', '', '0612345679', ''),
-(2, 'karinkreeft8@hotmail.com', '', '91283798123', '', '', '');
+(1, 'echtedata@gmail.com', 'test@gmail.com', '05245812892', '', '0612345679', ''),
+(2, 'karinkreeft8@hotmail.com', '', '91283798123', '', '', ''),
+(3, 'admin@test.com', '', '05245812897', '', '123213213', '');
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,8 @@ CREATE TABLE `acc_ranks` (
 
 INSERT INTO `acc_ranks` (`accounts_id`, `ranks_id`) VALUES
 (1, 2),
-(2, 5);
+(2, 5),
+(3, 1);
 
 -- --------------------------------------------------------
 
@@ -285,6 +288,7 @@ CREATE TABLE `members` (
   `members_stable` varchar(300) DEFAULT NULL,
   `members_bank` varchar(50) NOT NULL DEFAULT 'Niet opgegeven',
   `members_comment` varchar(1000) DEFAULT NULL,
+  `members_is_old` tinyint(1) NOT NULL DEFAULT '0',
   `members_types_id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -292,12 +296,12 @@ CREATE TABLE `members` (
 -- Gegevens worden geëxporteerd voor tabel `members`
 --
 
-INSERT INTO `members` (`members_id`, `members_approval`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_types_id`) VALUES
-(1, 0, 1, 'Petra', 'de', ' Boer', '1949-10-07', '2016-07-13 00:37:44', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 1),
-(2, 0, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-07-13 00:40:16', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 3),
-(3, 0, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-07-13 01:14:08', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 3),
-(4, 0, 1, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-07-13 00:54:10', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 4),
-(6, 0, 1, 'Bert', '', 'Stapper', '1977-12-07', '2016-07-13 09:13:56', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 4);
+INSERT INTO `members` (`members_id`, `members_approval`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_is_old`, `members_types_id`) VALUES
+(1, 0, 1, 'Petra', 'de', ' Boer', '1949-10-07', '2016-07-13 00:37:44', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 1),
+(2, 0, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-07-13 00:40:16', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
+(3, 0, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-07-13 01:14:08', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
+(4, 0, 1, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-07-13 00:54:10', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(6, 0, 1, 'Bert', '', 'Stapper', '1977-12-07', '2016-07-13 09:13:56', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -516,22 +520,28 @@ INSERT INTO `ranks` (`ranks_id`, `ranks_name`) VALUES
 
 CREATE TABLE `ranks_pages` (
   `ranks_id` int(5) NOT NULL,
-  `pages_id` int(5) NOT NULL
+  `pages_id` int(5) NOT NULL,
+  `permission` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `ranks_pages`
 --
 
-INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`) VALUES
-(2, 1),
-(5, 1),
-(2, 2),
-(2, 3),
-(2, 6),
-(5, 6),
-(2, 7),
-(5, 7);
+INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
+(1, 1, 1),
+(1, 2, 1),
+(1, 3, 1),
+(1, 6, 1),
+(1, 7, 1),
+(2, 1, 1),
+(2, 2, 1),
+(2, 3, 1),
+(2, 6, 1),
+(2, 7, 1),
+(5, 1, 1),
+(5, 6, 1),
+(5, 7, 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -657,7 +667,7 @@ ALTER TABLE `ranks_pages`
 -- AUTO_INCREMENT voor een tabel `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `accounts_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `accounts_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT voor een tabel `accounts_genders`
 --

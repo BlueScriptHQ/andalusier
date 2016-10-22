@@ -69,7 +69,7 @@
       WHERE acc_notif.accounts_id = :id ORDER BY notifications_time DESC";
       $data = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]), true, PDO::FETCH_OBJ);
       $return = "";
-      if($data !== false){
+      if(count($data) !== 0){
         foreach ($data as $key => $value) {
           $return.= "<tr>
                   <td>".$value->notifications_time."</td>
