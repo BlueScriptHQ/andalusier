@@ -54,15 +54,20 @@
             </ul>
         </div>
         <div id="content">
-          <div id="members-table-head">
-            <div id="members-table-button-section">
+
+          <div class="tableHead">
+
+            <div class="button-box">
               <input type="button" id="addMemberBtn" class="btn" value="Toevoegen">
             </div>
-            <div id="members-table-search-bar">
+
+            <div class="search-bar">
               <input type="text" value="" placeholder="Zoeken... (Werkt nog niet)" autocomplete="off" spellcheck="off">
               <input type="button">
             </div>
+
           </div>
+
           <div id="members-table" class="members-table">
             <div class="box-content">
               <div class="box-row">
