@@ -5,7 +5,7 @@
 
     $sql = "SELECT
     members.members_id, members_titles_content, members_name, members_tussenvoegsel,
-    members_lastname, members_contribution_amount, members_email,
+    members_lastname, members_types_content, members_contribution_amount, members_email,
     members_phonenr, members_paid, members_gift, members_reminder
     FROM members
     INNER JOIN members_contact_info
@@ -43,7 +43,7 @@
         <tr>
     				<td>".$value->members_id."</td>
     				<td>".$name."</td>
-    				<td>&euro;".$value->members_contribution_amount.",-</td>
+    				<td>".$value->members_types_content."</td>
     				<td>".$value->members_email."</td>
     				<td>
     					".$package."
