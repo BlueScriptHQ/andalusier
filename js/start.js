@@ -18,6 +18,10 @@ $(document).ready(function() {
         loadDocuments();
       }
 
+      if($(".accounts-table").length){
+        loadAccounts();
+      }
+
 
       callHandler.execute(function() {
           $("#loading-box img").fadeOut(800);

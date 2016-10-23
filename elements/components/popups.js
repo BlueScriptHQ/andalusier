@@ -13,11 +13,11 @@ function handlePopups(param) {
 }
 
 // standaard staat de eerste open
-$(".popup-section:eq(0)").addClass("open");
+$(".popup").each(function(){
+  $(this).find(".popup-section:eq(0)").addClass("open");
+});
 
 $(".popup-section").each(function() {
-
-
 
     var count = $(this).parent().find('.popup-section').length;
     var height = $(".popup-head").height();
@@ -52,4 +52,19 @@ $(".popup-section").on("click", ".openNext", function() {
 $(".popup-section-head").on("click", function() {
     var param = $(this).parent().find('.popup-section-content');
     handlePopups(param);
+});
+
+
+/*
+  Popup functions
+*/
+
+$(".popup_close").on("click", function() {
+    $("#page-overlay").fadeOut(500);
+    $(this).parent().parent().fadeOut(500);
+    $("#addFile").fadeOut(500);
+});
+$("#page-overlay").on("click", function() {
+    $(this).fadeOut(500);
+    $(".popup").fadeOut(500);
 });

@@ -1,7 +1,7 @@
 <!-- standard overlay -->
 <div id="page-overlay"></div>
 
-<div id="infoPopup">
+<div id="infoPopup" class="popup">
    <div class="popup-head">
       <h2>Klant wijzigen</h2>
    </div>
@@ -178,7 +178,7 @@
    </div>
 </div>
 
-<div id="editPopup">
+<div id="editPopup" class="popup">
    <div class="popup-head">
       <h2>Klantgegevens wijzigen</h2>
    </div>
@@ -217,7 +217,7 @@
          </div>
       </div>
    </div>
-   <div class="popup-section">
+   <div class="popup-section" >
       <div class="popup-section-head">
          <img src="elements/components/img/indicator-image-right.png" alt="" />
          <h2>AW gegevens</h2>
@@ -356,6 +356,95 @@
 </div>
 
 
+<div id="addAccountPopup" class="popup">
+   <div class="popup-head">
+      <h2>Account toevoegen</h2>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Algemene gegevens</h2>
+      </div>
+      <div class="popup-section-content">
+         <div class="row">
+            <p class="label">Gebruikersnaam</p>
+            <input type="text">
+         </div>
+         <div class="row">
+            <p class="label">Wachtwoord</p>
+            <input type="text">
+         </div>
+         <div class="row">
+            <p class="label">Naam</p>
+            <input type="text" optional="true">
+         </div>
+         <div class="row">
+            <p class="label">Tussenvoegsel</p>
+            <input type="text">
+         </div>
+         <div class="row">
+            <p class="label">Achternaam</p>
+            <input type="text">
+         </div>
+         <div class="row">
+            <p class="label">Geboortedatum</p>
+            <input type="text" value="DATEPICKER HIER ;')">
+         </div>
+         <div class="row">
+            <p class="label">&nbsp;</p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Contactgegevens</h2>
+      </div>
+      <div class="popup-section-content">
+        <div class="row">
+           <p class="label">E-mailadres</p>
+           <input type="text">
+        </div>
+        <div class="row">
+           <p class="label">Extra e-mailadres</p>
+           <input type="text" optional="true">
+        </div>
+        <div class="row">
+           <p class="label">Telefoonnummer</p>
+           <input type="text">
+        </div>
+        <div class="row">
+           <p class="label">Extra telefoonnummer</p>
+           <input type="text" optional="true">
+        </div>
+        <div class="row">
+           <p class="label">Mobielnummer</p>
+           <input type="text" optional="true">
+        </div>
+         <div class="row">
+            <p class="label">&nbsp;</p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Aanmaken</h2>
+      </div>
+      <div class="popup-section-content">
+        <div class="row flexible-height">
+           <p class="label">Opmerking</p><p class="label">&nbsp;</p>
+           <textarea placeholder="Dit vult u alleen in, als u het nodig acht."></textarea>
+        </div>
+        <div class="row">
+           <p class="label">&nbsp;</p>
+           <input type="button" value="Lid aanmaken">
+        </div>
+      </div>
+   </div>
+</div>
 
 
 

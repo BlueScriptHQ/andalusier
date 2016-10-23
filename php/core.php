@@ -33,6 +33,7 @@
       require "functions/members.php";
       require "functions/documents.php";
       require "functions/events.php";
+      require "functions/accounts.php";
       // require functions/register.php <- not being used atm
 
     /*

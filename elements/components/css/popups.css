@@ -7,7 +7,7 @@
   z-index: 2;
 }
 
-#infoPopup, #editPopup {
+#infoPopup, #editPopup, #addAccountPopup {
   display: none;
   width: 550px;
   height: 600px;

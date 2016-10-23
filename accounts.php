@@ -13,7 +13,8 @@
       require "elements/vendors.php";
     ?>
     <!-- page required scripts -->
-    <script src="js/ajax/log.accounts.js" charset="utf-8"></script>
+    <script src="js/ajax/accounts.ajax.js" charset="utf-8"></script>
+    <script src="js/controls/accounts.controls.js" charset="utf-8"></script>
 
     <?php
       // Algemene resources
@@ -25,7 +26,7 @@
 
     <?php
       require "elements/loader.php";
-      //require "elements/popups.php";
+      require "elements/components/popups.php";
       require "optional/comments.php";
     ?>
 
@@ -57,19 +58,16 @@
 
           </div>
 
-          <div id="members-table">
+          <div id="members-table" class="accounts-table">
             <div class="box-content">
               <div class="box-row">
                 <table>
-                    <tr>
+                    <tr class="accounts-tableHead">
+                      <th>#</th>
                       <th>Gebruikersnaam</th>
+                      <th>Naam</th>
                       <th>Type</th>
                       <th></th>
-                    </tr>
-                    <tr>
-                      <td>admin</td>
-                      <td>Administrator</td>
-                      <td>Edit</td>
                     </tr>
                 </table>
               </div>
