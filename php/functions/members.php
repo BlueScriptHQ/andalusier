@@ -58,7 +58,7 @@
 
   }
 
-  function getMembersInfo($dbHandler, $sequelHandler, $param){
+  function getMembersInfo($dbHandler, $param){
     $sql = "SELECT
     members.members_id, members_titles_content, members_name, members_tussenvoegsel, members_lastname, members_residence_street,
     members_residence_zip, members_residence_place, members_residence_country, DATE_FORMAT(members_birthdate, '%d-%m-%Y') AS members_birthdate, members_phonenr, members_phonenr2,

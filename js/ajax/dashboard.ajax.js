@@ -49,7 +49,7 @@ $(document).ready(function() {
 
         $("#acc_settings_loader").fadeIn(400);
 
-        callHandler.addCall("saveAccData", function() {
+        callHandler.addInvoked("saveAccData", function() {
 
           loadAccName();
           formatAccData();
@@ -65,7 +65,6 @@ $(document).ready(function() {
 
         }, dataArray);
 
-        callHandler.execute();
     };
 
     if ($("#notifications").length) {

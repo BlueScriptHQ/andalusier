@@ -4,7 +4,7 @@
     Open een map, door achter de sessie "documentsURL" de geselecteerde map naam te plakken.
   */
 
-  function openFolder($dbHandler, $sequelHandler, $param){
+  function openFolder($dbHandler, $param){
     if(valid($_SESSION["documentsURL"])){
       $_SESSION["documentsURL"] .= $param . "/";
     }
@@ -196,12 +196,13 @@
   }
 
 
-  function addFolder(){
+  function addFolder($dbHandler, $sequelHandler, $param){
     if(valid($_SESSION["documentsURL"])){
 
       // voordat hij wordt aangemaakt, de slashes verwijderen!
+      $stripped = str_replace('\\', '', str_replace('/', '', $param));
 
-      mkdir($_SESSION["documentsURL"].$_POST["requestFolderAdd"], 0700);
+      mkdir($_SESSION["documentsURL"].$stripped, 0700);
 
       // log
       $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
@@ -212,6 +213,6 @@
     }
   }
 
-  
+
 
 ?>

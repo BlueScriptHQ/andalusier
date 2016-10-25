@@ -1,6 +1,6 @@
 <?php
 
-	function checkLogin($dbHandler, $sequelHandler, $params){
+	function checkLogin($dbHandler, $params){
 			// Wait a bit.
 			sleep(3);
 

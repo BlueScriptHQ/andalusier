@@ -14,9 +14,12 @@
 </head>
 <body>
 
+  <?php require "elements/components/popups.php"; ?>
+
+<!--
   <div id="loading-box">
     <img src="img/other/loader.gif" alt="" />
-  </div>
+  </div>-->
 
   <div id="register-form">
     <form action="php/register.php" method="post">
@@ -125,7 +128,7 @@
           <p class="label">Aanmelden als:</p>
           <select class="type" name="">
             <option value="1">Januari</option>
-            
+
           </select>
         </div>
       </div>
