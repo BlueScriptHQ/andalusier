@@ -537,6 +537,7 @@
 
 
 <!-- requirements -->
+<link rel="stylesheet" href="css/popups_style.min.css" media="screen">
 <link rel="stylesheet" href="elements/components/css/popups.css" media="screen">
 <link rel="stylesheet" href="elements/components/css/check_radio.css" media="screen">
 <script src="elements/components/popups.js"></script>

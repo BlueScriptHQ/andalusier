@@ -51,7 +51,7 @@
 }
 
 .documents-popup-FolderFile .popup-content-h2 {
-	margin-top: 10px;
+	margin: 10px;
 }
 .documents-popup-FolderFile input[type=text] {
 	float: left;
@@ -107,6 +107,16 @@
 }
 .popup-head h2 {
   padding-left: 10px;
+}
+
+.popup-head a {
+  position: absolute;
+}
+
+.popup-head img {
+  width: 15px;
+  height: 15px;
+  margin: 10px;
 }
 
 .popup-section {
