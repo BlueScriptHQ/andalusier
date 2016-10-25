@@ -34,6 +34,7 @@
       require "functions/documents.php";
       require "functions/events.php";
       require "functions/accounts.php";
+      require "functions/adverts.php";
       // require functions/register.php <- not being used atm
 
     /*

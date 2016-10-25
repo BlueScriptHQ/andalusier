@@ -13,8 +13,7 @@
       require "elements/vendors.php";
     ?>
     <!-- page required scripts -->
-    <script src="js/ajax/accounts.ajax.js" charset="utf-8"></script>
-    <script src="js/controls/accounts.controls.js" charset="utf-8"></script>
+    <script src="js/ajax/adverts.ajax.js" charset="utf-8"></script>
 
     <?php
       // Algemene resources
@@ -58,14 +57,15 @@
 
           </div>
 
-          <div id="members-table" class="">
+          <div id="members-table">
             <div class="box-content">
               <div class="box-row">
                 <table>
-                    <tr class="accounts-tableHead">
+                    <tr class="adverts-tableHead">
                       <th>#</th>
                       <th>Naam</th>
                       <th>Soort</th>
+                      <th>Adverteerder</th>
                       <th>Status</th>
                       <th></th>
                     </tr>
@@ -74,8 +74,10 @@
                       <td>4</td>
                       <td>test</td>
                       <td>ldpelpde</td>
+                      <td></td>
                       <td>ok</td>
                       <td>open</td>
+
                     </tr>
                 </table>
               </div>
