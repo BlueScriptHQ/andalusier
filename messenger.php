@@ -22,6 +22,10 @@
     <script src="js/ajax/dashboard.ajax.js" charset="utf-8"></script>
     <script src="js/controls/dashboard.controls.js" charset="utf-8"></script>
 
+    <!-- Scripts -->
+    <script src="js/chat/controls.js" charset="utf-8"></script>
+    <script src="js/chat/ajax.js" charset="utf-8"></script>
+
     <?php
       // Algemene resources
       require "elements/resources.php";
@@ -86,8 +90,5 @@
       </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/chat/controls.js" charset="utf-8"></script>
-    <script src="js/chat/ajax.js" charset="utf-8"></script>
   </body>
 </html>

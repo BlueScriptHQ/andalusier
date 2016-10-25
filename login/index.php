@@ -5,6 +5,20 @@
   <title>Inloggen | Andalusier Vereniging</title>
   <link rel="stylesheet" href="../css/prefixes.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="../css/loginstyle.min.css" media="screen" charset="utf-8">
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="../js/assets/checks.js" charset="utf-8"></script>
+  <script src="../js/assets/variables.js" charset="utf-8"></script>
+  <script src="../js/assets/functions.js" charset="utf-8"></script>
+
+  <!-- AJAX handlers and events -->
+  <script src="../js/assets/callHandler.js" charset="utf-8"></script>
+  <script src="../js/ajax/general.ajax.js" charset="utf-8"></script>
+  <script src="../js/controls/general.controls.js" charset="utf-8"></script>
+
+  <script src="../js/ajax/login.ajax.js" charset="utf-8"></script>
+
+  <script src="../js/start.js" charset="utf-8"></script>
 
 </head>
   <body>
@@ -50,21 +64,5 @@
         </div>
       </div>
     </div>
-
-
-    <!-- scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="../js/assets/checks.js" charset="utf-8"></script>
-    <script src="../js/assets/variables.js" charset="utf-8"></script>
-    <script src="../js/assets/functions.js" charset="utf-8"></script>
-
-    <!-- AJAX handlers and events -->
-    <script src="../js/assets/callHandler.js" charset="utf-8"></script>
-    <script src="../js/ajax/general.ajax.js" charset="utf-8"></script>
-    <script src="../js/controls/general.controls.js" charset="utf-8"></script>
-
-    <script src="../js/ajax/login.ajax.js" charset="utf-8"></script>
-
-    <script src="../js/start.js" charset="utf-8"></script>
   </body>
 </html>
