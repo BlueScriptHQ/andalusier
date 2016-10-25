@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 25 okt 2016 om 20:05
+-- Gegenereerd op: 25 okt 2016 om 21:53
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -71,17 +71,6 @@ INSERT INTO `accounts_contact_info` (`accounts_id`, `accounts_email`, `accounts_
 (1, 'echtedata@gmail.com', 'test@gmail.com', '05245812892', '', '0612345679', ''),
 (2, 'karinkreeft8@hotmail.com', '', '91283798123', '', '', ''),
 (3, 'admin@test.com', '', '05245812897', '', '123213213', '');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `accounts_genders`
---
-
-CREATE TABLE `accounts_genders` (
-  `accounts_id` int(5) NOT NULL,
-  `accounts_genders_name` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -279,7 +268,6 @@ INSERT INTO `logs` (`logs_id`, `logs_date`, `logs_content`) VALUES
 
 CREATE TABLE `members` (
   `members_id` int(11) NOT NULL,
-  `members_approval` tinyint(1) NOT NULL DEFAULT '0',
   `members_onhold` tinyint(1) NOT NULL DEFAULT '1',
   `members_name` varchar(120) NOT NULL,
   `members_tussenvoegsel` varchar(20) DEFAULT NULL,
@@ -300,12 +288,12 @@ CREATE TABLE `members` (
 -- Gegevens worden geëxporteerd voor tabel `members`
 --
 
-INSERT INTO `members` (`members_id`, `members_approval`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_is_old`, `members_types_id`) VALUES
-(1, 0, 1, 'Petra', 'de', ' Boer', '1949-10-07', '2016-07-13 00:37:44', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 1),
-(2, 0, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-07-13 00:40:16', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
-(3, 0, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-07-13 01:14:08', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
-(4, 0, 1, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-07-13 00:54:10', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
-(6, 0, 1, 'Bert', '', 'Stapper', '1977-12-07', '2016-07-13 09:13:56', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4);
+INSERT INTO `members` (`members_id`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_is_old`, `members_types_id`) VALUES
+(1, 1, 'Petra', 'de', ' Boer', '1949-10-07', '2016-07-13 00:37:44', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 1),
+(2, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-07-13 00:40:16', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
+(3, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-07-13 01:14:08', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
+(4, 1, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-07-13 00:54:10', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(6, 1, 'Bert', '', 'Stapper', '1977-12-07', '2016-07-13 09:13:56', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4);
 
 -- --------------------------------------------------------
 
@@ -333,17 +321,6 @@ INSERT INTO `members_contact_info` (`members_id`, `members_email`, `members_emai
 (3, 's.stevens@outlook.com', 'moeder.stevens@yahoo.com', '0538-392919', '0538-392919', '06-38392919', NULL),
 (4, 'email@email.com', 'email2@email.com', '0923123123', '0923123123', '', NULL),
 (6, 'mail@mail.com', '', '0524581289', '0524581289', '', NULL);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `members_genders`
---
-
-CREATE TABLE `members_genders` (
-  `members_id` int(5) NOT NULL,
-  `members_genders_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -568,12 +545,6 @@ ALTER TABLE `accounts_contact_info`
   ADD PRIMARY KEY (`accounts_id`);
 
 --
--- Indexen voor tabel `accounts_genders`
---
-ALTER TABLE `accounts_genders`
-  ADD PRIMARY KEY (`accounts_id`);
-
---
 -- Indexen voor tabel `accounts_titles`
 --
 ALTER TABLE `accounts_titles`
@@ -610,12 +581,6 @@ ALTER TABLE `members`
 -- Indexen voor tabel `members_contact_info`
 --
 ALTER TABLE `members_contact_info`
-  ADD PRIMARY KEY (`members_id`);
-
---
--- Indexen voor tabel `members_genders`
---
-ALTER TABLE `members_genders`
   ADD PRIMARY KEY (`members_id`);
 
 --
@@ -677,11 +642,6 @@ ALTER TABLE `ranks_pages`
 ALTER TABLE `accounts`
   MODIFY `accounts_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT voor een tabel `accounts_genders`
---
-ALTER TABLE `accounts_genders`
-  MODIFY `accounts_id` int(5) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT voor een tabel `accounts_titles`
 --
 ALTER TABLE `accounts_titles`
@@ -726,12 +686,6 @@ ALTER TABLE `ranks`
 --
 
 --
--- Beperkingen voor tabel `accounts_genders`
---
-ALTER TABLE `accounts_genders`
-  ADD CONSTRAINT `acc_genders_acc` FOREIGN KEY (`accounts_id`) REFERENCES `accounts` (`accounts_id`);
-
---
 -- Beperkingen voor tabel `accounts_titles`
 --
 ALTER TABLE `accounts_titles`
@@ -756,12 +710,6 @@ ALTER TABLE `acc_ranks`
 --
 ALTER TABLE `members`
   ADD CONSTRAINT `members_types_foreign` FOREIGN KEY (`members_types_id`) REFERENCES `members_types` (`members_types_id`);
-
---
--- Beperkingen voor tabel `members_genders`
---
-ALTER TABLE `members_genders`
-  ADD CONSTRAINT `mem_genders_mem` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`);
 
 --
 -- Beperkingen voor tabel `members_titles`
