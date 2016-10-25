@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 okt 2016 om 19:57
+-- Gegenereerd op: 25 okt 2016 om 20:05
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -45,7 +45,7 @@ CREATE TABLE `accounts` (
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
 (1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-22 17:56:36', '2016-10-22 14:45:30'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
-(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator', '', 'Geen', '2016-10-11', '2016-10-22 17:56:49', '2016-10-22 18:44:38');
+(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-10-25 10:15:23', '2016-10-22 19:56:49');
 
 -- --------------------------------------------------------
 
@@ -265,7 +265,11 @@ INSERT INTO `logs` (`logs_id`, `logs_date`, `logs_content`) VALUES
 (91, '2016-07-13 09:33:02', 'Nieuwe map "\\werkt dit?" aangemaakt.'),
 (92, '2016-07-13 09:33:21', 'Bestand "werkt dit?" succesvol verwijderd.'),
 (93, '2016-08-30 08:51:55', 'Lid gegevens voor Saskia Stevens aangepast.'),
-(94, '2016-09-04 23:10:37', 'Bestand "Pura PasiÃ³n adverteerders 2016.xlsx" hernoemd naar "Pura PasiÃ³n adverteerders 2016.xlsx".');
+(94, '2016-09-04 23:10:37', 'Bestand "Pura PasiÃ³n adverteerders 2016.xlsx" hernoemd naar "Pura PasiÃ³n adverteerders 2016.xlsx".'),
+(95, '2016-10-25 12:48:19', 'Nieuwe map "test" aangemaakt.'),
+(96, '2016-10-25 12:49:09', 'Nieuwe map "test123" aangemaakt.'),
+(97, '2016-10-25 12:49:24', 'Nieuwe map "test12323123" aangemaakt.'),
+(98, '2016-10-25 12:56:41', 'Nieuwe map "test1234" aangemaakt.');
 
 -- --------------------------------------------------------
 
@@ -686,7 +690,7 @@ ALTER TABLE `accounts_titles`
 -- AUTO_INCREMENT voor een tabel `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `logs_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `logs_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 --
 -- AUTO_INCREMENT voor een tabel `members`
 --
