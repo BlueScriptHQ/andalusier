@@ -195,4 +195,23 @@
     return $structure;
   }
 
+
+  function addFolder(){
+    if(valid($_SESSION["documentsURL"])){
+
+      // voordat hij wordt aangemaakt, de slashes verwijderen!
+
+      mkdir($_SESSION["documentsURL"].$_POST["requestFolderAdd"], 0700);
+
+      // log
+      $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
+      $query = $conn->prepare($sql);
+      $result = $query->execute(array(
+       ":message" => "Nieuwe map \"".$_POST["requestFolderAdd"]. "\" aangemaakt."
+     ));
+    }
+  }
+
+  
+
 ?>
