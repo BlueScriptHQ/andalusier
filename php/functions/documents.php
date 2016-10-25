@@ -176,7 +176,7 @@
           <td class='alignCenter'>
 
           </td>
-          <td>".makeUTF8($files[$i])."</td>
+          <td>".$files[$i]."</td>
           <td class='alignCenter'>".$extn."</td>
           <td class='alignCenter'>".$size."</td>
           <td class='alignCenter'>".date("d-m-y H:i:s",  filemtime($directory.$files[$i]))."</td>
