@@ -23,6 +23,31 @@ $(document).ready(function() {
         $("#hiddenAddFile").trigger("click");
     });
 
+    // popup button
+    $("#addAFolder").on("click", function() {
+        $fName = $("#make_folder").val();
+        if ($fName === "") {
+            alert("Mapnaam mag niet leeg zijn!");
+            return false;
+        } else {
+            saveFolder($fName);
+        }
+    });
+
+    // tabel button
+    window.deleteFF = function(name) {
+        $("#page-overlay").fadeIn(500);
+        $("#deleteFolderFile").fadeIn(500);
+        $("#deleteFolderFile input[type=hidden]").val(name);
+    };
+
+    // popup button
+    $("#deleteFF").on("click", function() {
+        var fName = $("#deleteFolderFile input[type=hidden]").val();
+        deleteFileFolder(fName);
+    });
+
+
     $('#hiddenAddFile').click(function(e) {
         e.stopImmediatePropagation();
     });

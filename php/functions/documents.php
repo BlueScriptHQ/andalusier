@@ -196,20 +196,57 @@
   }
 
 
-  function addFolder($dbHandler, $sequelHandler, $param){
+  // het toevoegen van een mapje
+  function addFolder($dbHandler, $param){
     if(valid($_SESSION["documentsURL"])){
 
       // voordat hij wordt aangemaakt, de slashes verwijderen!
       $stripped = str_replace('\\', '', str_replace('/', '', $param));
 
-      mkdir($_SESSION["documentsURL"].$stripped, 0700);
+      if(!file_exists($_SESSION["documentsURL"].$stripped)){
+        mkdir($_SESSION["documentsURL"].$stripped, 0700);
+      } else {
+        return "exists";
+      }
+
 
       // log
       $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
-      $query = $conn->prepare($sql);
-      $result = $query->execute(array(
-       ":message" => "Nieuwe map \"".$_POST["requestFolderAdd"]. "\" aangemaakt."
+      $dbHandler->handleQuery($sql, array(
+       ":message" => "Nieuwe map \"".$stripped. "\" aangemaakt."
      ));
+    }
+  }
+
+  function deleteFileFolder($dbHandler, $param){
+    if(is_dir($_SESSION["documentsURL"].$param)){
+      if (is_dir_empty($_SESSION["documentsURL"].$param)) {
+        rmdir($_SESSION["documentsURL"].$param);
+
+        // log
+        $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
+        $dbHandler->processQuery($sql, array(
+         ":message" => "Map \"".$param. "\" succesvol verwijderd."
+        ));
+      } else{
+        $dirname = $_SESSION["documentsURL"].$param;
+        array_map('unlink', glob("$dirname/*.*"));
+        rmdir($_SESSION["documentsURL"].$param);
+
+        // log
+        $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
+        $dbHandler->processQuery($sql, array(
+         ":message" => "Map \"".$_POST["requestFFDelete"]. "\" met inhoud succesvol verwijderd."
+        ));
+      }
+
+    } else {
+      unlink($_SESSION["documentsURL"].$param);
+      // log
+      $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
+      $dbHandler->processQuery($sql, array(
+       ":message" => "Bestand \"".$param. "\" succesvol verwijderd."
+      ));
     }
   }
 

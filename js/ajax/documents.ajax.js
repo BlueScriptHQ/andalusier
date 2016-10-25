@@ -35,27 +35,19 @@ $(document).ready(function() {
 
     };
 
-    $("#addAFolder").on("click", function() {
-        $fName = $("#make_folder").val();
-        if ($fName === "") {
-            alert("Mapnaam mag niet leeg zijn!");
-            return false;
-        } else {
-            $("#page-overlay").fadeOut(500);
-            $("#addFolder").fadeOut(500);
-            saveFolder($fName);
-        }
-    });
 
     window.saveFolder = function(fName) {
-        $.ajax({
-            url: "php/documents.php",
-            data: "requestFolderAdd=" + fName,
-            method: "POST",
-            success: function() {
-                loadDocuments();
-            }
-        });
+
+      callHandler.addInvoked("addFolder", function(r){
+        if(r === "exists"){
+          alert("Deze map bestaat al!");
+          return false;
+        }
+        loadDocuments(true);
+        $("#page-overlay").fadeOut(500);
+        $("#addFolder").fadeOut(500);
+      }, fName);
+
     };
 
     window.renameFF = function(name) {
@@ -81,24 +73,12 @@ $(document).ready(function() {
         });
     });
 
-    window.deleteFF = function(name) {
-        $("#page-overlay").fadeIn(500);
-        $("#deleteFolderFile").fadeIn(500);
-        $("#deleteFolderFile input[type=hidden]").val(name);
+    window.deleteFileFolder = function(fName){
+      callHandler.addInvoked("deleteFileFolder", function(){
+        loadDocuments(true);
+        $("#page-overlay").fadeOut(500);
+        $("#deleteFolderFile").fadeOut(500);
+      }, fName);
     };
-
-    $("#deleteFF").on("click", function() {
-        var fName = $("#deleteFolderFile input[type=hidden]").val();
-        $.ajax({
-            url: "php/documents.php",
-            data: "requestFFDelete=" + fName,
-            method: "POST",
-            success: function() {
-                $("#page-overlay").fadeOut(500);
-                $("#deleteFolderFile").fadeOut(500);
-                loadDocuments();
-            }
-        });
-    });
 
 });

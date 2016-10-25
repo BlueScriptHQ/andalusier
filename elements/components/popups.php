@@ -449,7 +449,7 @@
 
 
 
-<div id="critical-error">
+<div id="critical-error" class="popup">
   <div class="popup-head">
     <h2>Kritieke fout</h2>
   </div>
@@ -465,7 +465,7 @@
   </div>
 </div>
 
-<div class="documents-popup-FolderFile" id="addFolder">
+<div class="documents-popup-FolderFile popup" id="addFolder">
   <div class="popup-head">
     <h2>Map aanmaken</h2>
     <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
@@ -481,7 +481,7 @@
   </div>
 </div>
 
-<div class="documents-popup-FolderFile" id="addFile">
+<div class="documents-popup-FolderFile popup" id="addFile">
   <form id="fileUploadForm" action="php/documents.php" enctype="multipart/form-data" method="post">
     <input type="file" id="hiddenAddFile" name="fileToUpload" style="display: none;" value="">
     <div class="popup-head">
@@ -502,7 +502,7 @@
   </form>
 </div>
 
-<div class="documents-popup-FolderFile" id="editFolderFile">
+<div class="documents-popup-FolderFile popup" id="editFolderFile" class="popup">
   <input type="hidden" value="">
   <div class="popup-head">
     <h2>Naam veranderen</h2>
@@ -519,7 +519,7 @@
   </div>
 </div>
 
-<div class="documents-popup-FolderFile" id="deleteFolderFile">
+<div class="documents-popup-FolderFile popup" id="deleteFolderFile">
   <input type="hidden" value="">
   <div class="popup-head">
     <h2>Verwijderen</h2>
