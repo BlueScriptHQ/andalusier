@@ -74,7 +74,7 @@ $(document).ready(function() {
     });
 
     window.deleteFileFolder = function(fName){
-      callHandler.addInvoked("deleteFileFolder", function(){
+      callHandler.addInvoked("deleteFileFolder", function(r){
         loadDocuments(true);
         $("#page-overlay").fadeOut(500);
         $("#deleteFolderFile").fadeOut(500);

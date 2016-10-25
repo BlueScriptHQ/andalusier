@@ -19,7 +19,7 @@
 
     require "assets/connection.php";
     require "assets/handlers/databaseHandler.php";
-    require "assets/handlers/sequelHandler.php";
+    require "assets/handlers/logHandler.php";
 
     /*
       All functions that can be called using the callHandler

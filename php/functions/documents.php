@@ -176,7 +176,7 @@
           <td class='alignCenter'>
 
           </td>
-          <td>".$files[$i]."</td>
+          <td>".makeUTF8($files[$i])."</td>
           <td class='alignCenter'>".$extn."</td>
           <td class='alignCenter'>".$size."</td>
           <td class='alignCenter'>".date("d-m-y H:i:s",  filemtime($directory.$files[$i]))."</td>
@@ -196,7 +196,10 @@
   }
 
 
-  // het toevoegen van een mapje
+  /*
+    Voeg een nieuw mapje toe
+  */
+
   function addFolder($dbHandler, $param){
     if(valid($_SESSION["documentsURL"])){
 
@@ -218,38 +221,60 @@
     }
   }
 
-  function deleteFileFolder($dbHandler, $param){
-    if(is_dir($_SESSION["documentsURL"].$param)){
-      if (is_dir_empty($_SESSION["documentsURL"].$param)) {
-        rmdir($_SESSION["documentsURL"].$param);
+  /*
+    Verwijder een bestand of map
+  */
 
-        // log
-        $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
-        $dbHandler->processQuery($sql, array(
-         ":message" => "Map \"".$param. "\" succesvol verwijderd."
-        ));
-      } else{
-        $dirname = $_SESSION["documentsURL"].$param;
-        array_map('unlink', glob("$dirname/*.*"));
-        rmdir($_SESSION["documentsURL"].$param);
 
-        // log
-        $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
-        $dbHandler->processQuery($sql, array(
-         ":message" => "Map \"".$_POST["requestFFDelete"]. "\" met inhoud succesvol verwijderd."
-        ));
+  function deleteFileFolder($dbHandler, $param, $logHandler){
+
+    if(valid($_SESSION["documentsURL"])){
+      /*
+        Check eerst of het een bestand is of een map
+      */
+
+      // NOTE: for some reason, moet het bestandspad naar kleine letters.. Hier moet nog even naar worden gekeken!
+
+      if(is_dir(strtolower($_SESSION["documentsURL"].$param))){
+
+        $param = makeUTF8($param);
+        /*
+          Zoja, check of het bestand leeg is
+        */
+        if (is_dir_empty($_SESSION["documentsURL"].$param)) {
+          /*
+            Het mapje is leeg.
+          */
+          rmdir($_SESSION["documentsURL"].$param);
+
+          $logHandler->addMessage("Map \"".$param. "\" succesvol verwijderd.");
+
+        } else {
+          /*
+            Het mapje is niet leeg, verwijder alle bestanden.
+          */
+          $dirname = $_SESSION["documentsURL"].$param;
+          array_map('unlink', glob("$dirname/*.*"));
+          rmdir($_SESSION["documentsURL"].$param);
+
+          $logHandler->addMessage("Map \"".$param. "\" met inhoud succesvol verwijderd.");
+        }
+      } else {
+        /*
+          Het is een bestand
+        */
+        if(file_exists(strtolower($_SESSION["documentsURL"].$param))){
+          unlink($_SESSION["documentsURL"].$param);
+
+          // log
+          $logHandler->addMessage("Map \"".$param. "\" met inhoud succesvol verwijderd.");
+        } else {
+          // er ging iets fout
+        }
       }
 
-    } else {
-      unlink($_SESSION["documentsURL"].$param);
-      // log
-      $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
-      $dbHandler->processQuery($sql, array(
-       ":message" => "Bestand \"".$param. "\" succesvol verwijderd."
-      ));
     }
+
   }
-
-
 
 ?>
