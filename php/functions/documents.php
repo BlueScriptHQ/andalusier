@@ -269,11 +269,37 @@
           // log
           $logHandler->addMessage("Map \"".$param. "\" met inhoud succesvol verwijderd.");
         } else {
-          // er ging iets fout
+          // Hmm, lijkt erop dat er iets mis gaat.
         }
       }
 
     }
+
+  }
+
+
+  /*
+    Verander de naam van een bestand of map
+  */
+  function changeNameFF($d, $data){
+    if(valid($_SESSION["documentsURL"])){
+      $old = $data->old;
+      $new = $data->new;
+
+      // Kijk of het een map is, zoja dan heeft dit geen extensie. Is het een bestand, pak dan die extensie.
+      $old_extension = (strpos($old, '.') !== false) ? substr($old, strrpos($old, '.')) : '';
+
+      $new_file_name = $new.$old_extension;
+
+      // verander nu het oude bestand naar het nieuwe bestand
+
+      
+      // het bestand is ineens weg, en hij hernoemd niet goed...
+      rename(strtolower($_SESSION["documentsURL"].$old), $new_file_name);
+    }
+
+
+
 
   }
 

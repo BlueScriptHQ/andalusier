@@ -47,6 +47,27 @@ $(document).ready(function() {
         deleteFileFolder(fName);
     });
 
+    window.renameFF = function(name) {
+        $("#page-overlay").fadeIn(500);
+        $("#editFolderFile").fadeIn(500);
+        // haal de extensie weg als het een bestand is.
+        var stripped_name = (name.indexOf(".") === -1) ? name : name.substring(0, name.lastIndexOf("."));
+        $("#editFolderFile .popup-content-h2").text("Huidige naam: " + stripped_name);
+        $("#editFolderFile #edit_folder").val(stripped_name);
+        $("#editFolderFile input[type=hidden]").val(name);
+    };
+
+    $("#renameFF").on("click", function() {
+        var oud = $("#editFolderFile input[type=hidden]").val();
+        var nieuw = $("#editFolderFile #edit_folder").val();
+        var object = {
+            old: oud,
+            new: nieuw
+        };
+
+        changeName(object);
+    });
+
 
     $('#hiddenAddFile').click(function(e) {
         e.stopImmediatePropagation();

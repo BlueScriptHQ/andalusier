@@ -38,47 +38,34 @@ $(document).ready(function() {
 
     window.saveFolder = function(fName) {
 
-      callHandler.addInvoked("addFolder", function(r){
-        if(r === "exists"){
-          alert("Deze map bestaat al!");
-          return false;
-        }
-        loadDocuments(true);
-        $("#page-overlay").fadeOut(500);
-        $("#addFolder").fadeOut(500);
-      }, fName);
-
-    };
-
-    window.renameFF = function(name) {
-        $("#page-overlay").fadeIn(500);
-        $("#editFolderFile").fadeIn(500);
-        $("#editFolderFile .popup-content-h2").text("Huidige naam: " + name);
-        $("#editFolderFile #edit_folder").val(name);
-        $("#editFolderFile input[type=hidden]").val(name);
-    };
-
-    $("#renameFF").on("click", function() {
-        var oud = $("#editFolderFile input[type=hidden]").val();
-        var nieuw = $("#editFolderFile #edit_folder").val();
-        $.ajax({
-            url: "php/documents.php",
-            data: "requestFFRename=" + oud + "&newFileName=" + nieuw,
-            method: "POST",
-            success: function() {
-                $("#page-overlay").fadeOut(500);
-                $("#editFolderFile").fadeOut(500);
-                loadDocuments();
+        callHandler.addInvoked("addFolder", function(r) {
+            if (r === "exists") {
+                alert("Deze map bestaat al!");
+                return false;
             }
-        });
-    });
+            loadDocuments(true);
+            $("#page-overlay").fadeOut(500);
+            $("#addFolder").fadeOut(500);
+        }, fName);
 
-    window.deleteFileFolder = function(fName){
-      callHandler.addInvoked("deleteFileFolder", function(r){
-        loadDocuments(true);
-        $("#page-overlay").fadeOut(500);
-        $("#deleteFolderFile").fadeOut(500);
-      }, fName);
+    };
+
+    window.changeName = function(object) {
+
+        callHandler.addInvoked("changeNameFF", function(r) {
+
+            alert(r);
+
+        }, object);
+
+    };
+
+    window.deleteFileFolder = function(fName) {
+        callHandler.addInvoked("deleteFileFolder", function(r) {
+            loadDocuments(true);
+            $("#page-overlay").fadeOut(500);
+            $("#deleteFolderFile").fadeOut(500);
+        }, fName);
     };
 
 });
