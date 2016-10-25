@@ -4,7 +4,8 @@ $(document).ready(function(){
   	$id = id;
 
 		callHandler.addInvoked("getOldAdvertInfo", function(result){
-    	alert(result);
+    	$obj = JSON.parse(result);
+			console.log($obj.adverts_name);
     }, $id);
   };
 

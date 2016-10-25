@@ -1,7 +1,7 @@
 <?php
 
   function getAdvertsTable($dbHandler){
-      $sql = "SELECT * FROM adverts WHERE adverts_old = 0";
+    $sql = "SELECT * FROM adverts WHERE adverts_old = 0";
     $data = $dbHandler->handleQuery($sql, false, true);
 
     $html = "";
@@ -24,6 +24,13 @@
 
     return $html;
 
+  }
+
+  function getAdvertsInfo($dbHandler, $id){
+    $sql = "SELECT * FROM adverts WHERE adverts_id = :id";
+    $data = $dbHandler->handleQuery($sql, array(":id"=> $id));
+
+    return json_encode($data);
   }
 
 ?>

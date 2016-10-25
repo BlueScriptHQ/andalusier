@@ -27,7 +27,13 @@
   }
 
   function getOldAdvertInfo($dbHandler, $id){
-    return "Uw ID is $id";
+
+
+    $sql = "SELECT * FROM adverts WHERE adverts_id = :id";
+    $data = $dbHandler->handleQuery($sql, array(":id"=> $id));
+
+    return json_encode($data);
+
   }
 
 ?>
