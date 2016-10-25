@@ -13,6 +13,7 @@
       require "elements/vendors.php";
     ?>
     <!-- page required scripts -->
+    <script src="js/adverts_controls.js" charset="utf-8"></script>
     <script src="js/ajax/adverts.ajax.js" charset="utf-8"></script>
 
     <?php
