@@ -4,7 +4,7 @@
     Open een map, door achter de sessie "documentsURL" de geselecteerde map naam te plakken.
   */
 
-  function openFolder($dbHandler, $sequelHandler, $param){
+  function openFolder($dbHandler, $param){
     if(valid($_SESSION["documentsURL"])){
       $_SESSION["documentsURL"] .= $param . "/";
     }

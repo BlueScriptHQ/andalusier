@@ -1,7 +1,7 @@
 <?php
 
   // load account data
-  function getAccountData($dbHandler, $sequelHandler){
+  function getAccountData($dbHandler){
     if(valid($_SESSION["loggeduserid"])){
       $sql = "SELECT
       accounts_name,accounts_tussenvoegsel,
@@ -20,7 +20,7 @@
     }
   }
 
-  function saveAccData($dbHandler, $sequelHandler, $param){
+  function saveAccData($dbHandler, $param){
     if(valid($param) && valid($_SESSION["loggeduserid"])){
       $sql = "UPDATE
       accounts acc

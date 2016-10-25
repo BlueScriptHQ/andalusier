@@ -24,12 +24,11 @@
     public function parseCalls($callArray){
       for ($i=0; $i < count($callArray); $i++) {
         global $dbHandler;
-        global $sequelHandler;
         if(function_exists($callArray[$i]->call)){
           if(property_exists($callArray[$i], 'callParameters')){
-            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $dbHandler, $sequelHandler, $callArray[$i]->callParameters)];
+            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $dbHandler, $callArray[$i]->callParameters)];
           } else {
-            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $dbHandler, $sequelHandler)];
+            $this->results[$callArray[$i]->call] = (object) ['result' => call_user_func($callArray[$i]->call, $dbHandler)];
           }
         } else {
           $this->results[$callArray[$i]->call] = (object) ['result' => null];

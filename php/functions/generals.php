@@ -15,23 +15,9 @@
     } else { return "Gebruiker"; }
   }
 
-  function getMenu($dbHandler, $sequelHandler){
+  function getMenu($dbHandler){
     if(valid($_SESSION["loggeduserid"])) {
-
-      $sql = $sequelHandler->generateSequel(
-      "SELECT",
-      array("pages.pages_id", "pages_name", "pages_parentid", "pages_iscontroller", "pages_url"),
-      "acc_ranks",
-      array("ranks" =>
-              "acc_ranks.ranks_id = ranks.ranks_id",
-            "ranks_pages"
-                   => "ranks.ranks_id = ranks_pages.ranks_id",
-            "pages"
-                   =>
-                      "ranks_pages.pages_id = pages.pages_id"),
-      array('acc_ranks.accounts_id' => 'id')
-      );
-
+      $sql = "SELECT pages.pages_id, pages_name, pages_parentid, pages_iscontroller, pages_url FROM acc_ranks INNER JOIN ranks ON acc_ranks.ranks_id = ranks.ranks_id INNER JOIN ranks_pages ON ranks.ranks_id = ranks_pages.ranks_id INNER JOIN pages ON ranks_pages.pages_id = pages.pages_id WHERE acc_ranks.accounts_id = :id";
       $fetchedResults = $dbHandler->handleQuery($sql, array(':id' => $_SESSION["loggeduserid"]), true, PDO::FETCH_OBJ);
       $structure = "";
       $hierarchy = array();
