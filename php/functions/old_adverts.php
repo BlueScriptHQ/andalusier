@@ -1,7 +1,7 @@
 <?php
 
-  function getAdvertsTable($dbHandler){
-      $sql = "SELECT * FROM adverts WHERE adverts_old = 0";
+  function getOldAdvertsTable($dbHandler){
+    $sql = "SELECT * FROM adverts WHERE adverts_old = 1";
     $data = $dbHandler->handleQuery($sql, false, true);
 
     $html = "";
@@ -24,6 +24,10 @@
 
     return $html;
 
+  }
+
+  function getOldAdvertInfo($dbHandler, $id){
+    return "Uw ID is $id";
   }
 
 ?>
