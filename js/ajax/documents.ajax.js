@@ -61,11 +61,15 @@ $(document).ready(function() {
     };
 
     window.deleteFileFolder = function(fName) {
-        callHandler.addInvoked("deleteFileFolder", function(r) {
-            loadDocuments(true);
-            $("#page-overlay").fadeOut(500);
-            $("#deleteFolderFile").fadeOut(500);
-        }, fName);
-    };
+       callHandler.addInvoked("deleteFileFolder", function(r) {
+         if(r === "not_empty"){
+           $("#deleteFolderPerm").show();
+           return false;
+         }
+         loadDocuments(true);
+         $("#page-overlay").fadeOut(500);
+         $("#deleteFolderFile").fadeOut(500);
+       }, fName);
+   };
 
 });

@@ -253,11 +253,7 @@
           /*
             Het mapje is niet leeg, verwijder alle bestanden.
           */
-          $dirname = $_SESSION["documentsURL"].$param;
-          array_map('unlink', glob("$dirname/*.*"));
-          rmdir($_SESSION["documentsURL"].$param);
-
-          $logHandler->addMessage("Map \"".$param. "\" met inhoud succesvol verwijderd.");
+          return "not_empty";
         }
       } else {
         /*
@@ -275,6 +271,14 @@
 
     }
 
+  }
+
+  function deletePerm($d, $param, $logHandler){
+    $dirname = $_SESSION["documentsURL"].$param;
+    array_map('unlink', glob("$dirname/*.*"));
+    rmdir($_SESSION["documentsURL"].$param);
+
+    $logHandler->addMessage("Map \"".$param. "\" met inhoud succesvol verwijderd.");
   }
 
 

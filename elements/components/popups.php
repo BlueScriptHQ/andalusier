@@ -503,6 +503,7 @@
       </div>
    </form>
 </div>
+
 <div class="documents-popup-FolderFile popup" id="editFolderFile" class="popup">
    <input type="hidden" value="">
    <div class="popup-head">
@@ -519,6 +520,7 @@
       <input type="button" class="folder_file_btn" id="renameFF" value="Wijzigen">
    </div>
 </div>
+
 <div class="documents-popup-FolderFile popup" id="deleteFolderFile">
    <input type="hidden" value="">
    <div class="popup-head">
@@ -532,6 +534,21 @@
       <input type="button" class="folder_file_btn delete" id="deleteFF" value="Verwijderen">
    </div>
 </div>
+
+<div class="documents-popup-FolderFile popup" id="deleteFolderPerm">
+   <input type="hidden" value="">
+   <div class="popup-head">
+      <h2>Verwijderen</h2>
+      <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
+   </div>
+   <div class="popup-content">
+      <h2 class="popup-content-h2">Deze map bevat bestanden, alsnog verwijderen?</h2>
+   </div>
+   <div class="popup-row">
+      <input type="button" class="folder_file_btn delete" id="deleteFP" value="Verwijderen">
+   </div>
+</div>
+
 <!-- PopUp adverts -->
 <div id="popupAdvertExtraInfo" class="popup">
    <div class="popup-head">
