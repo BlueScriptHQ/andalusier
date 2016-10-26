@@ -31,5 +31,22 @@ $(document).ready(function(){
 		$(".btn_save").show();
 	});
 
+	$("#page-overlay, .popup_close").on("click", function(){
+			$(".btn_edit").show();
+			$(".btn_save").hide();
+			addDisable("#popupAdvertExtraInfo");
+		});
+
+		$(".btn_save").on("click", function(){
+			$(".btn_save").hide();
+			$(".btn_edit").show();
+			addDisable("#popupAdvertExtraInfo");
+			var object = buildObject("#popupAdvertExtraInfo");
+
+
+			callHandler.addInvoked("advertsExtraInfoHandlerNew", function(result){
+				location.reload();
+			}, object);
+		});
 
 });
