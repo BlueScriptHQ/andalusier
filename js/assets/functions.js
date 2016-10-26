@@ -44,4 +44,19 @@ $(document).ready(function() {
         });
     };
 
+    window.buildObject = function buildObject(element){
+      var object = {};
+
+  		$(element + " input[type=text], textarea").each(function(){
+        // object vullen
+        var value = $(this).val();
+        var name = $(this).attr("name");
+        object[name] = value;
+
+      });
+  		return object;
+
+    }
+
+
 });

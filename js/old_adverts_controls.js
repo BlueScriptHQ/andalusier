@@ -18,6 +18,7 @@ $(document).ready(function(){
 				$(".advertsphone").val($obj.adverts_telephone);
 				$(".advertsbank").val($obj.adverts_bank);
 				$(".advertsbillingnumber").val($obj.adverts_billingnumber);
+				$(".advertsdate").val($obj.adverts_date);
 				addDisable("#popupAdvertExtraInfo");
 
 				$("#page-overlay").fadeIn(400);
@@ -31,5 +32,19 @@ $(document).ready(function(){
 		$(".btn_save").show();
 	});
 
+	$("#page-overlay, .popup_close").on("click", function(){
+		$(".btn_edit").show();
+		$(".btn_save").hide();
+		addDisable("#popupAdvertExtraInfo");
+	});
 
+	$(".btn_save").on("click", function(){
+		$(".btn_save").hide();
+		$(".btn_edit").show();
+		addDisable("#popupAdvertExtraInfo");
+		var object = buildObject("#popupAdvertExtraInfo");
+		callHandler.addInvoked("advertsExtraInfoHandler", function(result){
+			alert(result);
+		}, object);
+	});
 });

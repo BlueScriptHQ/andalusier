@@ -542,7 +542,7 @@
   <div class="popup-content">
       <div class="popup-row">
       <p class="label">Advertentie nummer:</p>
-      <input type="text" placeholder="Advertentienummer" class="advertsnumber" name="adverts_number" value="">
+      <input type="text" placeholder="Advertentienummer" class="advertsnumber" name="adverts_id" value="">
       </div>
       <br>
       <div class="popup-row">
@@ -591,10 +591,14 @@
       </div>
       <br>
       <div class="popup-row">
-      <p class="label">Adverteerders telefoon</p>
+      <p class="label">Adverteerders telefoon:</p>
       <input type="text" placeholder="Adverteerdertelefoon" class="advertsphone" name="adverts_phone" value="">
       </div>
       <br>
+      <div class="popup-row">
+      <p class="label">Advertentie startdatum:</p>
+      <input type="text" placeholder="Advertentiestartdatum" class="advertsdate" name="adverts_date" value="">
+      </div>
       <!--
       <div class="popup-row">
       <p class="label">Adverteerders bank:</p>
