@@ -542,7 +542,7 @@
   <div class="popup-content">
       <div class="popup-row">
       <p class="label">Advertentie nummer:</p>
-      <input type="text" placeholder="Advertentienummer" class="advertsnumber" name="adverts_number" value="">
+      <input type="text" placeholder="Advertentienummer" class="advertsnumber" name="adverts_id" value="">
       </div>
       <br>
       <div class="popup-row">
@@ -552,7 +552,11 @@
       <br>
       <div class="popup-row">
       <p class="label">Advertentie soort:</p>
-      <input type="text" placeholder="Advertentiesoort" class="advertstype" name="adverts_type" value="">
+      <select name="adverts_type" class="advertstype">
+        <option value="Half">Half</option>
+        <option value="Heel">Heel</option>
+        <option value="Kwart">Kwart</option>
+      </select>
       </div>
       <br>
       <div class="popup-row">
@@ -591,10 +595,14 @@
       </div>
       <br>
       <div class="popup-row">
-      <p class="label">Adverteerders telefoon</p>
+      <p class="label">Adverteerders telefoon:</p>
       <input type="text" placeholder="Adverteerdertelefoon" class="advertsphone" name="adverts_phone" value="">
       </div>
       <br>
+      <div class="popup-row">
+      <p class="label">Advertentie startdatum:</p>
+      <input type="text" placeholder="Advertentiestartdatum" class="advertsdate" name="adverts_date" value="">
+      </div>
       <!--
       <div class="popup-row">
       <p class="label">Adverteerders bank:</p>
@@ -607,6 +615,7 @@
       </div>
     -->
     <br>
+    <p id="status" class="label"></p>
     <input id="edit-popupExtra-btn" type="button" class="btn_edit" value="Wijzigen">
     <input id="save-popupExtra-btn" type="button" class="btn_save" value="Opslaan">
   </div>

@@ -61,6 +61,7 @@ $(document).ready(function() {
 
       callHandler.addInvoked("getMembersInfo", function(r){
         console.log(r);
+        $("#editPopup, #page_overlay").fadeIn(400);
       }, customerID);
 
     };
