@@ -31,6 +31,7 @@
 
 .btn_save {
   display: none;
+  border: 0;
   height: 40px;
   background-color: #990909;
   color: white;
