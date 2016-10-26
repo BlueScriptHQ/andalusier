@@ -62,13 +62,14 @@
                       <th>Type</th>
                       <th>Email</th>
                       <th class="controls"></th>
+                      <th></th>
+                      <th></th>
                     </tr>
-                    <!--DUMMY INFO, NEEDS TO BE REPLACED!!!-->
+                    <!--td's worden aangeroepen in functions/members_accept.php-->
                 </table>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
