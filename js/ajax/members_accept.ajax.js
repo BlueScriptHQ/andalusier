@@ -34,6 +34,7 @@ $(document).ready(function() {
       };
       callHandler.addInvoked("acceptMember", function(){
         //reload table when deleted or accepted a member
+        loadMenu();
         loadTable(true);
       }, object);
     };

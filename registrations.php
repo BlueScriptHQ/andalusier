@@ -34,6 +34,7 @@
       <script type="text/javascript">
         // page config
         $pageTitle = "Aanmeldingen";
+        $membersActive = true;
       </script>
       <!-- header section -->
       <?php

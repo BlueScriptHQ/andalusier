@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 
 
-    window.loadMenu = function() {
+    window.loadMenu = function(invoked) {
         if ($("#side-menu").length) {
             callHandler.addCall("getMenu", function(e) {
                 $("#side-menu ul").css("display", "none");
