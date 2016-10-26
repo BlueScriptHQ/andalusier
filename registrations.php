@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <title>Andalusier | Leden Accepteren</title>
+    <title>Andalusier | Aanmeldingen</title>
 
     <?php
       // Vendor scripts (externe libraries: jQuery etc)
@@ -33,7 +33,7 @@
     <div id="page-wrapper">
       <script type="text/javascript">
         // page config
-        $pageTitle = "Leden accepteren";
+        $pageTitle = "Aanmeldingen";
       </script>
       <!-- header section -->
       <?php

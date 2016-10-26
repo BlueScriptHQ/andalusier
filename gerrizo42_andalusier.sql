@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 25 okt 2016 om 21:53
+-- Gegenereerd op: 26 okt 2016 om 12:12
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -43,7 +43,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
-(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-22 17:56:36', '2016-10-22 14:45:30'),
+(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-26 07:05:07', '2016-10-22 19:56:36'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
 (3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-10-25 10:15:23', '2016-10-22 19:56:49');
 
@@ -289,11 +289,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`members_id`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_is_old`, `members_types_id`) VALUES
-(1, 1, 'Petra', 'de', ' Boer', '1949-10-07', '2016-07-13 00:37:44', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 1),
-(2, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-07-13 00:40:16', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
-(3, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-07-13 01:14:08', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
-(4, 1, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-07-13 00:54:10', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
-(6, 1, 'Bert', '', 'Stapper', '1977-12-07', '2016-07-13 09:13:56', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4);
+(2, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-10-26 09:57:48', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
+(3, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-10-26 09:57:58', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
+(4, 0, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-10-26 09:57:16', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(6, 0, 'Bert', '', 'Stapper', '1977-12-07', '2016-10-26 09:56:29', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(7, 1, 'Karin', NULL, 'Kreeft', '1996-09-05', '2016-10-26 09:58:49', NULL, 1, 1, 'paardenstal ', '3746238423', 'Druk aant programmieren', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -316,11 +316,11 @@ CREATE TABLE `members_contact_info` (
 --
 
 INSERT INTO `members_contact_info` (`members_id`, `members_email`, `members_email2`, `members_phonenr`, `members_phonenr2`, `members_mobnr`, `members_mobnr2`) VALUES
-(1, 'p.deboer@gmail.com', '', '0528-178932', '0528-178932', '06-90786523', NULL),
 (2, 'j.deboer@gmail.com', '', '0528-178932', '0528-178932', '06-90782354', NULL),
 (3, 's.stevens@outlook.com', 'moeder.stevens@yahoo.com', '0538-392919', '0538-392919', '06-38392919', NULL),
 (4, 'email@email.com', 'email2@email.com', '0923123123', '0923123123', '', NULL),
-(6, 'mail@mail.com', '', '0524581289', '0524581289', '', NULL);
+(6, 'mail@mail.com', '', '0524581289', '0524581289', '', NULL),
+(7, 'karinkreeft8@hotmail.com', NULL, '0528768264', NULL, '0615508853', NULL);
 
 -- --------------------------------------------------------
 
@@ -341,11 +341,11 @@ CREATE TABLE `members_residence_info` (
 --
 
 INSERT INTO `members_residence_info` (`members_id`, `members_residence_street`, `members_residence_zip`, `members_residence_place`, `members_residence_country`) VALUES
-(1, 'Prinsjeslaan38', '7902JH', 'Hoogeveen', 'nederland'),
 (2, 'Prinsjeslaan38', '7902JH', 'Hoogeveen', ''),
 (3, 'Pottenstraat27', '7863 TM', 'Zwinderen', 'nederland'),
 (4, 'Zeillaan271', '7863 BE', 'Oosterheim', 'belgie'),
-(6, 'De straat 24', '783TM', 'Hoogeveen', 'belgie');
+(6, 'De straat 24', '783TM', 'Hoogeveen', 'belgie'),
+(7, 'jan dekkerstraat 45', '7902jh', 'hgv', 'nl');
 
 -- --------------------------------------------------------
 
@@ -367,7 +367,6 @@ CREATE TABLE `members_status` (
 --
 
 INSERT INTO `members_status` (`members_id`, `members_gift`, `members_paid`, `members_paiddate`, `members_reminder`, `members_remdate`) VALUES
-(1, 1, 0, '0000-00-00', 0, '0000-00-00'),
 (2, 1, 1, '0000-00-00', 0, '0000-00-00'),
 (3, 1, 1, '0000-00-00', 1, '0000-00-00'),
 (4, 1, 1, '0000-00-00', 0, '0000-00-00'),
@@ -389,11 +388,11 @@ CREATE TABLE `members_titles` (
 --
 
 INSERT INTO `members_titles` (`members_id`, `members_titles_content`) VALUES
-(1, 'mevr'),
 (2, 'dhr'),
 (3, 'mevr'),
 (4, 'dhr'),
-(6, 'dhr');
+(6, 'dhr'),
+(7, 'mevr');
 
 -- --------------------------------------------------------
 
@@ -471,7 +470,8 @@ INSERT INTO `pages` (`pages_id`, `pages_name`, `pages_url`, `pages_parentid`, `p
 (6, 'Documenten', 'documents.php', NULL, 0),
 (7, 'Logboek', 'log.php', NULL, 0),
 (8, 'Accounts', 'accounts.php', NULL, 1),
-(9, 'Overzicht', 'accounts.php', 8, 0);
+(9, 'Overzicht', 'accounts.php', 8, 0),
+(10, 'Aanmeldingen', 'registrations.php', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -524,6 +524,7 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (2, 3, 1),
 (2, 6, 1),
 (2, 7, 1),
+(2, 10, 1),
 (5, 1, 1),
 (5, 6, 1),
 (5, 7, 1);
@@ -655,12 +656,12 @@ ALTER TABLE `logs`
 -- AUTO_INCREMENT voor een tabel `members`
 --
 ALTER TABLE `members`
-  MODIFY `members_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `members_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT voor een tabel `members_titles`
 --
 ALTER TABLE `members_titles`
-  MODIFY `members_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `members_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT voor een tabel `members_types`
 --
@@ -675,7 +676,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT voor een tabel `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT voor een tabel `ranks`
 --
@@ -709,13 +710,25 @@ ALTER TABLE `acc_ranks`
 -- Beperkingen voor tabel `members`
 --
 ALTER TABLE `members`
-  ADD CONSTRAINT `members_types_foreign` FOREIGN KEY (`members_types_id`) REFERENCES `members_types` (`members_types_id`);
+  ADD CONSTRAINT `members_members_types_fk` FOREIGN KEY (`members_types_id`) REFERENCES `members_types` (`members_types_id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `members_contact_info`
+--
+ALTER TABLE `members_contact_info`
+  ADD CONSTRAINT `members_contact_info_members_fk` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `members_residence_info`
+--
+ALTER TABLE `members_residence_info`
+  ADD CONSTRAINT `members_residence_info_members_fk` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`) ON DELETE CASCADE;
 
 --
 -- Beperkingen voor tabel `members_titles`
 --
 ALTER TABLE `members_titles`
-  ADD CONSTRAINT `mem_titles_mem` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`);
+  ADD CONSTRAINT `mem_titles_mem` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`) ON DELETE CASCADE;
 
 --
 -- Beperkingen voor tabel `ranks_pages`

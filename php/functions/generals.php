@@ -59,6 +59,10 @@
         $structure.= " <div id='".strtolower($hierarchy[$parentKey]["pages_name"])."-sub-menu' class='sub-menu'>";
         foreach ($hierarchy[$parentKey] as $key => $value) {
           if(is_array($value)){
+            if($value["pages_name"] === "Aanmeldingen"){
+              $data = $dbHandler->handleQuery("SELECT count(*) AS total FROM members WHERE members_onhold = 1");
+              $value["pages_name"] = $value["pages_name"]." (".$data->total.")";
+            }
            $structure.= "<li class='ischild'><a href='".strtolower($value['pages_url'])."'>".$value['pages_name']."</a></li>";
           }
         }

@@ -64,7 +64,7 @@
               WHERE members_id = :id";
       $data = $dbHandler->handleQuery($sql, array(":id"=> $id));
     }
-    //if param is true (accepteren) then startdate=currdate and onhold = 0
+    //if param is true (accpteren) then startdate=currdate and onhold = 0
     else{
       $sql = "UPDATE members SET members_onhold = 0, members_startdate = CURRENT_TIMESTAMP()
               WHERE members_id = :id";
