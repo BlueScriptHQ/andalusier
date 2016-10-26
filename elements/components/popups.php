@@ -464,6 +464,8 @@
       <a href="index.php"><input id="add-members-btn" type="button" class="btn save" value="Haal mij hier weg."></a>
    </div>
 </div>
+
+
 <div class="documents-popup-FolderFile popup" id="addFolder">
    <div class="popup-head">
       <h2>Map aanmaken</h2>
@@ -479,8 +481,10 @@
       <input type="button" class="folder_file_btn" id="addAFolder" value="Aanmaken">
    </div>
 </div>
+
+
 <div class="documents-popup-FolderFile popup" id="addFile">
-   <form id="fileUploadForm" action="php/documents.php" enctype="multipart/form-data" method="post">
+   <form id="fileUploadForm" action="php/files.php" enctype="multipart/form-data" method="post">
       <input type="file" id="hiddenAddFile" name="fileToUpload" style="display: none;" value="">
       <div class="popup-head">
          <h2>Bestand uploaden</h2>
@@ -615,6 +619,8 @@
       <input id="save-popupExtra-btn" type="button" class="btn_save" value="Opslaan">
    </div>
 </div>
+
+
 <!-- requirements -->
 <link rel="stylesheet" href="css/popups_style.min.css" media="screen">
 <link rel="stylesheet" href="elements/components/css/popups.css" media="screen">

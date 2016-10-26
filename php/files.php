@@ -9,6 +9,7 @@ session_start();
 require "assets/defaults.php";
 require "assets/generals.php";
 require "assets/verifications.php";
+require "assets/connection.php";
 
 /*
  Bestand downloaden
@@ -47,5 +48,38 @@ if(isset($_GET["downloadFile"])){
     }
   }
 }
+
+/*
+  Upload een bestand
+*/
+if(isset($_FILES["fileToUpload"])){
+  $newName = $_POST["newName"];
+
+  $target_dir = $_SESSION["documentsURL"];
+  $target_file = $target_dir . $newName;
+  $uploadOk = 1;
+  if($_FILES["fileToUpload"]["size"] > 209715200){
+    $uploadOk == 0;
+  }
+  // Check if $uploadOk is set to 0 by an error
+  if ($uploadOk == 0) {
+      echo "Sorry, bestand is niet geupload. Klik <a href='../documents.php'>hier</a> om terug te gaan";
+  // if everything is ok, try to upload file;
+  } else {
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+          // log
+          $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
+          $query = $conn->prepare($sql);
+          $result = $query->execute(array(
+           ":message" => "Bestand \"".$newName. "\" toegevoegd!"
+         ));
+      } else {
+          echo "Sorry, er is een probleem tijdens het uploaden. Klik <a href='../documents.php'>hier</a> om terug te gaan";
+      }
+  }
+
+  header("Location: ../documents.php");
+}
+
 
 ?>
