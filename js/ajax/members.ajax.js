@@ -60,8 +60,8 @@ $(document).ready(function() {
     window.editUser = function editUser(customerID) {
 
       callHandler.addInvoked("getMembersInfo", function(r){
-        console.log(r);
-        $("#editPopup, #page_overlay").fadeIn(400);
+        $("#editPopup").fadeIn(500);
+        $("#page-overlay").fadeIn(500);
       }, customerID);
 
     };
