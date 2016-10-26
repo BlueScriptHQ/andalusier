@@ -291,14 +291,14 @@
 
       $new_file_name = $new.$old_extension;
 
+      return $new_file_name;
+
       // verander nu het oude bestand naar het nieuwe bestand
 
-      
+
       // het bestand is ineens weg, en hij hernoemd niet goed...
       rename(strtolower($_SESSION["documentsURL"].$old), $new_file_name);
     }
-
-
 
 
   }

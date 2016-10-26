@@ -137,3 +137,7 @@ Om het project zo goed mogelijk te laten verlopen zijn ook plugins erg belangrij
 ######  Dit is een pagina van Andalusier.
 ######  Dingen die hier onder andere worden gedaan:
         * Momenteel nog niet zo veel. ;)
+
+## callHandler
+
+##### callHandler.addCall(<php_functie_naam> , <callback_functie (success handler)> , <eventueel de parameters>);
