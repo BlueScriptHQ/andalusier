@@ -52,8 +52,6 @@
     (:id, :name, :type, :owner, :date, :contact, :address, :postalcode, :city, :country, :email, :telephone, 0)";
 
     $data = $dbHandler->handleQuery($sql, array(":id"=> $adverts_id, ":name"=> $adverts_name, ":type"=> $adverts_type, ":owner"=> $adverts_owner, ":date"=> $adverts_date, ":contact"=> $adverts_contact, ":address"=> $adverts_address, ":postalcode"=> $adverts_postalcode, "city"=> $adverts_city,":country"=> $adverts_country, ":email"=> $adverts_email, ":telephone"=> $adverts_phone));
-
-    return "U moet de pagina verversen om de tabel bij te werken.";
   }
 
 ?>

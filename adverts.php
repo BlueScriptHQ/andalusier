@@ -70,16 +70,6 @@
                       <th>Status</th>
                       <th></th>
                     </tr>
-
-                    <tr>
-                      <td>4</td>
-                      <td>test</td>
-                      <td>ldpelpde</td>
-                      <td></td>
-                      <td>ok</td>
-                      <td>open</td>
-
-                    </tr>
                 </table>
               </div>
             </div>

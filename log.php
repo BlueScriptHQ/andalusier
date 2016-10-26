@@ -55,6 +55,10 @@
               <input type="button" id="downloadLogBtn" class="btn" value="Logboek downloaden (excel)">
             </div>
 
+            <div class="button-box">
+              <input type="button" id="deleteLogBtn" class="btn" value="Logboek leegmaken">
+            </div>
+
           </div>
 
           <div id="members-table" class="log-table">
