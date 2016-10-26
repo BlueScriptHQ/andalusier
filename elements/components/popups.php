@@ -611,6 +611,7 @@
       </div>
     -->
     <br>
+    <p id="status" class="label"></p>
     <input id="edit-popupExtra-btn" type="button" class="btn_edit" value="Wijzigen">
     <input id="save-popupExtra-btn" type="button" class="btn_save" value="Opslaan">
   </div>
