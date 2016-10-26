@@ -37,6 +37,7 @@
       require "functions/adverts.php";
       require "functions/old_adverts.php";
       require "functions/members_accept.php";
+      require "functions/logs.php";
       // require functions/register.php <- not being used atm
 
     /*
