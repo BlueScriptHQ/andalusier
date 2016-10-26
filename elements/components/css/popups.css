@@ -169,6 +169,7 @@
   width: 100%;
   float: left;
   height: 0;
+  overflow: hidden;
 }
 
 .popup-section-content .row {
