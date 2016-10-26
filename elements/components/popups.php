@@ -552,7 +552,11 @@
       <br>
       <div class="popup-row">
       <p class="label">Advertentie soort:</p>
-      <input type="text" placeholder="Advertentiesoort" class="advertstype" name="adverts_type" value="">
+      <select name="adverts_type" class="advertstype">
+        <option value="Half">Half</option>
+        <option value="Heel">Heel</option>
+        <option value="Kwart">Kwart</option>
+      </select>
       </div>
       <br>
       <div class="popup-row">

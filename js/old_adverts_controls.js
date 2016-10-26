@@ -41,10 +41,11 @@ $(document).ready(function(){
 	$(".btn_save").on("click", function(){
 		$(".btn_save").hide();
 		$(".btn_edit").show();
+		$("#status").empty();
 		addDisable("#popupAdvertExtraInfo");
 		var object = buildObject("#popupAdvertExtraInfo");
 		callHandler.addInvoked("advertsExtraInfoHandler", function(result){
-			alert(result);
+			location.reload();
 		}, object);
 	});
 });

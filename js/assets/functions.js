@@ -33,13 +33,13 @@ $(document).ready(function() {
     };
 
     window.removeDisable = function removeDisable(element) {
-        $(element + " input[type=text], input[type=password], textarea").each(function() {
+        $(element + " input[type=text], input[type=password], textarea, select").each(function() {
             $(this).attr("disabled", false);
         });
     };
 
     window.addDisable = function addDisable(element) {
-        $(element + " input[type=text], textarea").each(function() {
+        $(element + " input[type=text], textarea, select").each(function() {
             $(this).attr("disabled", "disabled");
         });
     };
@@ -47,7 +47,7 @@ $(document).ready(function() {
     window.buildObject = function buildObject(element){
       var object = {};
 
-  		$(element + " input[type=text], textarea").each(function(){
+  		$(element + " input[type=text], textarea, select").each(function(){
         // object vullen
         var value = $(this).val();
         var name = $(this).attr("name");
