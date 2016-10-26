@@ -32,14 +32,14 @@ $(document).ready(function() {
         });
     };
 
-    window.removeDisable = function removeDisable(form) {
-        $(form + " input[type=text], input[type=password], textarea").each(function() {
+    window.removeDisable = function removeDisable(element) {
+        $(element + " input[type=text], input[type=password], textarea").each(function() {
             $(this).attr("disabled", false);
         });
     };
 
-    window.addDisable = function addDisable(form) {
-        $(form + " input[type=text], textarea").each(function() {
+    window.addDisable = function addDisable(element) {
+        $(element + " input[type=text], textarea").each(function() {
             $(this).attr("disabled", "disabled");
         });
     };

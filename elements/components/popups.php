@@ -533,6 +533,85 @@
   </div>
 </div>
 
+<!-- PopUp adverts -->
+<div id="popupAdvertExtraInfo" class="popup">
+  <div class="popup-head">
+    <h2>Extra informatie</h2>
+    <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
+  </div>
+  <div class="popup-content">
+      <div class="popup-row">
+      <p class="label">Advertentie nummer:</p>
+      <input type="text" placeholder="Advertentienummer" class="advertsnumber" name="adverts_number" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Advertentie naam:</p>
+      <input type="text" placeholder="Advertentienaam" class="advertsname" name="adverts_name" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Advertentie soort:</p>
+      <input type="text" placeholder="Advertentiesoort" class="advertstype" name="adverts_type" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerder:</p>
+      <input type="text" placeholder="Adverteerder" class="advertsowner" name="adverts_owner" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Contactpersoon:</p>
+      <input type="text" placeholder="Contactpersoon" class="advertscontact" name="adverts_contact" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders adres:</p>
+      <input type="text" placeholder="Adverteerderadres" class="advertsaddress" name="adverts_address" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders postcode:</p>
+      <input type="text" placeholder="Adverteerderpostcode" class="advertspostalcode" name="adverts_postalcode" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders stad</p>
+      <input type="text" placeholder="Adverteerderstad" class="advertscity" name="adverts_city" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders land:</p>
+      <input type="text" placeholder="Adverteerderland" class="advertscountry" name="adverts_country" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders email:</p>
+      <input type="text" placeholder="Adverteerderemail" class="advertsemail" name="adverts_email" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders telefoon</p>
+      <input type="text" placeholder="Adverteerdertelefoon" class="advertsphone" name="adverts_phone" value="">
+      </div>
+      <br>
+      <!--
+      <div class="popup-row">
+      <p class="label">Adverteerders bank:</p>
+      <input type="text" placeholder="Adverteerderbank" class="advertsbank" value="">
+      </div>
+      <br>
+      <div class="popup-row">
+      <p class="label">Adverteerders rekeningnummer:</p>
+      <input type="text" placeholder="Adverteerderrekeningnummer" class="advertsbillingnumber" value="">
+      </div>
+    -->
+    <br>
+    <input id="edit-popupExtra-btn" type="button" class="btn_edit" value="Wijzigen">
+    <input id="save-popupExtra-btn" type="button" class="btn_save" value="Opslaan">
+  </div>
+</div>
+
 
 
 
