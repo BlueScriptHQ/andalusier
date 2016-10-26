@@ -54,7 +54,9 @@ $(document).ready(function() {
 
         callHandler.addInvoked("changeNameFF", function(r) {
 
-            alert(r);
+          loadDocuments(true);
+          $("#page-overlay").fadeOut(500);
+          $("#editFolderFile").fadeOut(500);
 
         }, object);
 
