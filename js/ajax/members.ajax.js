@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     };
 
-    $("#add-members-btn").on("click", function() {
+    /*$("#add-members-btn").on("click", function() {
         $day = ($("#add-day").val().length < 2) ? "0" + $("#add-day").val() : $("#add-day").val();
         $sendway = ($("#sendway_email_add").is(':checked')) ? 1 : 0;
 
@@ -41,9 +41,9 @@ $(document).ready(function() {
             $dataArray.members_newsletter = 0;
         }
         addMember($dataArray);
-    });
+    });*/
 
-    function addMember(dataArray) {
+    /*function addMember(dataArray) {
         $.ajax({
             url: "php/members.php",
             data: "requestMemberAdd=" + JSON.stringify(dataArray),
@@ -54,16 +54,21 @@ $(document).ready(function() {
                 loadTable();
             }
         });
-    }
+    }*/
 
 
-    window.editUser = function editUser(customerID) {
+    window.getMemberInfo = function(customerID) {
 
-      callHandler.addInvoked("getMembersInfo", function(r){
-        $("#editPopup").fadeIn(500);
-        $("#page-overlay").fadeIn(500);
-      }, customerID);
+        callHandler.addInvoked("getMembersInfo", function(r) {
+            console.log(r);
+            $("#editPopup").fadeIn(500);
+            $("#page-overlay").fadeIn(500);
+        }, customerID);
 
+    };
+
+    window.addMemberInfo = function(memberData) {
+        console.log(memberData);
     };
 
     function setInfoMembers(data) {

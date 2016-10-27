@@ -58,7 +58,7 @@
           <div class="tableHead">
 
             <div class="button-box">
-              <input type="button" id="addMemberBtn" class="btn" value="Toevoegen">
+              <input type="button" id="openMemberPopup-btn" class="btn" value="Toevoegen">
             </div>
 
             <div class="search-bar">

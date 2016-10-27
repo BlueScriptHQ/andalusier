@@ -50,7 +50,7 @@
     					".$paid."
               ".$reminder."
     				</td>
-    				<td><input type='button' onclick='editUser(".$value->members_id.");'></td>
+    				<td><input type='button' onclick='openMember(".$value->members_id.");'></td>
     		<tr>";
     }
 
