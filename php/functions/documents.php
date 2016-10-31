@@ -297,7 +297,7 @@
 
       if(file_exists(strtolower($_SESSION["documentsURL"].$old))){
         // verander nu de oude bestandsnaam naar de nieuwe bestandsnaam
-        rename(strtolower($_SESSION["documentsURL"].$old), $_SESSION["documentsURL"].$new_file_name);        
+        rename(strtolower($_SESSION["documentsURL"].$old), $_SESSION["documentsURL"].$new_file_name);
       }
 
     }
