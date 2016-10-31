@@ -64,29 +64,19 @@ $(document).ready(function() {
               }
             }
 
-            // fix voor members_receive_type
-            // Dit werkt momenteel nog niet! Hier moet dus een betere fix aan worden gehangen..
-            var members_receive_type = function(){
-              if(typeof object.members_receive_type === "undefined" && name === "members_receive_type"){
+            // Uitzondering: members_receive_type
+            if(object.members_receive_type === undefined){
+              var val = "";
+              $(element).find(".op_in_option").each(function(){
                 if($(this).attr("on") === "true"){
-                  object[name] = $(this).attr("value");
-                  return true;
-                } else {
-                  return true;
+                  val = $(this).attr("value");
                 }
-              }
-              else if(object.members_receive_type !== "undefined" && name === "members_receive_type"){
-                return true;
-              }
-
-            };
-
-            if(members_receive_type() === true) {
+              });
+              object.members_receive_type = val;
+              return true;
+            } else if(name === "members_receive_type" && object.members_receive_type !== undefined){
               return true;
             }
-
-            // Einde van exception members_receive_type
-
 
             object[name] = value;
 
