@@ -120,7 +120,7 @@
           margin: 0;
           padding-left: 40px;
 
-          &#addMemberBtn {
+          &#openMemberPopup-btn {
               background: url("../img/content-section/members-list/add_new.png") no-repeat scroll 7.5px 7.5px $main-color;
               background-size: $btnImageSize;
           }
@@ -140,6 +140,18 @@
               background: url("../img/content-section/log-list/download_log.png") no-repeat scroll 7.5px 7.5px $main-color;
               background-size: $btnImageSize;
               margin-right: 10px;
+          }
+
+          &#memberPaymentRequestPopup-btn {
+            background: url("../img/content-section/members-list/request.png") no-repeat scroll 7.5px 7.5px $main-color;
+            background-size: $btnImageSize;
+            margin-right: 10px;
+          }
+
+          &#openMemberPopup-btn {
+            background: url("../img/content-section/members-list/add_new.png") no-repeat scroll 7.5px 7.5px $main-color;
+            background-size: $btnImageSize;
+            margin-right: 10px;
           }
       }
     }

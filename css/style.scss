@@ -421,20 +421,25 @@ body {
           background: url("../img/content-section/members-list/add_new.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
         }
+        &#memberPaymentRequestPopup-btn {
+          background: url("../img/content-section/log-list/request.png") no-repeat scroll 7.5px 7.5px $main-color;
+          background-size: $btnImageSize;
+          margin-right: 10px;
+        }
         &#addFolderBtn {
           background: url("../img/content-section/documents-list/add_folder.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
-      }
+        }
         &#addFileBtn {
           background: url("../img/content-section/documents-list/add_file.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
           margin-right: 10px;
-      }
+        }
         &#downloadLogBtn {
           background: url("../img/content-section/log-list/download_log.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
           margin-right: 10px;
-      }
+        }
     }
   }
   #members-table-search-bar {
