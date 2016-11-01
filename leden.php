@@ -59,6 +59,7 @@
 
             <div class="button-box">
               <input type="button" id="openMemberPopup-btn" class="btn" value="Toevoegen">
+              <input type="button" id="memberPaymentRequestPopup-btn" class="btn" value="Betalingsverzoek">
             </div>
 
             <div class="search-bar">

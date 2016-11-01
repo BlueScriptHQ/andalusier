@@ -8,6 +8,11 @@ $(document).ready(function() {
         $("#addMemberPopup").fadeIn(500);
     });
 
+    $("#memberPaymentRequestPopup-btn").on("click", function() {
+        $("#page-overlay").fadeIn(500);
+        $("#memberPaymentRequest").fadeIn(500);
+    });
+
     $("#addMember-submit").on("click", function() {
         alert();
         var memberData = getPopupData("#addMemberPopup");
@@ -22,5 +27,9 @@ $(document).ready(function() {
     window.openMember = function(userID) {
         getMemberInfo(userID);
     };
+
+    $("#sendPR").on("click", function() {
+        getMemberPaymentRequest();
+    });
 
 });
