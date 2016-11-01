@@ -44,9 +44,18 @@ $(".popup").find("input[type=text], textarea").each(function() {
 
 
 $(".popup_close").on("click", function() {
-    $("#page-overlay").fadeOut(500);
-    $(this).parent().parent().fadeOut(500);
-    $("#addFile").fadeOut(500);
+
+   $("#page-overlay").fadeOut(500);
+
+   $(this).parent().parent().fadeOut(500);
+   $("#addFile").fadeOut(500);
+
+
+});
+
+$(".overlay_popup_close").on("click", function(){
+  $(this).parent().parent().fadeOut(500);
+  $("#addFile").fadeOut(500);
 });
 
 $("#page-overlay").on("click", function() {

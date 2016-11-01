@@ -358,7 +358,7 @@
 </div>
 
 
-<div id="addAccountPopup" class="popup">
+<div id="editAccountPopup" class="popup">
    <div class="popup-head">
       <h2>Account toevoegen</h2>
       <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
@@ -366,89 +366,72 @@
    <div class="popup-section">
       <div class="popup-section-head">
          <img src="elements/components/img/indicator-image-right.png" alt="" />
-         <h2>Algemene gegevens</h2>
+         <h2>Inloggegevens</h2>
       </div>
       <div class="popup-section-content">
          <div class="row">
+            <input type="hidden" name="accounts_id">
             <p class="label">Gebruikersnaam</p>
-            <input type="text">
+            <input type="text" name="accounts_username">
          </div>
-         <div class="row">
-            <p class="label">Wachtwoord</p>
-            <input type="text">
-         </div>
-         <div class="row">
-            <p class="label">Naam</p>
-            <input type="text" optional="true">
-         </div>
-         <div class="row">
-            <p class="label">Tussenvoegsel</p>
-            <input type="text">
-         </div>
-         <div class="row">
-            <p class="label">Achternaam</p>
-            <input type="text">
-         </div>
-         <div class="row">
-            <p class="label">Geboortedatum</p>
-            <input type="text" value="DATEPICKER HIER ;')">
-         </div>
-         <div class="row">
-            <p class="label"> </p>
-            <input type="button" value="Volgende stap" class="openNext">
-         </div>
-      </div>
-   </div>
-   <div class="popup-section">
-      <div class="popup-section-head">
-         <img src="elements/components/img/indicator-image-right.png" alt="" />
-         <h2>Contactgegevens</h2>
-      </div>
-      <div class="popup-section-content">
-         <div class="row">
-            <p class="label">E-mailadres</p>
-            <input type="text">
-         </div>
-         <div class="row">
-            <p class="label">Extra e-mailadres</p>
-            <input type="text" optional="true">
-         </div>
-         <div class="row">
-            <p class="label">Telefoonnummer</p>
-            <input type="text">
-         </div>
-         <div class="row">
-            <p class="label">Extra telefoonnummer</p>
-            <input type="text" optional="true">
-         </div>
-         <div class="row">
-            <p class="label">Mobielnummer</p>
-            <input type="text" optional="true">
-         </div>
-         <div class="row">
-            <p class="label"> </p>
-            <input type="button" value="Volgende stap" class="openNext">
-         </div>
-      </div>
-   </div>
-   <div class="popup-section">
-      <div class="popup-section-head">
-         <img src="elements/components/img/indicator-image-right.png" alt="" />
-         <h2>Aanmaken</h2>
-      </div>
-      <div class="popup-section-content">
          <div class="row flexible-height">
-            <p class="label">Opmerking</p>
-            <p class="label"> </p>
-            <textarea placeholder="Dit vult u alleen in, als u het nodig acht."></textarea>
+           <p class="desc">Om veiligheidsredenen is het niet mogelijk het wachtwoord in te zien.</p>
+         </div>
+         <div class="row password-row">
+            <p class="label">Wachtwoord</p>
+            <input type="button" class="btn" value="Reset" id="accountPasswordResetBtn">
          </div>
          <div class="row">
             <p class="label"> </p>
-            <input type="button" value="Lid aanmaken">
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Account type</h2>
+      </div>
+      <div class="popup-section-content">
+        <div class="row flexible-height">
+           <p class="desc">Hieronder kunt u een account type selecteren. Elk type heeft verschillende rechten. Deze kunt u inzien en muteren op de accounts pagina. Hier kunt u ook nieuwe account typen aanmaken.</p>
+        </div>
+        <div class="row">
+           <p class="label">Account type</p>
+           <select name="ranks_id">
+              <option value="1">Lid</option>
+              <option value="2">Jeugdlid</option>
+              <option value="3">Gezinslid</option>
+              <option value="4">Lid Buitenland</option>
+           </select>
+        </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Opslaan" id="saveEditAccountData">
          </div>
       </div>
    </div>
 </div>
+
+<div class="documents-popup-FolderFile" id="editAccountPasswordPopup">
+   <div class="popup-head">
+      <h2>Wachtwoord resetten</h2>
+      <a href="#" class="overlay_popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
+   </div>
+   <div class="popup-content">
+      <h2 class="popup-content-h2">Geef hier het nieuwe gewenste wachtwoord op</h2>
+   </div>
+   <div class="popup-row">
+      <input type="hidden" id="accountPasswordID">
+      <input type="password" placeholder="Nieuwe wachtwoord" autocomplete="off" id="newAccountPassword">
+   </div>
+   <div class="popup-row">
+      <input type="button" class="btn" value="Reset" id="saveAccountPassword">
+   </div>
+</div>
+
+
+
 <div id="critical-error" class="popup">
    <div class="popup-head">
       <h2>Kritieke fout</h2>
