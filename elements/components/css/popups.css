@@ -7,7 +7,9 @@
   z-index: 2;
 }
 
-#addMemberPopup, #editPopup, #addAccountPopup, #popupAdvertExtraInfo, #acceptMemberPopup, #newAdvertsAdd, #newAdvertsOpen{
+#addMemberPopup, #editPopup, #addAccountPopup,
+#popupAdvertExtraInfo, #acceptMemberPopup,
+#newAdvertsAdd, #newAdvertsOpen, #memberPaymentRequest{
   width: 550px;
   height: 600px;
   margin: auto;
@@ -15,6 +17,10 @@
   position: fixed;
   background-color: white;
   z-index: 3;
+}
+
+#memberPaymentRequest{
+  height: 190px;
 }
 
 .popup {

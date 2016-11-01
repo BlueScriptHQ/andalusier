@@ -282,7 +282,6 @@
       mail($row->members_mail,"Andalusier Vereniging Betalingsverzoek", $msg);
     }
 
-
   }
 
 ?>
