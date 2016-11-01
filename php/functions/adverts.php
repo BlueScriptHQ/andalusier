@@ -47,7 +47,7 @@
     $adverts_phone = $object->adverts_phone;
     $adverts_date = $object->adverts_date;
 
-    $sql = "REPLACE INTO adverts(adverts_id, adverts_name, adverts_type, adverts_owner ,adverts_date, adverts_contact, adverts_address, adverts_postalcode, adverts_city, adverts_country, adverts_email, adverts_telephone, adverts_old)
+    $sql = "UPDATE INTO adverts(adverts_id, adverts_name, adverts_type, adverts_owner ,adverts_date, adverts_contact, adverts_address, adverts_postalcode, adverts_city, adverts_country, adverts_email, adverts_telephone, adverts_old)
     VALUES
     (:id, :name, :type, :owner, :date, :contact, :address, :postalcode, :city, :country, :email, :telephone, 0)";
 
