@@ -65,6 +65,7 @@ $(document).ready(function() {
     window.deleteFileFolder = function(fName) {
        callHandler.addInvoked("deleteFileFolder", function(r) {
          if(r === "not_empty"){
+           $("#deleteFolderFile").fadeOut(500);
            $("#deleteFolderPerm").show();
            return false;
          }
@@ -72,6 +73,15 @@ $(document).ready(function() {
          $("#page-overlay").fadeOut(500);
          $("#deleteFolderFile").fadeOut(500);
        }, fName);
+   };
+
+   window.deletePerm = function(fName){
+     callHandler.addInvoked("deletePerm", function(){
+       loadDocuments(true);
+       $("#page-overlay").fadeOut(500);
+       $("#deleteFolderPerm").fadeOut(500);
+       $("#deleteFolderFile").fadeOut(500);
+     }, fName);
    };
 
 });

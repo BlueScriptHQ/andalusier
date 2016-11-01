@@ -9,11 +9,8 @@ $(document).ready(function() {
     });
 
     $("#addMember-submit").on("click", function() {
-
         var memberData = getPopupData("#addMemberPopup");
         addMemberInfo(memberData);
-
-
     });
 
     window.openMember = function(userID) {

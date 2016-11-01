@@ -22,8 +22,11 @@ $(document).ready(function() {
         callHandler.addInvoked("getMemberInfo", function(data) {
           //the returned data from PHP (an array in this case)
           //Needs to be parsed in popup
-          $hoi = JSON.parse(data);
-          console.log($hoi);
+          // $hoi = JSON.parse(data);
+          // console.log($hoi);
+          $("#page-overlay").fadeIn(500);
+          $("#acceptMemberPopup").fadeIn(500);
+          $("#acceptMemberPopup input[type=hidden]").val(id);
         }, id);
     };
 
@@ -32,7 +35,8 @@ $(document).ready(function() {
         id : id,
         param: param
       };
-      callHandler.addInvoked("acceptMember", function(){
+
+      callHandler.addInvoked("acceptMember", function(r){
         //reload table when deleted or accepted a member
         loadMenu();
         loadTable(true);

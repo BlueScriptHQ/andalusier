@@ -84,4 +84,9 @@ $(document).ready(function() {
         }
     });
 
+    $("#deleteFP").on("click", function(){
+      var fName = $("#deleteFolderFile input[type=hidden]").val();
+      deletePerm(fName);
+    });
+
 });

@@ -7,8 +7,7 @@
   z-index: 2;
 }
 
-#addMemberPopup, #editPopup, #addAccountPopup, #popupAdvertExtraInfo {
-  display: none;
+#addMemberPopup, #editPopup, #addAccountPopup, #popupAdvertExtraInfo, #acceptMemberPopup {
   width: 550px;
   height: 600px;
   margin: auto;
@@ -17,6 +16,13 @@
   background-color: white;
   z-index: 3;
 }
+
+.popup {
+  display: none;
+}
+
+
+
 
 .btn_edit {
   border: 0;
