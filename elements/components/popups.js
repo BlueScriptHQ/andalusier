@@ -75,7 +75,7 @@ window.getPopupData = function(element) {
         }
 
         // Uitzondering: members_receive_type
-        if(element === "#addMemberPopup" || element === "#editPopup"  && object.members_receive_type === undefined){
+        if(name === "members_receive_type" && object.members_receive_type === undefined){
           var val = "";
           $(element).find(".op_in_option").each(function(){
             if($(this).attr("on") === "true"){
@@ -84,7 +84,7 @@ window.getPopupData = function(element) {
           });
           object.members_receive_type = val;
           return true;
-        } else if(element === "#addMemberPopup" || element === "#editPopup" && name === "members_receive_type" && object.members_receive_type !== undefined){
+        } else if(name === "members_receive_type" && object.members_receive_type !== undefined){
           return true;
         }
 
