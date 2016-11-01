@@ -22,14 +22,14 @@ $(document).ready(function() {
 
   		callHandler.addInvoked("getAdvertsInfo", function(result){
       	$obj = JSON.parse(result);
-  			console.log($obj);
-  			//$("#page-overlay").fadeIn(400);
-  				// $("#popupAdvertExtraInfo").fadeIn(400);
+        insertPopupData("#newAdvertsOpen", $obj);
+        $("#newAdvertsOpen input[type=hidden]").val($id);
+  			$("#page-overlay").fadeIn(400);
+  			$("#newAdvertsOpen").fadeIn(400);
       }, $id);
     };
 
     window.saveAdvert = function(object){
-      console.log(object);
   		callHandler.addInvoked("addNewAdvert", function(result){
         $("#newAdvertsAdd").fadeOut(500);
         $("#page-overlay").fadeOut(500);
@@ -38,4 +38,19 @@ $(document).ready(function() {
   		}, object);
     };
 
+    window.updateAdvert = function(object){
+      callHandler.addInvoked("saveNewAdvert", function(result){
+        $("#newAdvertsOpen").fadeOut(500);
+        $("#page-overlay").fadeOut(500);
+        loadTable(true);
+      }, object);
+    };
+
+    window.moveAdvert = function(id){
+      callHandler.addInvoked("moveNewAdvert", function(result){
+        $("#newAdvertsOpen").fadeOut(500);
+        $("#page-overlay").fadeOut(500);
+        loadTable(true);
+      }, id);
+    };
 });

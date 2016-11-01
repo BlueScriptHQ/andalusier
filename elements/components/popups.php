@@ -945,8 +945,8 @@
          <div class="row">
             <p class="label">Status</p>
             <select class="title" id="add-title" required="true" name="adverts_status">
-               <option value="betaald">Betaald</option>
-               <option value="nietbetaald">Niet betaald</option>
+               <option value="1">Betaald</option>
+               <option value="0">Niet betaald</option>
             </select>
          </div>
          <div class="row">
@@ -974,6 +974,164 @@
    </div>
 </div>
 
+
+<!--
+
+    Nieuwe adverts popup : Edit
+
+-->
+<div id="newAdvertsOpen" class="popup">
+   <div class="popup-head">
+      <h2>Nieuwe advertentie toevoegen</h2>
+      <input type="hidden" name="id" value="">
+      <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Advertentiegegevens</h2>
+      </div>
+      <div class="popup-section-content">
+        <input type="hidden" name="adverts_id" value="">
+         <div class="row">
+            <p class="label">Advertentienaam</p>
+            <input type="text" name="adverts_name">
+         </div>
+         <div class="row">
+            <p class="label">Advertentiesoort</p>
+            <select class="title" id="add-title" required="true" name="adverts_type">
+               <option value="Heel">Heel</option>
+               <option value="Half">Half</option>
+               <option value="Kwart">Kwart</option>
+            </select>
+         </div>
+         <div class="row">
+            <p class="label">Adverteerder</p>
+            <input type="text" name="adverts_owner">
+         </div>
+         <div class="row">
+            <p class="label">Eind datum</p>
+            <input type="text" name="adverts_enddate">
+         </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>NAW-gegevens</h2>
+      </div>
+      <div class="popup-section-content">
+         <div class="row">
+            <p class="label">Contactpersoon</p>
+            <input type="text" name="adverts_contact">
+         </div>
+         <div class="row">
+            <p class="label">Postcode</p>
+            <input type="text" name="adverts_postalcode">
+         </div>
+         <div class="row">
+            <p class="label">Adres</p>
+            <input type="text" name="adverts_address">
+         </div>
+         <div class="row">
+            <p class="label">Stad</p>
+            <input type="text" name="adverts_city">
+         </div>
+         <div class="row">
+            <p class="label">Land</p>
+            <select name="adverts_country">
+               <option value="nederland">Nederland</option>
+               <option value="belgie">België</option>
+            </select>
+         </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Contactgegevens</h2>
+      </div>
+      <div class="popup-section-content">
+         <div class="row">
+            <p class="label">E-mailadres</p>
+            <input type="text" name="adverts_email">
+         </div>
+         <div class="row">
+            <p class="label">Extra e-mailadres</p>
+            <input type="text" optional="true" name="adverts_email2">
+         </div>
+         <div class="row">
+            <p class="label">Telefoonnummer</p>
+            <input type="text" name="adverts_telephone">
+         </div>
+         <div class="row">
+            <p class="label">Extra telefoonnummer</p>
+            <input type="text" optional="true" name="adverts_telephone2">
+         </div>
+         <div class="row">
+            <p class="label">Mobielnummer</p>
+            <input type="text" optional="true" name="adverts_mobile">
+         </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Bankgegevens</h2>
+      </div>
+      <div class="popup-section-content">
+         <div class="row">
+            <p class="label">Bank</p>
+            <input type="text" name="adverts_bank">
+         </div>
+         <div class="row">
+            <p class="label">Rekeningnummer</p>
+            <input type="text" name="adverts_billingnumber">
+         </div>
+         <div class="row">
+            <p class="label">Status</p>
+            <select class="title" id="add-title" required="true" name="adverts_status">
+               <option value="1">Betaald</option>
+               <option value="0">Niet betaald</option>
+            </select>
+         </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Volgende stap" class="openNext">
+         </div>
+      </div>
+   </div>
+   <div class="popup-section">
+      <div class="popup-section-head">
+         <img src="elements/components/img/indicator-image-right.png" alt="" />
+         <h2>Bijwerken</h2>
+      </div>
+      <div class="popup-section-content">
+         <div class="row flexible-height">
+            <p class="label">Opmerking</p>
+            <p class="label"> </p>
+            <textarea placeholder="Dit vult u alleen in, als u het nodig acht." name="adverts_comment"></textarea>
+         </div>
+         <div class="row">
+            <p class="label"> </p>
+            <input type="button" value="Opslaan" id="updateAdvertButton">
+            <input type="button" value="Verplaats naar oud" id="moveAdvertButton">
+         </div>
+      </div>
+   </div>
+</div>
 
 <!-- requirements -->
 <link rel="stylesheet" href="css/popups_style.min.css" media="screen">

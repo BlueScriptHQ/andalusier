@@ -57,7 +57,7 @@ $("#page-overlay").on("click", function() {
 window.getPopupData = function(element) {
     var object = {};
 
-    $(element).find("input[type=text], textarea, select, .control").each(function() {
+    $(element).find("input[type=text], input[type=hidden], textarea, select, .control").each(function() {
         // object vullen
         var value = $(this).val();
         var name = $(this).attr("name");

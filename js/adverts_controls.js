@@ -10,5 +10,14 @@ $(document).ready(function(){
 		saveAdvert(data);
 	});
 
+	$("#updateAdvertButton").on("click", function(){
+		var data = getPopupData("#newAdvertsOpen");
+		updateAdvert(data);
+	});
+
+	$("#moveAdvertButton").on("click", function(){
+		var id = $("#newAdvertsOpen input[type=hidden]").val();
+		moveAdvert(id);
+	});
 
 });
