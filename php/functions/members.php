@@ -60,7 +60,7 @@
 
   function getMembersInfo($dbHandler, $param){
     $sql = "SELECT
-    members.members_id, members_titles_content, members_name, members_tussenvoegsel, members_lastname, members_residence_street,
+    members.members_id, members_titles_content, members_name, members_tussenvoegsel, members_lastname, members_residence_street, members_residence_streetnr,
     members_residence_zip, members_residence_place, members_residence_country, DATE_FORMAT(members_birthdate, '%d-%m-%Y') AS members_birthdate, members_phonenr, members_phonenr2,
     members_mobnr, members_mobnr2, members_email, members_email2, DATE_FORMAT(members_startdate, '%d-%m-%Y') AS members_startdate, members_types.members_types_id,
     members_stable, members_bank, members_newsletter, members_comment, members_mail, members_gift, members_paid, members_reminder

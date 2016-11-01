@@ -95,3 +95,32 @@ window.getPopupData = function(element) {
     return object;
 
 };
+
+window.insertPopupData = function(elem, object){
+
+  for (var property in object) {
+    if (object.hasOwnProperty(property)) {
+
+      // exceptions
+      if(property === "members_newsletter"){
+
+        if(object[property] === "1"){
+          $(elem + ' *[name=' + property + ']').attr("on", "true");
+          $(elem + ' *[name=' + property + ']').show();
+        } else {
+          $(elem + ' *[name=' + property + ']').attr("on", "false");
+          $(elem + ' *[name=' + property + ']').hide();
+        }
+
+        continue;
+
+      }
+
+
+
+
+      $(elem + ' *[name=' + property + ']').val(object[property]);
+    }
+  }
+
+};

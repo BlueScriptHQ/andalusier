@@ -181,7 +181,7 @@
 
 <div id="editPopup" class="popup">
    <div class="popup-head">
-      <h2>Klantgegevens wijzigen</h2>
+      <h2>Klant toevoegen</h2>
       <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
    </div>
    <div class="popup-section">
@@ -192,26 +192,26 @@
       <div class="popup-section-content">
          <div class="row">
             <p class="label">Aanhef</p>
-            <select class="title" id="add-title" required="true" name="">
+            <select class="title" id="add-title" required="true" name="members_titles_content">
                <option value="dhr">De heer</option>
                <option value="mevr">Mevrouw</option>
             </select>
          </div>
          <div class="row">
             <p class="label">Voornaam</p>
-            <input type="text">
+            <input type="text" name="members_name">
          </div>
          <div class="row">
             <p class="label">Tussenvoegsel</p>
-            <input type="text" optional="true">
+            <input type="text" optional="true" name="members_tussenvoegsel">
          </div>
          <div class="row">
             <p class="label">Achternaam</p>
-            <input type="text">
+            <input type="text" name="members_lastname">
          </div>
          <div class="row">
             <p class="label">Geboortedatum</p>
-            <input type="text" value="DATEPICKER HIER ;')">
+            <input type="text" value="DATEPICKER HIER ;')" name="members_birthdate">
          </div>
          <div class="row">
             <p class="label"> </p>
@@ -219,7 +219,7 @@
          </div>
       </div>
    </div>
-   <div class="popup-section" >
+   <div class="popup-section">
       <div class="popup-section-head">
          <img src="elements/components/img/indicator-image-right.png" alt="" />
          <h2>AW gegevens</h2>
@@ -227,23 +227,23 @@
       <div class="popup-section-content">
          <div class="row">
             <p class="label">Straatnaam</p>
-            <input type="text">
+            <input type="text" name="members_residence_street">
          </div>
          <div class="row">
             <p class="label">Huisnummer</p>
-            <input type="text" name="accounts_street_nr">
+            <input type="text" name="members_residence_streetnr">
          </div>
          <div class="row">
             <p class="label">Woonplaats</p>
-            <input type="text">
+            <input type="text" name="members_residence_place">
          </div>
          <div class="row">
             <p class="label">Postcode</p>
-            <input type="text" name="accounts_zip">
+            <input type="text" name="members_residence_zip">
          </div>
          <div class="row">
             <p class="label">Land van herkomst</p>
-            <select>
+            <select name="members_residence_country">
                <option value="nederland">Nederland</option>
                <option value="belgie">België</option>
             </select>
@@ -262,23 +262,23 @@
       <div class="popup-section-content">
          <div class="row">
             <p class="label">E-mailadres</p>
-            <input type="text">
+            <input type="text" name="members_email">
          </div>
          <div class="row">
             <p class="label">Extra e-mailadres</p>
-            <input type="text" optional="true">
+            <input type="text" optional="true" name="members_email2">
          </div>
          <div class="row">
             <p class="label">Telefoonnummer</p>
-            <input type="text">
+            <input type="text" name="members_phonenr">
          </div>
          <div class="row">
             <p class="label">Extra telefoonnummer</p>
-            <input type="text" optional="true">
+            <input type="text" optional="true" name="members_phonenr2">
          </div>
          <div class="row">
             <p class="label">Mobielnummer</p>
-            <input type="text" optional="true">
+            <input type="text" optional="true" name="members_mobnr">
          </div>
          <div class="row">
             <p class="label"> </p>
@@ -294,7 +294,7 @@
       <div class="popup-section-content">
          <div class="row">
             <p class="label">Lid type</p>
-            <select>
+            <select name="members_types_id">
                <option value="1">Lid</option>
                <option value="2">Jeugdlid</option>
                <option value="3">Gezinslid</option>
@@ -305,29 +305,29 @@
             <p class="label">Nieuwsbrief</p>
             <div class="cop_check_wrapper">
                <div class="cop_container cop_con_check">
-                  <div class="cop_inner cop_in_check"></div>
+                  <div class="cop_inner cop_in_check control" name="members_newsletter"></div>
                </div>
             </div>
          </div>
          <div class="row">
             <p class="label">Stalnaam</p>
-            <input type="text">
+            <input type="text" name="members_stable">
          </div>
          <div class="row">
             <p class="label">Bankrekening</p>
-            <input type="text">
+            <input type="text" name="members_bank">
          </div>
          <div class="row">
             <p class="label">Ontvangen via</p>
             <div class="op_option_wrapper">
                <div class="cop_container op_con_option">
-                  <div class="cop_inner op_in_option"></div>
+                  <div class="cop_inner op_in_option control" value="1" name="members_receive_type"></div>
                </div>
                <p class="tag">E-mail</p>
             </div>
             <div class="op_option_wrapper">
                <div class="cop_container op_con_option">
-                  <div class="cop_inner op_in_option"></div>
+                  <div class="cop_inner op_in_option control" value="0" name="members_receive_type"></div>
                </div>
                <p class="tag">Post</p>
             </div>
@@ -347,11 +347,11 @@
          <div class="row flexible-height">
             <p class="label">Opmerking</p>
             <p class="label"> </p>
-            <textarea placeholder="Dit vult u alleen in, als u het nodig acht."></textarea>
+            <textarea placeholder="Dit vult u alleen in, als u het nodig acht." name="members_comment"></textarea>
          </div>
          <div class="row">
             <p class="label"> </p>
-            <input type="button" value="Lid aanmaken">
+            <input type="button" value="Lid aanmaken" id="editMember-submit">
          </div>
       </div>
    </div>

@@ -9,7 +9,13 @@ $(document).ready(function() {
     });
 
     $("#addMember-submit").on("click", function() {
+        alert();
         var memberData = getPopupData("#addMemberPopup");
+        addMemberInfo(memberData);
+    });
+
+    $("#editMember-submit").on("click", function() {
+        var memberData = getPopupData("#editPopup");
         addMemberInfo(memberData);
     });
 

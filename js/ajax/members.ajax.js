@@ -9,6 +9,24 @@ $(document).ready(function() {
 
     };
 
+
+    window.getMemberInfo = function(customerID) {
+
+        callHandler.addInvoked("getMembersInfo", function(r) {
+            console.log(r);
+
+            insertPopupData("#editPopup", r);
+
+            $("#editPopup").fadeIn(500);
+            $("#page-overlay").fadeIn(500);
+        }, customerID);
+
+    };
+
+    window.addMemberInfo = function(memberData) {
+        console.log(memberData);
+    };
+
     /*$("#add-members-btn").on("click", function() {
         $day = ($("#add-day").val().length < 2) ? "0" + $("#add-day").val() : $("#add-day").val();
         $sendway = ($("#sendway_email_add").is(':checked')) ? 1 : 0;
@@ -56,22 +74,7 @@ $(document).ready(function() {
         });
     }*/
 
-
-    window.getMemberInfo = function(customerID) {
-
-        callHandler.addInvoked("getMembersInfo", function(r) {
-            console.log(r);
-            $("#editPopup").fadeIn(500);
-            $("#page-overlay").fadeIn(500);
-        }, customerID);
-
-    };
-
-    window.addMemberInfo = function(memberData) {
-        console.log(memberData);
-    };
-
-    function setInfoMembers(data) {
+    /*function setInfoMembers(data) {
         $("#edit-members-id").val(data.members_id);
 
         // reset
@@ -193,5 +196,5 @@ $(document).ready(function() {
                 loadTable();
             }
         });
-    }
+    }*/
 });
