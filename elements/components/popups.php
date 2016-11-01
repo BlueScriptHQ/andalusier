@@ -974,6 +974,23 @@
    </div>
 </div>
 
+<!--Members payment request-->
+<div class="documents-popup-FolderFile popup" id="memberPaymentRequest">
+   <input type="hidden" value="">
+   <div class="popup-head">
+      <h2>Betalingsverzoek</h2>
+      <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
+   </div>
+   <div class="popup-content">
+      <h2 class="popup-content-h2">Vorige betalingsverzoek was op: [dummydatum].</h2>
+      <h2 class="popup-content-h2">Betalingsverzoek versturen?</h2>
+   </div>
+   <div class="popup-row">
+      <input type="button" class="folder_file_btn delete" id="sendPR" value="Versturen">
+      <input type="button" class="folder_file_btn delete" id="cancelPR" value="Annuleren">
+   </div>
+</div>
+
 
 <!--
 

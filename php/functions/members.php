@@ -258,4 +258,31 @@
       ":message" => "Lid ".$name. " toegevoegd!"
     ));
   }
+
+
+  function getMemberPR($dbHandler){
+
+    $sql = "SELECT
+    members.members_id, members_mail, members_paid, members_email
+    FROM members
+    INNER JOIN members_contact_info
+    ON members.members_id = members_contact_info.members_id
+    INNER JOIN members_status
+    ON members.members_id = members_status.members_id
+    WHERE members_mail = 1 AND members_paid = 0";
+
+    $data = $dbHandler->handleQuery($sql, false, true);
+
+    foreach($data as $row){
+      // the message
+      $msg = "Pay mate";
+      // use wordwrap() if lines are longer than 70 characters
+      $msg = wordwrap($msg,70);
+      // send email
+      mail($row->members_mail,"Andalusier Vereniging Betalingsverzoek", $msg);
+    }
+
+
+  }
+
 ?>

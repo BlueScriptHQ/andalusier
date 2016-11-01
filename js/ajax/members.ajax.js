@@ -27,6 +27,15 @@ $(document).ready(function() {
         console.log(memberData);
     };
 
+    window.getMemberPaymentRequest = function() {
+        callHandler.addInvoked("getMemberPR", function(r) {
+            console.log(JSON.parse(r));
+        });
+
+    };
+
+
+
     /*$("#add-members-btn").on("click", function() {
         $day = ($("#add-day").val().length < 2) ? "0" + $("#add-day").val() : $("#add-day").val();
         $sendway = ($("#sendway_email_add").is(':checked')) ? 1 : 0;
