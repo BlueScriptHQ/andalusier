@@ -52,11 +52,16 @@
     $adverts_billingnumber = $object->adverts_billingnumber;
     $adverts_comment = $object->adverts_comment;
 
-    //$sql = "INSERT INTO adverts(adverts_id, adverts_name, adverts_type, adverts_owner, adverts_date, adverts_contact, adverts_address, adverts_postalcode, adverts_city, adverts_country, adverts_email, adverts_telephone, adverts_old)
-    //VALUES
-    //(:id, :name, :type, :owner, :date, :contact, :address, :postalcode, :city, :country, :email, :telephone, 0)";
+    $sql = "INSERT INTO adverts(adverts_name, adverts_type, adverts_owner, adverts_enddate, adverts_contact, adverts_address, adverts_postalcode, adverts_city, adverts_country, adverts_email, adverts_email2, adverts_telephone, adverts_telephone2, adverts_mobile, adverts_old)
+    VALUES
+    (:name, :type, :owner, :date, :contact, :address, :postalcode, :city, :country, :email, :email2, :telephone, :telephone2, :mobile, 0)";
 
-    //$data = $dbHandler->handleQuery($sql, array(":id"=> $adverts_id, ":name"=> $adverts_name, ":type"=> $adverts_type, ":owner"=> $adverts_owner, ":date"=> $adverts_date, ":contact"=> $adverts_contact, ":address"=> $adverts_address, ":postalcode"=> $adverts_postalcode, "city"=> $adverts_city,":country"=> $adverts_country, ":email"=> $adverts_email, ":telephone"=> $adverts_phone));
+    $data = $dbHandler->handleQuery($sql,
+      array(":name"=> $adverts_name, ":type"=> $adverts_type, ":owner"=> $adverts_owner,
+            ":date"=> $adverts_date, ":contact"=> $adverts_contact, ":address"=> $adverts_address,
+            ":postalcode"=> $adverts_postalcode, "city"=> $adverts_city,":country"=> $adverts_country,
+            ":email"=> $adverts_email, ":email2"=> $adverts_email2, ":telephone"=>
+            $adverts_telephone, ":telephone2"=> $adverts_telephone2, ":mobile"=> $adverts_mobile));
   }
 
   function advertsExtraInfoHandlerNew($dbHandler, $object){

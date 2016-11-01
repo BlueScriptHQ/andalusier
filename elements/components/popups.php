@@ -852,6 +852,10 @@
             <input type="text" name="adverts_owner">
          </div>
          <div class="row">
+            <p class="label">Eind datum</p>
+            <input type="text" name="adverts_date">
+         </div>
+         <div class="row">
             <p class="label"> </p>
             <input type="button" value="Volgende stap" class="openNext">
          </div>

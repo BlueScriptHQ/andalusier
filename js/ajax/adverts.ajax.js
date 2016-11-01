@@ -29,7 +29,11 @@ $(document).ready(function() {
     };
 
     window.saveAdvert = function(object){
+      console.log(object);
   		callHandler.addInvoked("addNewAdvert", function(result){
+        $("#newAdvertsAdd").fadeOut(500);
+        $("#page-overlay").fadeOut(500);
+        clearForm("#newAdvertsAdd");
   			loadTable(true);
   		}, object);
     };
