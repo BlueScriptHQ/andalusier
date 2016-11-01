@@ -44,47 +44,5 @@ $(document).ready(function() {
         });
     };
 
-    window.getPopupData = function(element) {
-        var object = {};
-
-        $(element).find("input[type=text], textarea, select, .control").each(function() {
-            // object vullen
-            var value = $(this).val();
-            var name = $(this).attr("name");
-
-            // fix voor members_newsletter
-            if(name === "members_newsletter"){
-              if($(this).attr("on") === "true"){
-                object[name] = 1;
-                return true;
-              }
-              else {
-                object[name] = 0;
-                return true;
-              }
-            }
-
-            // Uitzondering: members_receive_type
-            if(object.members_receive_type === undefined){
-              var val = "";
-              $(element).find(".op_in_option").each(function(){
-                if($(this).attr("on") === "true"){
-                  val = $(this).attr("value");
-                }
-              });
-              object.members_receive_type = val;
-              return true;
-            } else if(name === "members_receive_type" && object.members_receive_type !== undefined){
-              return true;
-            }
-
-            object[name] = value;
-
-        });
-
-        return object;
-
-    };
-
-
+    
 });
