@@ -272,7 +272,17 @@
     WHERE members_mail = 1 AND members_paid = 0";
 
     $data = $dbHandler->handleQuery($sql, false, true);
-    return json_encode($data);
+
+    foreach($data as $row){
+      // the message
+      $msg = "Pay mate";
+      // use wordwrap() if lines are longer than 70 characters
+      $msg = wordwrap($msg,70);
+      // send email
+      mail($row->members_mail,"Andalusier Vereniging Betalingsverzoek", $msg);
+    }
+
+
   }
 
 ?>
