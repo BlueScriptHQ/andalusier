@@ -53,7 +53,7 @@
           <div class="tableHead">
 
             <div class="button-box">
-              <input type="button" class="btn" value="Adverteerder toevoegen" id="addAdvertsButton">
+              <input type="button" class="btn" value="Advertentie toevoegen" id="addAdvertsButton">
             </div>
 
           </div>

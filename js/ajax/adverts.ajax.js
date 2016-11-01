@@ -29,7 +29,7 @@ $(document).ready(function() {
     };
 
     window.saveAdvert = function(object){
-  		callHandler.addInvoked("advertsExtraInfoHandlerNew", function(result){
+  		callHandler.addInvoked("addNewAdvert", function(result){
   			loadTable(true);
   		}, object);
     };

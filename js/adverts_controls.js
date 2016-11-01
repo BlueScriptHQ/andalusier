@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$("#saveAdvertButton").on("click", function(){
 		var data = getPopupData("#newAdvertsAdd");
-		console.log(data);
+		saveAdvert(data);
 	});
 
 
