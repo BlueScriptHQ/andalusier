@@ -52,7 +52,7 @@ function loadTable(){
         $navigator = "";
 
         for($i = 1; $i < $pageCount + 1; $i++){
-        $navigator .= "<a href='#' onclick='openPage(".$i.", \"pagination.php\")'>".$i."</a>";
+        $navigator .= "<a href='#' onclick='openPage(".$i.", \"index.php\")'>".$i."</a>";
         }
 
         if($count > 5){

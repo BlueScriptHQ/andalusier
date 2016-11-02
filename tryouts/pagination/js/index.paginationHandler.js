@@ -8,7 +8,7 @@ $(document).ready(function(){
     console.log($obj);
 
     $.ajax({
-      url: "php/fieldHandler.php",
+      url: "php/index.fieldHandler.php",
       data: "object=" + JSON.stringify($obj),
       method: "POST",
       success: function(result){

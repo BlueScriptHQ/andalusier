@@ -1,7 +1,7 @@
 $(document).ready(function(){
 window.loadTable = function(){
   $.ajax({
-    url: "php/fieldHandler.php",
+    url: "php/index.fieldHandler.php",
     data: "read=true",
     method: "POST",
     success: function(result){
