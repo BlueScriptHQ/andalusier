@@ -57,11 +57,11 @@
                <input type="text" name="register_dateofbirth">
             </div>
           </div>
+
           <div id="register-as-block">
             <p>Lidsoort</p>
             <img src="elements/components/img/indicator-image-right.png">
           </div>
-
         <div id="register-as-block-content">
           <div class="row full-width">
              <p class="label">Lidsoort kiezen:</p>
@@ -76,6 +76,34 @@
            </fieldset>
           </div>
         </div>
+
+        <div id="question-block">
+          <p>Vragen</p>
+          <img src="elements/components/img/indicator-image-right.png">
+        </div>
+        <div id="question-form">
+          <div class="row">
+             <p class="label">1. Ben je in het bezit van een Spaans paard / meerdere Spaanse paarden? Zo ja, wat is de naam?</p>
+             <input type="text" name="register_horse_name">
+          </div>
+          <div class="row">
+             <p class="label">Welke activiteit / discipline heeft je interesse?</p>
+             <input type="text" name="register_activities">
+          </div>
+          <div class="row">
+             <p class="label">Zou je jezelf voor willen stellen in ons verenigingsblad?</p>
+             <input type="text" name="register_introduction">
+          </div>
+          <div class="row">
+             <p class="label">Wil jij je inzetten om de vereniging te promoten d.m.v. standbemanning op beurzen / evenementen?</p>
+             <input type="text" name="register_promoting">
+          </div>
+          <div class="row">
+             <p class="label">Heb je nog andere ideëen</p>
+             <input type="text" name="register_ideas">
+          </div>
+        </div>
+
     </div>
     </div>
   </div>

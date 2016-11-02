@@ -124,6 +124,7 @@ img {
   padding-bottom: 10px;
   background-color: #f2f2f2;
   height: 130px;
+  display: none;
 }
 
 fieldset {
@@ -135,4 +136,18 @@ fieldset {
 
 fieldset input[type="radio"]{
   margin-top: 10px;
+}
+
+#question-block {
+  float: left;
+  width: 100%;
+  background-color: #222222;
+  height: 40px;
+}
+
+#question-block p {
+  line-height: 40px;
+  color: white;
+  float: right;
+  margin-right: 10px;
 }
