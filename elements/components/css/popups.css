@@ -9,7 +9,8 @@
 
 #addMemberPopup, #editPopup, #editAccountPopup,
 #popupAdvertExtraInfo, #acceptMemberPopup,
-#newAdvertsAdd, #newAdvertsOpen, #memberPaymentRequest{
+#newAdvertsAdd, #newAdvertsOpen, #memberPaymentRequest,
+#addNewAccountPopup {
   width: 550px;
   height: 600px;
   margin: auto;
@@ -30,8 +31,6 @@
 .popup {
   display: none;
 }
-
-
 
 
 .btn_edit {
@@ -91,7 +90,7 @@
 .documents-popup-FolderFile .popup-content-h2 {
 	margin: 10px;
 }
-.documents-popup-FolderFile input[type=text], input[type=password] {
+.documents-popup-FolderFile input[type=text], .a_password {
 	float: left;
 	margin: 10px 5px 10px 10px;
 	height: 30px;
@@ -215,7 +214,7 @@
   line-height: 50px;
   padding-left: 20px;
 }
-.popup-section-content .row input[type=text] {
+.popup-section-content .row input[type=text], .password {
   width: calc(50% - 9px);
   float: left;
   margin: 5px 0;

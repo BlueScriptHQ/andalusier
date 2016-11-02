@@ -63,11 +63,9 @@
     $sql = "UPDATE accounts
             INNER JOIN acc_ranks
             ON accounts.accounts_id = acc_ranks.accounts_id
-            INNER JOIN ranks
-            ON acc_ranks.ranks_id = ranks.ranks_id
             SET
             accounts.accounts_username = :username,
-            ranks.ranks_id = :ranks_id
+            acc_ranks.ranks_id = :ranks_id
             WHERE accounts.accounts_id = :id";
 
     $data = $dbHandler->handleQuery($sql, array(

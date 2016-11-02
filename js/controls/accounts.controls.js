@@ -4,6 +4,11 @@ $(document).ready(function(){
     $("#editAccountPasswordPopup").fadeIn(500);
   });
 
+  $("#addAccountPopupBtn").on("click", function(){
+    $("#addNewAccountPopup").fadeIn(500);
+    $("#page-overlay").fadeIn(500);
+  });
+
   $("#saveAccountPassword").on("click", function(){
     var newpassword = $("#newAccountPassword").val();
     var id = $("#editAccountPopup input[type=hidden]").val();

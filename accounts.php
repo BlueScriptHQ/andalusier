@@ -53,7 +53,7 @@
           <div class="tableHead">
 
             <div class="button-box">
-              <input type="button" class="btn" value="Account toevoegen">
+              <input type="button" class="btn" value="Account toevoegen" id="addAccountPopupBtn">
             </div>
 
           </div>
