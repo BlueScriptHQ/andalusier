@@ -37,6 +37,7 @@
 						// here we need to update the time
 						$_SESSION["loggeduserid"] = $data->accounts_id;
 						$_SESSION["documentsURL"] = $_SERVER['DOCUMENT_ROOT']."/andalusier/documents/";
+						$_SESSION["newsURL"] = $_SERVER['DOCUMENT_ROOT']."/andalusier/newsletters/";
 
 
 						$sql = "
