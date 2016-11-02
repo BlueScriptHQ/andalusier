@@ -15,7 +15,6 @@ body, html {
 #register_form {
   width: 100%;
   height: 500px;
-  background-color: red;
 }
 
 #header {
@@ -27,8 +26,113 @@ body, html {
 #header h2 {
   float: left;
   line-height: 60px;
+  margin-left: 10px;
 }
 
 #header img {
   float: right;
+  width: 70px;
+}
+
+#register-form-content {
+  background-color: #990909;
+  height: 440px;
+  width: 100%;
+}
+
+#contact-block {
+  background-color: #222222;
+  width: 100%;
+  height: 40px;
+  color: white;
+  line-height: 40px;
+  float: left;
+}
+
+#contact-block p {
+  margin-right: 10px;
+  float: right;
+}
+
+img {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 20px;
+}
+
+#contact-form {
+  float: left;
+  background-color: #f2f2f2;
+  width: 100%;
+  padding-bottom: 10px;
+  display: none;
+}
+
+.row {
+  width: 100%;
+  float: left;
+  height: 40px;
+  position: relative;
+}
+.rowLast {
+  width: 100%;
+  float: left;
+  height: 40px;
+  position: relative;
+}
+
+.row p.label {
+  width: 50%;
+  float: left;
+  line-height: 50px;
+  padding-left: 20px;
+}
+
+.row input[type="text"]{
+  width: calc(50% - 9px);
+  float: left;
+  margin-top: 10px;
+  margin-right: 5px;
+  height: 30px;
+  border: 2px solid #990909;
+  padding: 5px;
+  font-size: 16px;
+}
+
+#register-as-block {
+  float: left;
+  width: 100%;
+  background-color: #222222;
+  height: 40px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+#register-as-block p {
+  line-height: 40px;
+  color: white;
+  float: right;
+  margin-right: 10px;
+}
+
+#register-as-block-content {
+  float: left;
+  width: 100%;
+  padding-bottom: 10px;
+  background-color: #f2f2f2;
+  height: 130px;
+}
+
+fieldset {
+  float: left;
+  display: inline-block;
+  margin-top: 10px;
+
+}
+
+fieldset input[type="radio"]{
+  margin-top: 10px;
 }
