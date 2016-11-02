@@ -24,6 +24,7 @@
       <div id="register_form">
         <div id="header">
           <h2>Vereniging van het spaanse paard</h2>
+          <img src="img/header-section/brand.png">
         </div>
     </div>
   </div>
