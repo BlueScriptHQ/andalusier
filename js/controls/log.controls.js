@@ -6,9 +6,7 @@ $(document).ready(function(){
 	});
 
 	$("#deleteLog").on("click", function(){
-		callHandler.addInvoked("emptyLog", function(result){
-			location.reload();
-		});
+		confirmEmptyLog();
 	});
 
 	$("#cancelLog").on("click", function(){
