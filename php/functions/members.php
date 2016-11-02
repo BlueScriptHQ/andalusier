@@ -262,7 +262,7 @@
 
   function getMemberPR($dbHandler){
 
-    $sql = "SELECT
+    /*$sql = "SELECT
     members.members_id, members_mail, members_paid, members_email
     FROM members
     INNER JOIN members_contact_info
@@ -280,8 +280,28 @@
       $msg = wordwrap($msg,70);
       // send email
       mail($row->members_mail,"Andalusier Vereniging Betalingsverzoek", $msg);
-    }
+    }*/
+    $sql = "UPDATE payment_requests
+            SET payment_requests_send = NOW()
+            WHERE payment_requests_page = 3";
+    $dbHandler->handleQuery($sql);
 
   }
+
+  function getMemberPRSend($dbHandler){
+    $sql = "SELECT payment_requests_send FROM payment_requests
+    WHERE payment_requests_page = 3";
+
+    $data = $dbHandler->handleQuery($sql, false, false);
+
+    if($data){
+      return date_format(new DateTime($data->payment_requests_send), 'd-m-Y h:i');
+    }
+    else{
+      return "Geen bekende laatste tijd";
+    }
+  }
+
+
 
 ?>

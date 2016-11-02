@@ -29,7 +29,16 @@ $(document).ready(function() {
 
     window.getMemberPaymentRequest = function() {
         callHandler.addInvoked("getMemberPR", function(r) {
-            console.log(JSON.parse(r));
+            console.log(r);
+            $("#page-overlay").fadeOut(500);
+            $("#memberPaymentRequest").fadeOut(500);
+        });
+
+    };
+
+    window.getMemberPaymentRequestSend = function() {
+        callHandler.addInvoked("getMemberPRSend", function(r) {
+            $(".prSend").text(r);
         });
 
     };

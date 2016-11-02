@@ -8,11 +8,6 @@ $(document).ready(function() {
         $("#addMemberPopup").fadeIn(500);
     });
 
-    $("#memberPaymentRequestPopup-btn").on("click", function() {
-        $("#page-overlay").fadeIn(500);
-        $("#memberPaymentRequest").fadeIn(500);
-    });
-
     $("#addMember-submit").on("click", function() {
         alert();
         var memberData = getPopupData("#addMemberPopup");
@@ -28,8 +23,19 @@ $(document).ready(function() {
         getMemberInfo(userID);
     };
 
+    $("#memberPaymentRequestPopup-btn").on("click", function() {
+        $("#page-overlay").fadeIn(500);
+        $("#memberPaymentRequest").fadeIn(500);
+        getMemberPaymentRequestSend();
+    });
+
     $("#sendPR").on("click", function() {
         getMemberPaymentRequest();
+    });
+
+    $("#cancelPR").on("click", function() {
+      $("#page-overlay").fadeOut(500);
+      $("#memberPaymentRequest").fadeOut(500);
     });
 
 });

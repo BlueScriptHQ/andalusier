@@ -877,7 +877,7 @@
       <a href="#" class="popup_close"><img src="img/content-section/general/close.png" alt="" /></a>
    </div>
    <div class="popup-content">
-      <h2 class="popup-content-h2">Vorige betalingsverzoek was op: [dummydatum].</h2>
+      <h2 class="popup-content-h2">Vorige betalingsverzoek was op: <span class="prSend"></span>.</h2>
       <h2 class="popup-content-h2">Betalingsverzoek versturen?</h2>
    </div>
    <div class="popup-row">
