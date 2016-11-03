@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   window.closeAllForms = function(){
     $("#contact-form").slideUp();
-    $("#register-as-block-content").slideUp();
+    $("#register-as-form").slideUp();
     $("#question-form").slideUp();
 
     $("#contact-arrow").attr("src", "elements/components/img/indicator-image-right.png");
@@ -10,50 +10,40 @@ $(document).ready(function(){
     $("#question-arrow").attr("src", "elements/components/img/indicator-image-right.png");
   };
 
-  var opened = false;
   $("#contact-block").on("click", function(){
     closeAllForms();
 
-    if(opened === true){
+    if($("#contact-form").is(":visible")){
       $("#contact-form").slideUp();
-      closeAllForms();
-      opened = false;
+    } else {
+      $("#contact-form").slideDown();
+      $("#contact-arrow").attr("src", "elements/components/img/indicator-image-down.png");
     }
-    else {
-    $("#contact-arrow").attr("src","elements/components/img/indicator-image-down.png");
-    $("#contact-form").slideDown();
-     opened = true;
+
+  });
+
+
+  $("#question-block").on("click", function(){
+    closeAllForms();
+
+    if($("#question-form").is(":visible")){
+      $("#question-form").slideUp();
+    } else {
+      $("#question-form").slideDown();
+      $("#question-arrow").attr("src", "elements/components/img/indicator-image-down.png");
     }
+
   });
 
   $("#register-as-block").on("click", function(){
     closeAllForms();
 
-    if(opened === true){
-      $("#register-as-block-content").slideUp();
-      closeAllForms();
-      opened = false;
+    if($("#register-as-form").is(":visible")){
+      $("#register-as-form").slideUp();
+    } else {
+      $("#register-as-form").slideDown();
+      $("#register-as-arrow").attr("src", "elements/components/img/indicator-image-down.png");
     }
-    else {
-    $("#register-as-arrow").attr("src","elements/components/img/indicator-image-down.png");
-    $("#register-as-block-content").slideDown();
-     opened = true;
-    }
+
   });
-
-  $("#question-block").on("click", function(){
-    closeAllForms();
-
-    if(opened === true){
-      $("#question-form").slideUp();
-      closeAllForms();
-      opened = false;
-    }
-    else {
-    $("#question-arrow").attr("src","elements/components/img/indicator-image-down.png");
-    $("#question-form").slideDown();
-     opened = true;
-    }
-  });
-
 });

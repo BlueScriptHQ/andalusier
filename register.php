@@ -64,7 +64,7 @@
             <img id="register-as-arrow" src="elements/components/img/indicator-image-right.png">
           </div>
           </a>
-        <div id="register-as-block-content">
+        <div id="register-as-form">
           <div class="row full-width">
              <p class="label">Lidsoort kiezen:</p>
              <fieldset>
