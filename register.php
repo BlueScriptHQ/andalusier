@@ -29,7 +29,7 @@
         <div id="register-form-content">
           <a class="openBlock-contact"><div id="contact-block">
             <p>Contactgegevens</p>
-            <img src="elements/components/img/indicator-image-right.png">
+            <img id="contact-arrow" src="elements/components/img/indicator-image-right.png">
           </div>
           </a>
           <div id="contact-form">
@@ -61,7 +61,7 @@
 
           <a class="openBlock-register-as"><div id="register-as-block">
             <p>Lidsoort</p>
-            <img src="elements/components/img/indicator-image-right.png">
+            <img id="register-as-arrow" src="elements/components/img/indicator-image-right.png">
           </div>
           </a>
         <div id="register-as-block-content">
@@ -81,7 +81,7 @@
 
         <a class="openBlock-question"><div id="question-block">
           <p>Vragen</p>
-          <img src="elements/components/img/indicator-image-right.png">
+          <img id="question-arrow" src="elements/components/img/indicator-image-right.png">
         </div>
       </a>
       <div id="question-form">
