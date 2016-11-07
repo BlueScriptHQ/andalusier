@@ -3,7 +3,7 @@
     Open een map, door achter de sessie "newsURL" de geselecteerde map naam te plakken.
   */
 
-  function openFolder($dbHandler, $param){
+  function openFolderNews($dbHandler, $param){
     if(valid($_SESSION["newsURL"])){
       $_SESSION["newsURL"] .= $param . "/";
     }
@@ -13,7 +13,7 @@
     Ga een map terug, door van de sessie "newsURL", de laatste map er af te strippen.
   */
 
-  function backFolder(){
+  function backFolderNews(){
     if(valid($_SESSION["newsURL"])){
       $_SESSION["newsURL"] = substr($_SESSION["newsURL"], 0, strrpos( $_SESSION["newsURL"], '/'));
       $_SESSION["newsURL"] = substr($_SESSION["newsURL"], 0, strrpos( $_SESSION["newsURL"], '/')) . "/";
@@ -24,7 +24,7 @@
     Haal alle bestanden op in de huidige map (uit newsURL sessie variabele)
   */
 
-  function getDocuments(){
+  function getNewsletters(){
 
     /*
       Haal de benodige variabelen op
@@ -199,7 +199,7 @@
     Voeg een nieuw mapje toe
   */
 
-  function addFolder($dbHandler, $param){
+  function addFolderNews($dbHandler, $param){
     if(valid($_SESSION["newsURL"])){
 
       // voordat hij wordt aangemaakt, de slashes verwijderen!
@@ -225,7 +225,7 @@
   */
 
 
-  function deleteFileFolder($dbHandler, $param, $logHandler){
+  function deleteFileFolderNews($dbHandler, $param, $logHandler){
 
     if(valid($_SESSION["newsURL"])){
       /*
@@ -272,7 +272,7 @@
 
   }
 
-  function deletePerm($d, $param, $logHandler){
+  function deletePermNews($d, $param, $logHandler){
     $dirname = $_SESSION["newsURL"].$param;
     array_map('unlink', glob("$dirname/*.*"));
     rmdir($_SESSION["newsURL"].$param);
@@ -284,7 +284,7 @@
   /*
     Verander de naam van een bestand of map
   */
-  function changeNameFF($d, $data){
+  function changeNameFFNews($d, $data){
     if(valid($_SESSION["newsURL"])){
       $old = $data->old;
       $new = $data->new;
