@@ -39,6 +39,8 @@
       require "functions/members_accept.php";
       require "functions/logs.php";
       require "functions/newsletters.php";
+
+      require "functions/tutorial.php";
       // require functions/register.php <- not being used atm
 
     /*

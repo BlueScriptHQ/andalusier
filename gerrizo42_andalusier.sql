@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 26 okt 2016 om 12:12
+-- Gegenereerd op: 07 nov 2016 om 21:51
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -43,9 +43,9 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
-(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-26 07:05:07', '2016-10-22 19:56:36'),
+(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-26 12:32:29', '2016-10-26 09:05:07'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
-(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-10-25 10:15:23', '2016-10-22 19:56:49');
+(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-11-07 19:50:20', '2016-11-02 08:48:53');
 
 -- --------------------------------------------------------
 
@@ -125,9 +125,43 @@ CREATE TABLE `acc_ranks` (
 --
 
 INSERT INTO `acc_ranks` (`accounts_id`, `ranks_id`) VALUES
-(1, 2),
+(1, 1),
 (2, 5),
 (3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `adverts`
+--
+
+CREATE TABLE `adverts` (
+  `adverts_id` int(4) NOT NULL,
+  `adverts_name` varchar(50) NOT NULL,
+  `adverts_owner` varchar(50) NOT NULL,
+  `adverts_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `adverts_status` tinyint(1) NOT NULL,
+  `adverts_type` varchar(10) NOT NULL,
+  `adverts_old` int(2) NOT NULL,
+  `adverts_contact` varchar(30) NOT NULL,
+  `adverts_address` varchar(70) NOT NULL,
+  `adverts_postalcode` varchar(20) NOT NULL,
+  `adverts_city` varchar(50) NOT NULL,
+  `adverts_country` varchar(50) NOT NULL,
+  `adverts_email` varchar(40) NOT NULL,
+  `adverts_telephone` varchar(20) NOT NULL,
+  `adverts_bank` varchar(40) NOT NULL,
+  `adverts_billingnumber` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `adverts`
+--
+
+INSERT INTO `adverts` (`adverts_id`, `adverts_name`, `adverts_owner`, `adverts_date`, `adverts_status`, `adverts_type`, `adverts_old`, `adverts_contact`, `adverts_address`, `adverts_postalcode`, `adverts_city`, `adverts_country`, `adverts_email`, `adverts_telephone`, `adverts_bank`, `adverts_billingnumber`) VALUES
+(1, 'Hele jaar aanbieding', 'Jumbo', '2016-10-26 07:14:30', 1, 'Heel', 0, '', '', '', '', '', 'jumbo@infofake.nl', '', 'Knab', 'knab05019283957691'),
+(2, 'De vrolijke koe', 'Jumbo', '2016-10-26 10:02:55', 0, 'Heel', 1, 'Piet Klaas', 'Hoofdlaan 1', '0000AB', 'Amsterdam', 'Nederland', 'jumbo@infofake.nl', '0638794613', '', ''),
+(3, 'Mooie advertentie', 'Abc', '2016-10-26 07:02:46', 0, 'Heel', 1, '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -258,7 +292,10 @@ INSERT INTO `logs` (`logs_id`, `logs_date`, `logs_content`) VALUES
 (95, '2016-10-25 12:48:19', 'Nieuwe map "test" aangemaakt.'),
 (96, '2016-10-25 12:49:09', 'Nieuwe map "test123" aangemaakt.'),
 (97, '2016-10-25 12:49:24', 'Nieuwe map "test12323123" aangemaakt.'),
-(98, '2016-10-25 12:56:41', 'Nieuwe map "test1234" aangemaakt.');
+(98, '2016-10-25 12:56:41', 'Nieuwe map "test1234" aangemaakt.'),
+(99, '2016-10-26 12:53:42', 'Nieuwe map "test" aangemaakt.'),
+(100, '2016-10-26 12:54:06', 'Bestand "Plan van Aanpak.docx" toegevoegd!'),
+(101, '2016-10-26 12:54:13', 'Bestand "functioneel ontwerp.docx" toegevoegd!');
 
 -- --------------------------------------------------------
 
@@ -289,11 +326,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`members_id`, `members_onhold`, `members_name`, `members_tussenvoegsel`, `members_lastname`, `members_birthdate`, `members_startdate`, `members_enddate`, `members_newsletter`, `members_mail`, `members_stable`, `members_bank`, `members_comment`, `members_is_old`, `members_types_id`) VALUES
-(2, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-10-26 09:57:48', NULL, 1, 0, 'Paardjeshof', '', 'Over dit lid geen opmerkingen.', 0, 3),
-(3, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-10-26 09:57:58', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
-(4, 0, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-10-26 09:57:16', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
-(6, 0, 'Bert', '', 'Stapper', '1977-12-07', '2016-10-26 09:56:29', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
-(7, 1, 'Karin', NULL, 'Kreeft', '1996-09-05', '2016-10-26 09:58:49', NULL, 1, 1, 'paardenstal ', '3746238423', 'Druk aant programmieren', 0, 1);
+(2, 1, 'Jan', 'De', ' Boer', '1946-05-09', '2016-11-01 10:15:12', NULL, 1, 0, 'Paardjeshof', 'ASNBNRANDOMIETSGG', 'Over dit lid geen opmerkingen.', 0, 3),
+(3, 1, 'Saskia', '', 'Stevens', '1971-01-01', '2016-10-26 10:25:06', NULL, 0, 0, 'Hengstenkamp', 'ASNB RANDOM NUMMER', 'Dit lid woont in het buitenland, maar wil graag in Nederland de post ontvangen.', 0, 3),
+(4, 0, 'Stefan', '', 'Klaassen', '1981-05-02', '2016-10-26 10:21:01', NULL, 0, 0, 'AndalusierHofje', 'SNSB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(6, 0, 'Bert', '', 'Stapper', '1977-12-07', '2016-10-26 10:24:52', NULL, 1, 1, 'De Stal', 'ASNB RANDOM NUMMER', 'Over dit lid geen opmerkingen.', 0, 4),
+(7, 1, 'Karin', '', 'Kreeft', '1996-09-05', '2016-11-01 14:40:56', NULL, 1, 1, 'paardenstal ', '3746238423', 'Druk aant programmieren', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -331,6 +368,7 @@ INSERT INTO `members_contact_info` (`members_id`, `members_email`, `members_emai
 CREATE TABLE `members_residence_info` (
   `members_id` int(5) NOT NULL,
   `members_residence_street` varchar(200) NOT NULL,
+  `members_residence_streetnr` varchar(10) NOT NULL,
   `members_residence_zip` varchar(10) NOT NULL,
   `members_residence_place` varchar(300) NOT NULL,
   `members_residence_country` varchar(100) NOT NULL
@@ -340,12 +378,12 @@ CREATE TABLE `members_residence_info` (
 -- Gegevens worden geëxporteerd voor tabel `members_residence_info`
 --
 
-INSERT INTO `members_residence_info` (`members_id`, `members_residence_street`, `members_residence_zip`, `members_residence_place`, `members_residence_country`) VALUES
-(2, 'Prinsjeslaan38', '7902JH', 'Hoogeveen', ''),
-(3, 'Pottenstraat27', '7863 TM', 'Zwinderen', 'nederland'),
-(4, 'Zeillaan271', '7863 BE', 'Oosterheim', 'belgie'),
-(6, 'De straat 24', '783TM', 'Hoogeveen', 'belgie'),
-(7, 'jan dekkerstraat 45', '7902jh', 'hgv', 'nl');
+INSERT INTO `members_residence_info` (`members_id`, `members_residence_street`, `members_residence_streetnr`, `members_residence_zip`, `members_residence_place`, `members_residence_country`) VALUES
+(2, 'Prinsjeslaan', '38', '7902JH', 'Hoogeveen', 'nederland'),
+(3, 'Pottenstraat', '27', '7863 TM', 'Zwinderen', 'nederland'),
+(4, 'Zeillaan', '271', '7863 BE', 'Oosterheim', 'belgie'),
+(6, 'De straat', '24', '783TM', 'Hoogeveen', 'belgie'),
+(7, 'jan dekkerstraat', '', '7902jh', 'hgv', 'nl');
 
 -- --------------------------------------------------------
 
@@ -529,6 +567,26 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (5, 6, 1),
 (5, 7, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `tutorials`
+--
+
+CREATE TABLE `tutorials` (
+  `tutorials_id` int(5) NOT NULL,
+  `tutorials_name` varchar(400) NOT NULL,
+  `tutorials_desc` varchar(2000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tutorials`
+--
+
+INSERT INTO `tutorials` (`tutorials_id`, `tutorials_name`, `tutorials_desc`) VALUES
+(1, 'Tutorial 1', 'Uitleggen over callHandler'),
+(2, 'Tutorial 2', 'Uitleggen wat het doel van mijn leven is');
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -564,6 +622,12 @@ ALTER TABLE `acc_notif`
 ALTER TABLE `acc_ranks`
   ADD PRIMARY KEY (`accounts_id`,`ranks_id`),
   ADD KEY `acc_ranks_ranks` (`ranks_id`);
+
+--
+-- Indexen voor tabel `adverts`
+--
+ALTER TABLE `adverts`
+  ADD PRIMARY KEY (`adverts_id`);
 
 --
 -- Indexen voor tabel `logs`
@@ -634,6 +698,12 @@ ALTER TABLE `ranks_pages`
   ADD KEY `ranks_pages_pages` (`pages_id`);
 
 --
+-- Indexen voor tabel `tutorials`
+--
+ALTER TABLE `tutorials`
+  ADD PRIMARY KEY (`tutorials_id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -648,10 +718,15 @@ ALTER TABLE `accounts`
 ALTER TABLE `accounts_titles`
   MODIFY `accounts_id` int(5) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT voor een tabel `adverts`
+--
+ALTER TABLE `adverts`
+  MODIFY `adverts_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT voor een tabel `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `logs_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `logs_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT voor een tabel `members`
 --
@@ -682,6 +757,11 @@ ALTER TABLE `pages`
 --
 ALTER TABLE `ranks`
   MODIFY `ranks_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT voor een tabel `tutorials`
+--
+ALTER TABLE `tutorials`
+  MODIFY `tutorials_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
