@@ -55,7 +55,7 @@
             </div>
             <div class="row">
                <p class="label">Geboortedatum</p>
-               <input type="text" name="register_dateofbirth">
+               <input type="text" class="dateofbirth-register" name="register_dateofbirth">
             </div>
           </div>
 
@@ -105,6 +105,9 @@
            <p class="label">Heb je nog andere ideëen</p>
            <input type="text" name="register_ideas">
         </div>
+      </div>
+      <div id="btn_container">
+        <button id="btn_register">Aanmelden</button>
       </div>
       </div>
       </div>

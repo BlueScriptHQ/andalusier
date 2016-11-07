@@ -8,6 +8,9 @@ $(document).ready(function(){
     $("#contact-arrow").attr("src", "elements/components/img/indicator-image-right.png");
     $("#register-as-arrow").attr("src", "elements/components/img/indicator-image-right.png");
     $("#question-arrow").attr("src", "elements/components/img/indicator-image-right.png");
+
+    checkFilled();
+
   };
 
   $("#contact-block").on("click", function(){
@@ -46,4 +49,73 @@ $(document).ready(function(){
     }
 
   });
+
+  window.checkFilled = function(){
+    var valid = true;
+    $("#contact-form input[type='text']").each(function(){
+      if($(this).val() === ""){
+        valid = false;
+      }
+    });
+
+    var valid2 = false;
+    if($('#register-as-form input[type="radio"]').is(':checked')) {
+      valid2 = true;
+    }
+
+    var valid3 = true;
+    $("#question-form input[type='text']").each(function(){
+      if($(this).val() === ""){
+        valid3 = false;
+      }
+    });
+
+    if(valid){
+      $("#contact-block").css({"background-color": "#2ecc71"});
+    }
+
+    if(valid2){
+      $("#register-as-block").css({"background-color": "#2ecc71"});
+    }
+
+    if(valid3){
+      $("#question-block").css({"background-color": "#2ecc71"});
+    }
+
+    if(valid && valid2 && valid3){
+      $("#btn_register").fadeIn();
+    }
+  };
+
+    $("#btn_register").on("click", function(){
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
