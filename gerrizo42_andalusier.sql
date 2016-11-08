@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 nov 2016 om 09:05
+-- Gegenereerd op: 08 nov 2016 om 09:18
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -125,7 +125,7 @@ CREATE TABLE `acc_ranks` (
 --
 
 INSERT INTO `acc_ranks` (`accounts_id`, `ranks_id`) VALUES
-(1, 1),
+(1, 2),
 (2, 5),
 (3, 1);
 
@@ -508,7 +508,6 @@ INSERT INTO `pages` (`pages_id`, `pages_name`, `pages_url`, `pages_parentid`, `p
 (1, 'Dashboard', 'index.php', NULL, 0),
 (2, 'Leden', 'leden.php', NULL, 1),
 (3, 'Overzicht', 'leden.php', 2, 0),
-(4, 'Nieuwe aanmeldingen', 'aanmeldingen.php', 2, 0),
 (5, 'Oud leden', 'oudleden.php', 2, 0),
 (6, 'Documenten', 'documents.php', NULL, 0),
 (7, 'Logboek', 'log.php', NULL, 0),
@@ -533,7 +532,7 @@ CREATE TABLE `payment_requests` (
 --
 
 INSERT INTO `payment_requests` (`payment_requests_id`, `payment_requests_page`, `payment_requests_send`) VALUES
-(1, '3', '2016-11-02 10:17:02');
+(1, '3', '2016-11-08 09:08:21');
 
 -- --------------------------------------------------------
 
@@ -581,11 +580,13 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (1, 7, 1),
 (1, 8, 1),
 (1, 9, 1),
+(1, 10, 1),
 (2, 1, 1),
 (2, 2, 1),
 (2, 3, 1),
 (2, 6, 1),
 (2, 7, 1),
+(2, 9, 1),
 (2, 10, 1),
 (5, 1, 1),
 (5, 6, 1),
