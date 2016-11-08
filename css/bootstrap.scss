@@ -135,6 +135,16 @@
               background-size: $btnImageSize;
               margin-right: 10px;
           }
+          &#newsAddFolderBtn {
+              background: url("../img/content-section/documents-list/add_folder.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+          }
+
+          &#newsAddFileBtn {
+              background: url("../img/content-section/documents-list/add_file.png") no-repeat scroll 7.5px 7.5px $main-color;
+              background-size: $btnImageSize;
+              margin-right: 10px;
+          }
 
           &#downloadLogBtn {
               background: url("../img/content-section/log-list/download_log.png") no-repeat scroll 7.5px 7.5px $main-color;

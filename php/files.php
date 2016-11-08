@@ -52,6 +52,7 @@ if(isset($_GET["downloadFile"])){
 /*
   Upload een bestand
 */
+
 if(isset($_FILES["fileToUpload"])){
   $newName = $_POST["newName"];
 
@@ -80,6 +81,5 @@ if(isset($_FILES["fileToUpload"])){
 
   header("Location: ../documents.php");
 }
-
 
 ?>
