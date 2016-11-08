@@ -200,7 +200,7 @@
     Voeg een nieuw mapje toe
   */
 
-  function addFolderNews($dbHandler, $param){
+  function addFolderNews($dbHandler, $param, $logHandler){
     if(valid($_SESSION["newsURL"])){
 
       // voordat hij wordt aangemaakt, de slashes verwijderen!
@@ -212,12 +212,8 @@
         return "exists";
       }
 
-
       // log
-      $sql = "INSERT INTO logs (logs_content) VALUES (:message);";
-      $dbHandler->handleQuery($sql, array(
-       ":message" => "Nieuwe map \"".$stripped. "\" aangemaakt in nieuwsbrieven."
-     ));
+      $logHandler->addMessage("Nieuwe map \"".$stripped. "\" aangemaakt in nieuwsbrieven.");
     }
   }
 
@@ -285,7 +281,7 @@
   /*
     Verander de naam van een bestand of map
   */
-  function changeNameFFNews($d, $data){
+  function changeNameFFNews($d, $data, $logHandler){
     if(valid($_SESSION["newsURL"])){
       $old = $data->old;
       $new = $data->new;
@@ -299,6 +295,8 @@
         // verander nu de oude bestandsnaam naar de nieuwe bestandsnaam
         rename(strtolower($_SESSION["newsURL"].$old), $_SESSION["newsURL"].$new_file_name);
       }
+
+      $logHandler->addMessage("Bestand \"".$old."\" hernoemd naar \"".$new_file_name."\"");
 
     }
   }

@@ -60,7 +60,7 @@ $(document).ready(function() {
 
     $("#renameFFNews").on("click", function() {
         var oud = $("#editFolderFileNews input[type=hidden]").val();
-        var nieuw = $("#editFolderFileNews #edit_folder").val();
+        var nieuw = $("#editFolderFileNews #edit_folderNews").val();
         var object = {
             old: oud,
             new: nieuw

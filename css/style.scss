@@ -435,11 +435,11 @@ body {
           background-size: $btnImageSize;
           margin-right: 10px;
         }
-        &#AddFileBtnNews {
+        &#addFileBtnNews {
           background: url("../img/content-section/documents-list/add_folder.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
         }
-        &#AddFileBtnNews {
+        &#addFileBtnNews {
           background: url("../img/content-section/documents-list/add_file.png") no-repeat scroll 7.5px 7.5px $main-color;
           background-size: $btnImageSize;
           margin-right: 10px;
@@ -523,7 +523,7 @@ body {
           padding-left: 20px;
         }
         &.fName{
-          min-width: 400px;
+          min-width: 350px;
           padding: 0;
           padding-left: 20px;
         }
@@ -532,7 +532,7 @@ body {
           padding: 0;
         }
         &.fSize{
-          min-width: 160px;
+          max-width: 160px;
           text-align: center;
           padding: 0;
         }
@@ -556,6 +556,11 @@ body {
           padding: 0;
           padding-left: 20px;
           min-width: 500px;
+        }
+        &.fNewsOptions{
+          text-align: center;
+          padding: 0;
+          width: 150px;
         }
       }
 

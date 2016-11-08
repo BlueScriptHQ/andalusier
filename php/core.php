@@ -37,7 +37,6 @@
       require "functions/adverts.php";
       require "functions/old_adverts.php";
       require "functions/members_accept.php";
-      require "functions/logs.php";
       require "functions/newsletters.php";
 
       require "functions/tutorial.php";

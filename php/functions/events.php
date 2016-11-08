@@ -2,7 +2,7 @@
 
   function getEvents($dbHandler){
     $structure = "";
-    $sql = "SELECT DATE_FORMAT(logs_date, '%d-%m-%Y %H:%i:%s') AS logs_date, logs_content FROM logs ORDER BY logs_date DESC LIMIT 100";
+    $sql = "SELECT DATE_FORMAT(logs_date, '%d-%m-%Y %H:%i:%s') AS logs_date, logs_content FROM logs ORDER BY logs_date ASC LIMIT 50";
     $data = $dbHandler->handleQuery($sql, false, true, PDO::FETCH_OBJ);
     if(empty($data) || $data === 0){
       return "<tr>
@@ -49,5 +49,10 @@
       fputcsv($output, $row, ';', ' ');
     }
 
+  }
+
+  function emptyLog($dbHandler){
+  	$sql = "TRUNCATE logs";
+  	$data = $dbHandler->handleQuery($sql, false);
   }
 ?>

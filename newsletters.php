@@ -70,7 +70,7 @@
                         <th class="fType">Type</th>
                         <th class="fSize">Bestandsgrootte</th>
                         <th class="fEdited">Laatst gewijzigd</th>
-                        <th class="fOptions">Opties</th>
+                        <th class="fNewsOptions">Opties</th>
                       </tr>
                   </table>
                 </div>

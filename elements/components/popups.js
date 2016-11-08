@@ -49,8 +49,7 @@ $(".popup_close").on("click", function() {
 
    $(this).parent().parent().fadeOut(500);
    $("#addFile").fadeOut(500);
-
-
+   $("#addFileNews").fadeOut(500);
 });
 
 $(".overlay_popup_close").on("click", function(){
