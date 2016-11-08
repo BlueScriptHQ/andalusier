@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     if ($ajax) {
-        $("form:not(#fileUploadForm)").submit(function(e) {
+        $("form:not(#fileUploadForm, #fileUploadFormNews)").submit(function(e) {
             e.preventDefault();
         });
     }
@@ -44,5 +44,5 @@ $(document).ready(function() {
         });
     };
 
-    
+
 });

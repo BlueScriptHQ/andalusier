@@ -1797,7 +1797,7 @@
 
 
 
- <div class="documents-popup-FolderFile popup" id="newsAddFolder">
+ <div class="documents-popup-FolderFile popup" id="addFolderNews">
     <div class="popup-head">
        <h2>Map aanmaken</h2>
        <a class="popup_close" href="#"><img alt="" src="img/content-section/general/close.png"></a>
@@ -1806,37 +1806,37 @@
        <h2 class="popup-content-h2">Geef de gewenste naam voor de map op</h2>
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn" id="newsMakeFolder" placeholder="Mapnaam" type="text" value="">
+       <input class="folder_file_btn" id="make_folderNews" placeholder="Mapnaam" type="text" value="">
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn" id="newsAddAFolder" type="button" value="Aanmaken">
+       <input class="folder_file_btn" id="addAFolderNews" type="button" value="Aanmaken">
     </div>
  </div>
 
+ <div class="documents-popup-FolderFile popup" id="addFileNews">
+    <form action="php/files.php" enctype="multipart/form-data" id="fileUploadFormNews" method="post" name="fileUploadFormNews">
+       <input id="hiddenAddFileNews" name="fileToUploadNews" style="display: none;" type="file" value="">
 
- <div class="documents-popup-FolderFile popup" id="newsAddFile">
-    <form action="php/files.php" enctype="multipart/form-data" id="fileUploadForm" method="get" name="newsFileUploadForm">
-       <input id="newsHiddenAddFile" name="newsFileToUpload" style="display: none;" type="file" value="">
        <div class="popup-head">
           <h2>Bestand uploaden</h2>
           <a class="popup_close" href="#"><img alt="" src="img/content-section/general/close.png"></a>
        </div>
        <div class="popup-content">
           <div class="popup-row">
-             <input id="newsAddAFileBtn" type="button" value="Kies bestand">
+             <input id="addAFileBtnNews" type="button" value="Kies bestand">
           </div>
        </div>
        <div class="popup-row">
-          <input class="folder_file_btn" id="newsUpFile" name="newName" placeholder="Bestandsnaam" type="text" value="">
+          <input class="folder_file_btn" id="up_fileNews" name="newNameNews" placeholder="Bestandsnaam" type="text" value="">
        </div>
        <div class="popup-row">
-          <input class="folder_file_btn" id="newsUploadFile" type="button" value="Uploaden">
+          <input class="folder_file_btn" id="uploadFileNews" type="button" value="Uploaden">
        </div>
     </form>
  </div>
 
 
- <div class="popup" id="newsEditFolderFile">
+ <div class="documents-popup-FolderFile popup" id="editFolderFileNews">
     <input type="hidden" value="">
     <div class="popup-head">
        <h2>Naam veranderen</h2>
@@ -1846,14 +1846,15 @@
        <h2 class="popup-content-h2">Huidige naam:</h2>
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn" id="newsEditFolder" placeholder="Geef hier de nieuwe naam op..." type="text" value="">
+       <input class="folder_file_btn" id="edit_folderNews" placeholder="Geef hier de nieuwe naam op..." type="text" value="">
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn" id="newsRenameFF" type="button" value="Wijzigen">
+       <input class="folder_file_btn" id="renameFFNews" type="button" value="Wijzigen">
     </div>
  </div>
 
- <div class="documents-popup-FolderFile popup" id="newsDeleteFolderFile">
+
+ <div class="documents-popup-FolderFile popup" id="deleteFolderFileNews">
     <input type="hidden" value="">
     <div class="popup-head">
        <h2>Verwijderen</h2>
@@ -1863,11 +1864,11 @@
        <h2 class="popup-content-h2">Weet u zeker dat u dit wilt verwijderen?</h2>
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn delete" id="newsDeleteFF" type="button" value="Verwijderen">
+       <input class="folder_file_btn delete" id="deleteFFNews" type="button" value="Verwijderen">
     </div>
  </div>
 
- <div class="documents-popup-FolderFile popup" id="newsDeleteFolderPerm">
+ <div class="documents-popup-FolderFile popup" id="deleteFolderPermNews">
     <input type="hidden" value="">
     <div class="popup-head">
        <h2>Verwijderen</h2>
@@ -1877,9 +1878,11 @@
        <h2 class="popup-content-h2">Deze map bevat bestanden, alsnog verwijderen?</h2>
     </div>
     <div class="popup-row">
-       <input class="folder_file_btn delete" id="newsDeleteFP" type="button" value="Verwijderen">
+       <input class="folder_file_btn delete" id="deleteFPNews" type="button" value="Verwijderen">
     </div>
  </div>
+
+
  <!-- requirements -->
  <link href="css/popups_style.min.css" media="screen" rel="stylesheet">
  <link href="elements/components/css/popups.css" media="screen" rel="stylesheet">

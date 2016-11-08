@@ -10,7 +10,8 @@
 #addMemberPopup, #editPopup, #editAccountPopup,
 #popupAdvertExtraInfo, #acceptMemberPopup,
 #newAdvertsAdd, #newAdvertsOpen, #memberPaymentRequest,
-#addNewAccountPopup {
+#addNewAccountPopup, #editFolderFileNews, #deleteFolderFileNews,
+#deleteFolderPermNews {
   width: 550px;
   height: 600px;
   margin: auto;
@@ -24,7 +25,11 @@
   height: 190px;
 }
 
-#editAccountPopup {
+ #editFolderFileNews, #deleteFolderFileNews ,#deleteFolderPermNews{
+   height: 165px;
+ }
+
+#editAccountPopup  {
   height: 340px;
 }
 

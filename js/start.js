@@ -17,10 +17,15 @@ $(document).ready(function() {
       if($(".documents-tableHead").length){
         loadDocuments();
       }
+      if($(".newsletters-tableHead").length){
+        loadNewsletters();
+      }
 
       if($(".accounts-table").length){
         loadAccounts();
       }
+
+
 
 
       callHandler.execute(function() {
