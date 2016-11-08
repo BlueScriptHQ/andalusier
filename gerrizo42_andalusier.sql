@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 07 nov 2016 om 21:51
+-- Gegenereerd op: 08 nov 2016 om 09:05
 -- Serverversie: 10.1.16-MariaDB
 -- PHP-versie: 7.0.9
 
@@ -45,7 +45,7 @@ CREATE TABLE `accounts` (
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
 (1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-26 12:32:29', '2016-10-26 09:05:07'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
-(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-11-07 19:50:20', '2016-11-02 08:48:53');
+(3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-11-08 07:43:20', '2016-11-07 20:50:20');
 
 -- --------------------------------------------------------
 
@@ -140,6 +140,7 @@ CREATE TABLE `adverts` (
   `adverts_name` varchar(50) NOT NULL,
   `adverts_owner` varchar(50) NOT NULL,
   `adverts_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `adverts_enddate` date NOT NULL,
   `adverts_status` tinyint(1) NOT NULL,
   `adverts_type` varchar(10) NOT NULL,
   `adverts_old` int(2) NOT NULL,
@@ -148,20 +149,24 @@ CREATE TABLE `adverts` (
   `adverts_postalcode` varchar(20) NOT NULL,
   `adverts_city` varchar(50) NOT NULL,
   `adverts_country` varchar(50) NOT NULL,
-  `adverts_email` varchar(40) NOT NULL,
+  `adverts_email` varchar(50) NOT NULL,
+  `adverts_email2` varchar(50) DEFAULT NULL,
   `adverts_telephone` varchar(20) NOT NULL,
+  `adverts_telephone2` varchar(20) DEFAULT NULL,
+  `adverts_mobile` varchar(20) DEFAULT NULL,
   `adverts_bank` varchar(40) NOT NULL,
-  `adverts_billingnumber` varchar(30) NOT NULL
+  `adverts_billingnumber` varchar(30) NOT NULL,
+  `adverts_comment` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `adverts`
 --
 
-INSERT INTO `adverts` (`adverts_id`, `adverts_name`, `adverts_owner`, `adverts_date`, `adverts_status`, `adverts_type`, `adverts_old`, `adverts_contact`, `adverts_address`, `adverts_postalcode`, `adverts_city`, `adverts_country`, `adverts_email`, `adverts_telephone`, `adverts_bank`, `adverts_billingnumber`) VALUES
-(1, 'Hele jaar aanbieding', 'Jumbo', '2016-10-26 07:14:30', 1, 'Heel', 0, '', '', '', '', '', 'jumbo@infofake.nl', '', 'Knab', 'knab05019283957691'),
-(2, 'De vrolijke koe', 'Jumbo', '2016-10-26 10:02:55', 0, 'Heel', 1, 'Piet Klaas', 'Hoofdlaan 1', '0000AB', 'Amsterdam', 'Nederland', 'jumbo@infofake.nl', '0638794613', '', ''),
-(3, 'Mooie advertentie', 'Abc', '2016-10-26 07:02:46', 0, 'Heel', 1, '', '', '', '', '', '', '', '', '');
+INSERT INTO `adverts` (`adverts_id`, `adverts_name`, `adverts_owner`, `adverts_date`, `adverts_enddate`, `adverts_status`, `adverts_type`, `adverts_old`, `adverts_contact`, `adverts_address`, `adverts_postalcode`, `adverts_city`, `adverts_country`, `adverts_email`, `adverts_email2`, `adverts_telephone`, `adverts_telephone2`, `adverts_mobile`, `adverts_bank`, `adverts_billingnumber`, `adverts_comment`) VALUES
+(1, 'Hele jaar aanbieding', 'Jumbo', '2016-11-01 12:54:46', '0000-00-00', 1, 'Heel', 0, '', '', '', '', '', 'jumbo@infofake.nl', '', '', '', '', 'Knab', 'knab05019283957691', NULL),
+(2, 'De vrolijke koe', 'Jumbo', '2016-11-01 14:01:58', '0000-00-00', 1, 'Heel', 1, 'Piet Klaas', 'Hoofdlaan 1', '0000AB', 'Amsterdam', '', 'jumbo@infofake.nl', '', '0638794613', '', '', 'rabo', 'knb', 'jhdgfjkhasgfjkf'),
+(3, 'Mooie advertentie', 'Abc2', '2016-11-01 14:01:28', '0000-00-00', 1, 'Heel', 1, '', '', '', '', '', '', '', '', '', '', 'Knab', 'knab0101930', 'test');
 
 -- --------------------------------------------------------
 
@@ -514,6 +519,25 @@ INSERT INTO `pages` (`pages_id`, `pages_name`, `pages_url`, `pages_parentid`, `p
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `payment_requests`
+--
+
+CREATE TABLE `payment_requests` (
+  `payment_requests_id` int(4) NOT NULL,
+  `payment_requests_page` varchar(200) NOT NULL,
+  `payment_requests_send` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `payment_requests`
+--
+
+INSERT INTO `payment_requests` (`payment_requests_id`, `payment_requests_page`, `payment_requests_send`) VALUES
+(1, '3', '2016-11-02 10:17:02');
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `ranks`
 --
 
@@ -566,26 +590,6 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (5, 1, 1),
 (5, 6, 1),
 (5, 7, 1);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `tutorials`
---
-
-CREATE TABLE `tutorials` (
-  `tutorials_id` int(5) NOT NULL,
-  `tutorials_name` varchar(400) NOT NULL,
-  `tutorials_desc` varchar(2000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `tutorials`
---
-
-INSERT INTO `tutorials` (`tutorials_id`, `tutorials_name`, `tutorials_desc`) VALUES
-(1, 'Tutorial 1', 'Uitleggen over callHandler'),
-(2, 'Tutorial 2', 'Uitleggen wat het doel van mijn leven is');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -685,6 +689,12 @@ ALTER TABLE `pages`
   ADD PRIMARY KEY (`pages_id`);
 
 --
+-- Indexen voor tabel `payment_requests`
+--
+ALTER TABLE `payment_requests`
+  ADD PRIMARY KEY (`payment_requests_id`);
+
+--
 -- Indexen voor tabel `ranks`
 --
 ALTER TABLE `ranks`
@@ -696,12 +706,6 @@ ALTER TABLE `ranks`
 ALTER TABLE `ranks_pages`
   ADD PRIMARY KEY (`ranks_id`,`pages_id`),
   ADD KEY `ranks_pages_pages` (`pages_id`);
-
---
--- Indexen voor tabel `tutorials`
---
-ALTER TABLE `tutorials`
-  ADD PRIMARY KEY (`tutorials_id`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -753,15 +757,15 @@ ALTER TABLE `notifications`
 ALTER TABLE `pages`
   MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT voor een tabel `payment_requests`
+--
+ALTER TABLE `payment_requests`
+  MODIFY `payment_requests_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT voor een tabel `ranks`
 --
 ALTER TABLE `ranks`
   MODIFY `ranks_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT voor een tabel `tutorials`
---
-ALTER TABLE `tutorials`
-  MODIFY `tutorials_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
