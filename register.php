@@ -27,15 +27,18 @@
           <img src="img/header-section/brand.png">
         </div>
         <div id="register-form-content">
-          <a class="openBlock-contact"><div id="contact-block">
+
+        <div class="tab">
+          <a class="openBlock-contact"><div id="contact-block" class="block">
             <p>Contactgegevens</p>
-            <img id="contact-arrow" src="elements/components/img/indicator-image-right.png">
+            <img id="contact-arrow" src="elements/components/img/indicator-image-down.png">
           </div>
           </a>
+
           <div id="contact-form">
             <div class="row">
                <p class="label">Naam</p>
-               <input type="text" name="register_name">
+               <input type="text" id="register_name">
             </div>
             <div class="row">
                <p class="label">Adres</p>
@@ -51,15 +54,17 @@
             </div>
             <div class="row">
                <p class="label">Email</p>
-               <input type="text" name="register_email">
+               <input type="text" class="register_mail" name="register_email">
             </div>
             <div class="row">
                <p class="label">Geboortedatum</p>
-               <input type="text" class="dateofbirth-register" name="register_dateofbirth">
+               <input type="date" min="1900-01-01" class="dateofbirth-register" name="register_dateofbirth">
             </div>
           </div>
+        </div>
 
-          <a class="openBlock-register-as"><div id="register-as-block">
+        <div class="tab">
+          <a class="openBlock-register-as"><div id="register-as-block" class="block">
             <p>Lidsoort</p>
             <img id="register-as-arrow" src="elements/components/img/indicator-image-right.png">
           </div>
@@ -68,7 +73,7 @@
           <div class="row full-width">
              <p class="label">Lidsoort kiezen:</p>
              <fieldset>
-             <input type="radio" name="lid" value="Lid">Lid</input>
+             <input type="radio" name="lid" value="Lid" checked>Lid</input>
              <br>
              <input type="radio" name="lid" value="Jeugdlid">Jeugdlid</input>
              <br>
@@ -78,8 +83,10 @@
            </fieldset>
           </div>
         </div>
+      </div>
 
-        <a class="openBlock-question"><div id="question-block">
+      <div class="tab">
+        <a class="openBlock-question"><div id="question-block" class="block">
           <p>Vragen</p>
           <img id="question-arrow" src="elements/components/img/indicator-image-right.png">
         </div>
@@ -106,6 +113,7 @@
            <input type="text" name="register_ideas">
         </div>
       </div>
+    </div>
       <div id="btn_container">
         <button id="btn_register">Aanmelden</button>
       </div>

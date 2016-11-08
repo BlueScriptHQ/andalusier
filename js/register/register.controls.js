@@ -57,65 +57,31 @@ $(document).ready(function(){
         valid = false;
       }
     });
-
-    var valid2 = false;
-    if($('#register-as-form input[type="radio"]').is(':checked')) {
-      valid2 = true;
-    }
-
-    var valid3 = true;
-    $("#question-form input[type='text']").each(function(){
-      if($(this).val() === ""){
-        valid3 = false;
-      }
-    });
-
-    if(valid){
-      $("#contact-block").css({"background-color": "#2ecc71"});
-    }
-
-    if(valid2){
-      $("#register-as-block").css({"background-color": "#2ecc71"});
-    }
-
-    if(valid3){
-      $("#question-block").css({"background-color": "#2ecc71"});
-    }
-
-    if(valid && valid2 && valid3){
-      $("#btn_register").fadeIn();
-    }
   };
 
-    $("#btn_register").on("click", function(){
+  window.checkInput = function(){
+    $("#register-form-content input[type='text'], input[type='radio']:checked, input[type='date']").each(function(){
+      $values = $(this).val();
+      if(/^[a-zA-Z0-9- ]*$/.test($values) === false){
+        $(this).css({"background-color": "#990909"});
 
+          if($(this).hasClass("register_mail")){
+            $(this).css({"background-color": "white"});
+            $mail = $(this).val();
+            if(/^[a-zA-Z0-9-@._ ]*$/.test($mail) === false){
+              $(this).css({"background-color": "#990909"});
+              $atPos = $mail.indexOf("@");
+
+            }
+          }
+      }
+      else {
+        $(this).css({"background-color": "white"});
+      }
     });
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  $("#register-form-content input[type='text'], input[type='radio']:checked, input[type='date']").on("keyup", function(){
+    checkInput();
+  });
 });
