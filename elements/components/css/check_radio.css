@@ -3,6 +3,9 @@
   margin-right: 30px;
   margin: 12px 0;
 }
+.cop_check_wrapper *::selection {
+  background-color: transparent;
+}
 .cop_container{
   width: 26px;
   height: 26px;
@@ -24,8 +27,11 @@
   display: none;
 }
 .cop_check_wrapper img{
+  width: 26px;
+  height: 26px;
   float: right;
-  margin-top: calc((40px - 32px) /2)
+  margin: 0 30px 0 5px;
+  /* margin-top: calc((26px - 20px) /2); */
 }
 
 .op_option_wrapper{
@@ -34,6 +40,12 @@
   margin: 12px 0;
   margin-right: 30px;
 }
+.op_option_wrapper *::selection {
+  background-color: transparent;
+  color: #222;
+}
+
+
 .op_option_wrapper .tag {
   float:left;
   line-height: 26px;

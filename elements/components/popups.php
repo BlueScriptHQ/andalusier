@@ -687,6 +687,31 @@
              </div>
           </div>
 
+          <div class="row">
+            <p class="label">Status</p>
+
+            <div class="cop_check_wrapper">
+                <div class="cop_container cop_con_check">
+                   <div class="cop_inner cop_in_check control" name="members_newsletter"></div>
+                </div>
+                <img src="img/content-section/members-list/packet_notreceived.png" alt="" />
+             </div>
+
+            <div class="cop_check_wrapper">
+                 <div class="cop_container cop_con_check">
+                    <div class="cop_inner cop_in_check control" name="members_newsletter"></div>
+                 </div>
+                 <img src="img/content-section/members-list/money_notpayed.png" alt="" />
+            </div>
+
+            <div class="cop_check_wrapper">
+                  <div class="cop_container cop_con_check">
+                     <div class="cop_inner cop_in_check control" name="members_newsletter"></div>
+                  </div>
+                  <img src="img/content-section/members-list/reminder_notreceived.png" alt="" />
+            </div>
+          </div>
+
 
           <div class="row">
              <p class="label">
