@@ -2,6 +2,7 @@
 
   function getEvents($dbHandler){
     $structure = "";
+    $sql = "SELECT DATE_FORMAT(logs_date, '%d-%m-%Y %H:%i:%s') AS logs_date_formatted, logs_content FROM logs ORDER BY logs_date DESC";
     $data = $dbHandler->handleQuery($sql, false, true, PDO::FETCH_OBJ);
     if(empty($data) || $data === 0){
       return "<tr>
