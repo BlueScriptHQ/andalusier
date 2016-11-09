@@ -1,5 +1,33 @@
 $(document).ready(function(){
 
+  window.isValidEmail = function(s){
+    var atCount = s.split("@").length -1;
+    var dotCount = s.split(".").length -1;
+
+    if(atCount > 1){
+      return false;
+    }
+
+    if(dotCount === 0){
+      return false;
+    }
+
+    var atIndex = s.indexOf("@");
+    var dotIndex = s.indexOf(".");
+
+    if(dotIndex > atIndex){
+      return false;
+    }
+
+    if(/^[a-zA-Z0-9-@._+ ]*$/.test(s) === false){
+      return false;
+    }
+    else {
+      return true;
+    }
+
+  };
+
   window.closeAllForms = function(){
     $("#contact-form").slideUp();
     $("#register-as-form").slideUp();
@@ -8,8 +36,6 @@ $(document).ready(function(){
     $("#contact-arrow").attr("src", "elements/components/img/indicator-image-right.png");
     $("#register-as-arrow").attr("src", "elements/components/img/indicator-image-right.png");
     $("#question-arrow").attr("src", "elements/components/img/indicator-image-right.png");
-
-    checkFilled();
 
   };
 
@@ -50,38 +76,51 @@ $(document).ready(function(){
 
   });
 
-  window.checkFilled = function(){
-    var valid = true;
-    $("#contact-form input[type='text']").each(function(){
-      if($(this).val() === ""){
-        valid = false;
-      }
-    });
-  };
-
   window.checkInput = function(){
+    $fail = false;
     $("#register-form-content input[type='text'], input[type='radio']:checked, input[type='date']").each(function(){
       $values = $(this).val();
-      if(/^[a-zA-Z0-9- ]*$/.test($values) === false){
-        $(this).css({"background-color": "#990909"});
-
-          if($(this).hasClass("register_mail")){
-            $(this).css({"background-color": "white"});
-            $mail = $(this).val();
-            if(/^[a-zA-Z0-9-@._ ]*$/.test($mail) === false){
-              $(this).css({"background-color": "#990909"});
-              $atPos = $mail.indexOf("@");
-
-            }
-          }
+      if(/^[a-zA-Z0-9-+]*$/.test($values) === false){
+        $(this).css({"background-color": "#990909", "color": "white"});
+        $fail = true;
       }
+      else if($values === "") {
+        $fail = true;
+      }
+
       else {
-        $(this).css({"background-color": "white"});
+        $(this).css({"background-color": "white", "color": "black"});
+      }
+
+      if($(this).hasClass("register_mail")){
+        $(this).css({"background-color": "white", "color": "black"});
+
+        if(isValidEmail($(this).val())){
+          $fail = false;
+        } else {
+          $fail = true;
+          $(this).css({"background-color": "#990909", "color": "white"});
+        }
       }
     });
+
+    if($fail === true){
+      $("#btn_register").hide();
+    }
+
+    else if($fail === false) {
+      $("#btn_register").show();
+
+    }
   };
 
   $("#register-form-content input[type='text'], input[type='radio']:checked, input[type='date']").on("keyup", function(){
     checkInput();
   });
+
+  $('.register_tel').keyup(function () {
+    if (this.value != this.value.replace(/[^0-9\.+]/g, '')) {
+       this.value = this.value.replace(/[^0-9\.+]/g, '');
+    }
+});
 });

@@ -35,9 +35,9 @@ body, html {
 }
 
 #register-form-content {
-  background-color: #990909;
   width: 100%;
   height: 190px;
+  position: relative;
 }
 
 #contact-block {
@@ -172,7 +172,7 @@ fieldset input[type="radio"]{
 #btn_register {
   border: 0px;
   color: white;
-  background-color: #222222;
+  background-color: #990909;
   float: left;
   height: 40px;
   width: 100px;
@@ -181,8 +181,9 @@ fieldset input[type="radio"]{
 }
 
 #btn_container {
-  float: right;
-  margin: 10px;
+  float: left;
+  height: 60px;
+  width: 100%;
 }
 
 #btn_register:hover {
@@ -191,6 +192,17 @@ fieldset input[type="radio"]{
 }
 
 .row input[type="date"] {
+  width: calc(50% - 9px);
+  float: left;
+  margin-top: 10px;
+  margin-right: 5px;
+  height: 30px;
+  border: 2px solid #990909;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.row input[type="number"] {
   width: calc(50% - 9px);
   float: left;
   margin-top: 10px;

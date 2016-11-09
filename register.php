@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                <p class="label">Telefoon of mobiel</p>
-               <input type="text" name="register_tel">
+               <input type="text" class="register_tel" name="register_tel" maxlength="15">
             </div>
             <div class="row">
                <p class="label">Email</p>
@@ -114,11 +114,12 @@
         </div>
       </div>
     </div>
-      <div id="btn_container">
-        <button id="btn_register">Aanmelden</button>
+    <div id="btn_container">
+    <button id="btn_register">Aanmelden</button>
+    </div>
       </div>
       </div>
-      </div>
+
     </div>
   </div>
 
