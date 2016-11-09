@@ -32,6 +32,9 @@
 #editAccountPopup  {
   height: 340px;
 }
+#mailNewsletterPopup{
+  height: 160px;
+}
 
 .popup {
   display: none;
@@ -120,6 +123,13 @@
 	margin-right: 20px;
 	margin-left: 10px;
 	width: 120px;
+}
+.documents-popup-FolderFile input[type=button].mail {
+	float: right;
+	margin-right: 20px;
+	margin-left: 10px;
+	width: 120px;
+  margin-bottom: 10px;
 }
 
 

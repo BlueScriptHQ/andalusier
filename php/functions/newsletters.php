@@ -181,9 +181,10 @@
           <td class='alignCenter'>".$size."</td>
           <td class='alignCenter'>".date("d-m-y H:i:s",  filemtime($directory.$files[$i]))."</td>
           <td>
-            <img src='./img/content-section/documents-list/rename.png' style='cursor:pointer;' onclick='renameFFNews(\"".$files[$i]."\");' id='renameButtonNews' class='img_size' alt='' />
-            <a href='php/files.php?downloadFileNews=".$files[$i]."'><img src='./img/content-section/documents-list/download2.png' class='rename img_size' style='cursor:pointer;' id='downloadButtonNews' alt='' /></a>
-            <img src='./img/content-section/documents-list/delete.png' style='cursor:pointer;' class='img_size' id='deleteButtonNews'  onclick='deleteFFNews(\"".$files[$i]."\");' alt='' />
+            <img src='./img/content-section/documents-list/rename.png' style='cursor:pointer;' onclick='renameFFNews(\"".$files[$i]."\");' id='renameButtonNews' class='img_size'/>
+            <a href='php/files.php?downloadFileNews=".$files[$i]."'><img src='./img/content-section/documents-list/download2.png' class='rename img_size' style='cursor:pointer;' id='downloadButtonNews'/></a>
+            <img src='./img/content-section/documents-list/delete.png' style='cursor:pointer;' class='img_size' id='deleteButtonNews'  onclick='deleteFFNews(\"".$files[$i]."\");'/>
+            <img src='./img/content-section/newsletters-list/mail.png' style='cursor:pointer;' onclick='mailNewsletter(\"".$files[$i]."\");' class='img_size' id='mailButtonNewsletter'/>
           </td>
         </tr>
       ";
@@ -299,6 +300,47 @@
       $logHandler->addMessage("Bestand \"".$old."\" hernoemd naar \"".$new_file_name."\"");
 
     }
+  }
+
+  //functie om nieuwsbrieven te mailen
+  function mailNewsletter($dbHandler, $name, $logHandler){
+    //krijg het path + parameter 'name'
+    $dirname = $_SESSION["newsURL"].$name;
+    //return $dirname;
+
+    //alles selecteren van members en members_contact_info waar newsletter 1 (waar) is
+    $sql="SELECT *
+          FROM members
+          INNER JOIN members_contact_info ON
+          members.members_id = members_contact_info.members_id
+          WHERE members_newsletter = 1";
+    $data = $dbHandler->handleQuery($sql, false, true);
+
+    //emails aanmaken om een waarde te kunnen returnen
+    $emails = '';
+      //voor elke rij iets doen
+      foreach($data as $row){
+        //kijken of 1e email leeg is
+        if(empty($row->members_email)){//zo ja, check of 2e email ook leeg is
+          if(empty($row->members_email)){
+            return "geen bekend e-mailadres";
+          }
+          else{//2e email bestaat wel
+
+          }
+        }
+        else{//1e email bestaat wel
+
+        }
+          $emails.= $row->members_name."\n";
+      }
+
+    }
+
+    //$emails.= $row->members_name.$row->members_email.$row->members_email2."\n";
+    return $emails;
+
+    //$logHandler->addMessage("nieuwsbrief verstuurd");
   }
 
 

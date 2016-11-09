@@ -1907,6 +1907,20 @@
     </div>
  </div>
 
+ <div class="documents-popup-FolderFile popup" id="mailNewsletterPopup">
+    <input type="hidden" value="">
+    <div class="popup-head">
+       <h2>Nieuwsbrief versturen</h2>
+       <a class="popup_close" href="#"><img alt="" src="img/content-section/general/close.png"></a>
+    </div>
+    <div class="popup-content">
+       <h2 class="popup-content-h2">Wilt u de nieuwsbrief <span class="newsletterName">default</span> versturen?</h2>
+    </div>
+    <div class="popup-row">
+       <input class="folder_file_btn mail" id="mail_newsletter" type="button" value="Versturen">
+    </div>
+ </div>
+
 
  <!-- requirements -->
  <link href="css/popups_style.min.css" media="screen" rel="stylesheet">

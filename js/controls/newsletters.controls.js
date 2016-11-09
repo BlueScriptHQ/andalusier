@@ -90,4 +90,17 @@ $(document).ready(function() {
       deletePermNews(fName);
     });
 
+    window.mailNewsletter = function(fName){
+      $("#mailNewsletterPopup input[type=hidden]").val(fName);
+      $(".newsletterName").text(fName);
+
+      $("#page-overlay").fadeIn(500);
+      $("#mailNewsletterPopup").fadeIn(500);
+    };
+
+    $("#mail_newsletter").on("click", function(){
+      var fName = $("#mailNewsletterPopup input[type=hidden]").val();
+      mailTheNewsletter(fName);
+    });
+
 });

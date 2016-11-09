@@ -73,4 +73,15 @@ $(document).ready(function() {
      }, fName);
    };
 
+   window.mailTheNewsletter = function(fName){
+     callHandler.addInvoked("mailNewsletter", function(r){
+
+       console.log(r);
+
+       /*$("#page-overlay").fadeOut(500);
+       $("#mailNewsletterPopup").fadeOut(500);
+       loadNewsletters(true);*/
+     }, fName);
+   };
+
 });
