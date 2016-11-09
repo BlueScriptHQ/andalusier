@@ -21,6 +21,10 @@
       return $this->prepareQuery();
     }
 
+    public function lastID(){
+      return $this->conn->lastInsertId();
+    }
+
     private function prepareQuery(){
       $this->stmt = $this->conn->prepare($this->sql);
       return $this->executeQuery();

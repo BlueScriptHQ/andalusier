@@ -13,6 +13,14 @@
             WHERE members_onhold = 1";
     $data = $dbHandler->handleQuery($sql, false, true);
 
+    if($data === false || count($data) === 0){
+      return "<tr>
+        <td></td>
+        <td>Momenteel zijn er geen nieuwe aanmeldingen</td>
+      </tr>";
+    }
+
+
     $html = "";
     foreach($data as $row){
       $spaceEnabled = (empty($row->members_tussenvoegsel) ? '' : ' ');
