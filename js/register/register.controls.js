@@ -4,18 +4,16 @@ $(document).ready(function(){
     var atCount = s.split("@").length -1;
     var dotCount = s.split(".").length -1;
 
-    if(atCount > 1){
-      return false;
-    }
-
-    if(dotCount === 0){
+    if(atCount > 1 || atCount <= 0){
       return false;
     }
 
     var atIndex = s.indexOf("@");
-    var dotIndex = s.indexOf(".");
+    var strLength = s.length;
+    var trimmed = s.substring("atIndex, strLength");
+    var dotCountTrim = trimmed.split(".").length -1;
 
-    if(dotIndex > atIndex){
+    if(dotCountTrim > 1){
       return false;
     }
 
@@ -25,7 +23,6 @@ $(document).ready(function(){
     else {
       return true;
     }
-
   };
 
   window.closeAllForms = function(){
@@ -80,7 +77,8 @@ $(document).ready(function(){
     $fail = false;
     $("#register-form-content input[type='text'], input[type='radio']:checked, input[type='date']").each(function(){
       $values = $(this).val();
-      if(/^[a-zA-Z0-9-+]*$/.test($values) === false){
+
+      if(/^[a-zA-Z0-9-+ ]*$/.test($values) === false){
         $(this).css({"background-color": "#990909", "color": "white"});
         $fail = true;
       }
@@ -96,6 +94,7 @@ $(document).ready(function(){
         $(this).css({"background-color": "white", "color": "black"});
 
         if(isValidEmail($(this).val())){
+          $(this).css({"background-color": "white", "color": "black"});
           $fail = false;
         } else {
           $fail = true;
@@ -123,4 +122,36 @@ $(document).ready(function(){
        this.value = this.value.replace(/[^0-9\.+]/g, '');
     }
 });
+
+  $("#btn_register").on("click", function(){
+      $name = $("#register_name").val();
+      $address = $("#register_address").val();
+      $city = $("#register_city").val();
+      $tel = $("#register_tel").val();
+      $email = $("#register_mail").val();
+      $date = $("#register_dateofbirth").val();
+      $register_as = $("#register-as-form input[type='radio']:checked").val();
+      $horsename = $("#register_horse_name").val();
+      $activities = $("#register_activities").val();
+      $introduction = $("#register_introduction").val();
+      $promoting = $("#register_promoting").val();
+      $ideas = $("#register_ideas").val();
+
+      $obj = {
+        name : $name,
+        address : $address,
+        city : $city,
+        tel : $tel,
+        email : $email,
+        date : $date,
+        register_as : $register_as,
+        horsename : $horsename,
+        activities : $activities,
+        introduction : $introduction,
+        promoting : $promoting,
+        ideas : $ideas
+      };
+
+      registerUser($obj);
+  });
 });

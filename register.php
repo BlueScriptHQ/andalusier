@@ -11,6 +11,7 @@
   <script src="http://developers.bluescript.nl/libraries/requirements.min.js" charset="utf-8"></script>
 
   <script src="js/register/register.controls.js" charset="utf-8"></script>
+  <script src="js/register/register.ajax.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -42,23 +43,23 @@
             </div>
             <div class="row">
                <p class="label">Adres</p>
-               <input type="text" name="register_address">
+               <input type="text" id="register_address" name="register_address">
             </div>
             <div class="row">
                <p class="label">Woonplaats</p>
-               <input type="text" name="register_city">
+               <input type="text" id="register_city" name="register_city">
             </div>
             <div class="row">
                <p class="label">Telefoon of mobiel</p>
-               <input type="text" class="register_tel" name="register_tel" maxlength="15">
+               <input type="text" id="register_tel" class="register_tel" name="register_tel" maxlength="15">
             </div>
             <div class="row">
                <p class="label">Email</p>
-               <input type="text" class="register_mail" name="register_email">
+               <input type="text" id="register_mail" class="register_mail" name="register_email">
             </div>
             <div class="row">
                <p class="label">Geboortedatum</p>
-               <input type="date" min="1900-01-01" class="dateofbirth-register" name="register_dateofbirth">
+               <input type="date" min="1900-01-01" id="register_dateofbirth" class="dateofbirth-register" name="register_dateofbirth">
             </div>
           </div>
         </div>
@@ -94,23 +95,23 @@
       <div id="question-form">
         <div class="row-question">
            <p class="label">1. Ben je in het bezit van een Spaans paard Zo ja, wat is de naam?</p>
-           <input type="text" name="register_horse_name">
+           <input type="text" id="register_horse_name" name="register_horse_name">
         </div>
         <div class="row-question">
            <p class="label">Welke activiteit / discipline heeft je interesse?</p>
-           <input type="text" name="register_activities">
+           <input type="text" id="register_activities" name="register_activities">
         </div>
         <div class="row-question">
            <p class="label">Zou je jezelf voor willen stellen in ons verenigingsblad?</p>
-           <input type="text" name="register_introduction">
+           <input type="text" id="register_introduction" name="register_introduction">
         </div>
         <div class="row-question">
            <p class="label">Wil jij je inzetten om de vereniging te promoten d.m.v. standbemanning op beurzen / evenementen?</p>
-           <input type="text" name="register_promoting">
+           <input type="text" id="register_promoting" name="register_promoting">
         </div>
         <div class="row-question">
            <p class="label">Heb je nog andere ideëen</p>
-           <input type="text" name="register_ideas">
+           <input type="text" id="register_ideas" name="register_ideas">
         </div>
       </div>
     </div>
