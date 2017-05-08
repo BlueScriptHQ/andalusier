@@ -11,15 +11,15 @@
 			$password = $params->password;
 
 
-			/*if($inputHandling->emptyCheck($data) == true){
-				echo ($ajax == true) ? "Velden mogen niet leeg zijn." : "";
-				exit();
-			}
-			else if($inputHandling->checkLength($data, $defaultLengths) == true){
-				echo ($ajax == true) ? "Ingevoerde data te lang!" : "";
-				exit();
-			}*/
-			if(1 == 2){
+			// if($inputHandling->emptyCheck($data) == true){
+			// 	echo ($ajax == true) ? "Velden mogen niet leeg zijn." : "";
+			// 	exit();
+			// }
+			// else if($inputHandling->checkLength($data, $defaultLengths) == true){
+			// 	echo ($ajax == true) ? "Ingevoerde data te lang!" : "";
+			// 	exit();
+			// }
+			if(0){
 				// validation
 			}
 			else {
@@ -53,7 +53,8 @@
 						));
 
 						$_SESSION["verified"] = true;
-						return "loggedin";
+					} else {
+						return "Verkeerde gegevens. Probeer het opnieuw.";
 					}
 				}	else {
 					return "Verkeerde gegevens. Probeer het opnieuw.";

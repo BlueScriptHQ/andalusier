@@ -1,8 +1,7 @@
 <?php
 
-  if(isset($_SESSION["verified"])){
-    if($_SESSION["verified"] == true){}
-    else { header("Location: login/"); exit();
-    }} else { header("Location: login/"); exit(); }
+  if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
+    header('Location: login/'); exit;
+  }
 
 ?>

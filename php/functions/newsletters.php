@@ -332,10 +332,11 @@
         else{//1e email bestaat wel
 
         }
-          $emails.= $row->members_name."\n";
+
+        $emails.= $row->members_name."\n";
       }
 
-    }
+    
 
     //$emails.= $row->members_name.$row->members_email.$row->members_email2."\n";
     return $emails;
