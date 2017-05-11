@@ -73,5 +73,3 @@
 
   $dbHandler = new dbHandler();
   $dbHandler->setConnection($conn);
-
-?>
