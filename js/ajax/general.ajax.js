@@ -31,7 +31,7 @@ $(document).ready(function() {
                 $("#side-menu ul").css("display", "none");
                 $("#side-menu ul").html(e);
                 $("#side-menu ul").fadeIn();
-                fixMenuLeden();
+                fixMenu($("#leden-dropdown-indicator"), $('#leden-sub-menu'), $("#leden-toggler"));
                 handleActive();
             });
         }

@@ -13,21 +13,18 @@ $(document).ready(function() {
         }
     };
 
-
-    // Als er op een sub menu toggler wordt geklikt, open dan het juiste sub menu
     $("#side-menu").on("click", ".sub-menu-toggler", function() {
         // Sla de pagina naam op, zodat er geen externe variabele nodig is.
         var pagename = $(this).find("a").text().toLowerCase();
+        var dropdownIndicator = $(this).find(".dropdown-indicator");
         // Kijk of er een sub menu bestaat..
         var submenu = $(this).parent().find("#" + pagename + "-sub-menu");
-        var dropdownIndicator = $(this).find(".dropdown-indicator");
         var toggler = $(this);
 
         if (submenu.length > 0) {
             // het sub menu bestaat
             if (submenu.is(":visible")) {
-
-                dropdownIndicator.attr("src", "img/side-menu/arrow-down.png");
+                dropdownIndicator.parent().removeClass('dropMeDown');
                 toggler.css("background-color", "#222222");
                 submenu.animate({
                     height: 0
@@ -42,6 +39,7 @@ $(document).ready(function() {
                 });
 
                 var curHeight = submenu.height();
+                dropdownIndicator.parent().addClass('dropMeDown');
                 submenu.css("height", "0px");
 
                 toggler.css("background-color", "#840505");
@@ -50,21 +48,37 @@ $(document).ready(function() {
                 submenu.animate({
                     height: curHeight
                 }, 500);
-                dropdownIndicator.attr("src", "img/side-menu/arrow-up.png");
-
-            }
-
+              }
         }
-
     });
 
+    window.fixMenu = function(dropdown, subMenu, toggler){
+      if (typeof $membersActive !== 'undefined') { //MOET NAAR GEKEKEN WORDEN. NU MOET ALSNOG MEERDERE FUNCTIES
+          dropdown.hide();
+          subMenu.css({
+              "display": "block",
+              "height": "auto"
+          });
+          $curHeight = subMenu.height();
+          subMenu.css({
+              "height": "0px"
+          });
+          toggler.css("background-color", "#840505");
+          subMenu.css("display", "block");
+          subMenu.css({
+              "height": $curHeight
+          });
+      }
+    };
 
+    //fixMenu($("#leden-dropdown-indicator"), $('#leden-sub-menu'), $("#leden-toggler"));
+    fixMenu($("#accounts-dropdown-indicator"), $('#accounts-sub-menu'), $("#accounts-toggler"));
 
 
 
     //  Dit is een tweede noodzakelijke fix voor de "scroll" animatie op de controller van Leden
     // Opent alvast de menu item bij de pagina
-    window.fixMenuLeden = function fixMenuLeden() {
+    /*window.fixMenuLeden = function fixMenuLeden() {
         if (typeof $membersActive !== 'undefined') {
             $("#leden-dropdown-indicator").hide();
             $('#leden-sub-menu').css({
@@ -80,7 +94,6 @@ $(document).ready(function() {
             $('#leden-sub-menu').css({
                 "height": $curHeight
             });
-            $("#leden-dropdown-indicator").attr("src", "img/side-menu/arrow-up.png");
         }
     };
 
@@ -100,8 +113,7 @@ $(document).ready(function() {
             $('#leden-sub-menu').css({
                 "height": $curHeight
             });
-            $("#leden-dropdown-indicator").attr("src", "img/side-menu/arrow-up.png");
         }
-    };
+    };*/
 
 });

@@ -1,6 +1,4 @@
 function handlePopups(element, index) {
-
-
     $(element).find(".popup-section-head img").attr("src", "elements/components/img/indicator-image-right.png");
 
     // reset

@@ -193,6 +193,7 @@
   margin: 12.5px;
   margin-left: 0;
   float: left;
+  transition: 300ms;
 }
 
 .popup-section-content {

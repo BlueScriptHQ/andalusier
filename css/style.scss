@@ -292,13 +292,17 @@ body {
         transition: background-color 400ms;
       position: relative;
 
-      &:hover{
+      &:hover {
       background-color: #840505;
       -webkit-transition: background-color 400ms;
         transition: background-color 400ms;
       }
       &.active{
         background-color: $main-color !important;
+      }
+      &.dropMeDown .dropdown-indicator{
+        transform: rotate(180deg);
+        transition: 300ms;
       }
 
       img {
@@ -314,7 +318,8 @@ body {
         right: 0;
         width: 20px;
         height: 20px;
-        margin: 10px
+        margin: 10px;
+        transition: 300ms;
       }
 
       a {
