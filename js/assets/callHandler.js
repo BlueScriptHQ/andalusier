@@ -32,6 +32,17 @@ var callHandler = (function() {
         execute();
     };
 
+    var Socket = function(interval, callName, callBackFn, callParameters)
+    {
+        setTimeout(function(){
+            addInvoked(callName, callBackFn, callParameters);
+        },200);
+
+        window.setTimeout(function(){
+            Socket(interval, callName, callBackFn, callParameters);
+        }, interval);
+    }
+
     var execute = function(callBackFn) {
 
         if (calls.length !== 0) {
@@ -85,7 +96,8 @@ var callHandler = (function() {
                 callBackFns.splice(index, 1);
 
                 // finally, execute the function with the correct parameters
-                temporaryFunction(result);
+
+                    temporaryFunction(result);
 
             }
         }
@@ -100,7 +112,8 @@ var callHandler = (function() {
     return {
         addCall: addCall,
         addInvoked: addInvoked,
-        execute: execute
+        execute: execute,
+        Socket: Socket
     };
 
 })();

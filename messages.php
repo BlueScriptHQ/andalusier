@@ -34,14 +34,14 @@ require "php/assets/verifications.php";
             color: white;
         }
 
-        #membersActiveContainer {
+        #chatsActiveContainer {
             float: left;
             background-color: #990909;
             width: 270px;
             height: 100vh;
         }
 
-        .user {
+        .user, .group {
             height: 40px;
             color: white;
             text-align: center;
@@ -52,7 +52,7 @@ require "php/assets/verifications.php";
             cursor: pointer;
         }
 
-        .user:hover {
+        .user:hover, .group:hover {
             color: black;
             background-color: white;
         }
@@ -152,6 +152,18 @@ require "optional/comments.php";
     <script type="text/javascript">
         // page config
         $pageTitle = "Berichtencentrum";
+
+        $(document).ready(function(){
+            callHandler.Socket(5000, "getList", function(result){
+                $("#chatsActive").html(JSON.parse(result));
+            });
+
+            $("#chatsActive").on("click", '.user' ,function(){
+               callHandler.Socket(1000, "getChat", function(result){
+                   console.log(result);
+               }, $(this).data("user-id"))
+            });
+        });
     </script>
     <!-- header section -->
     <?php
@@ -171,12 +183,9 @@ require "optional/comments.php";
                 <h2>Chat: Algemene groep</h2>
             </div>
 
-            <div id="membersActiveContainer">
-                <ul id="membersActive">
-                    <li class="user active">Algemene Groep</li>
-                    <li class="user">User</li>
-                    <li class="user">User</li>
-                    <li class="user">User</li>
+            <div id="chatsActiveContainer">
+                <ul id="chatsActive">
+
                 </ul>
             </div>
 

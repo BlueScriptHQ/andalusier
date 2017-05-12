@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 08 nov 2016 om 09:18
--- Serverversie: 10.1.16-MariaDB
--- PHP-versie: 7.0.9
+-- Gegenereerd op: 12 mei 2017 om 13:41
+-- Serverversie: 10.1.19-MariaDB
+-- PHP-versie: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,9 +43,20 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accounts_id`, `accounts_username`, `accounts_password`, `accounts_name`, `accounts_tussenvoegsel`, `accounts_lastname`, `accounts_birthdate`, `accounts_loggedintime`, `accounts_prev_loggedintime`) VALUES
-(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2016-10-26 12:32:29', '2016-10-26 09:05:07'),
+(1, 'andalusier', '$2y$10$QvGxbBKa512kGJf0i7Z6uOx4qrtuhTletIpLhJd0nFF2MKCHg4UXy', 'Bert123', 'Test', 'Account', '2016-03-06', '2017-05-12 09:59:57', '2017-05-11 13:35:00'),
 (2, 'karin', '$2y$10$TV.HWDWLpilT0Ea9dpzSZO3vsL/4fhjvwZ5GVgoG9EAdbQbTN5EgW', 'Karin', '', 'Kreeft', '1996-09-05', '2016-10-22 12:47:15', '2016-06-17 13:14:52'),
 (3, 'admin', '$2y$10$zbiLGbWUBGKxVsipfLz6..fTIgMUiipSKKpaN0WcEag7IDQhc2U0K', 'Administrator2', '', 'Geen', '2016-10-11', '2016-11-08 07:43:20', '2016-11-07 20:50:20');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `accounts_chats`
+--
+
+CREATE TABLE `accounts_chats` (
+  `accounts_id` int(4) NOT NULL,
+  `chats_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -125,7 +136,7 @@ CREATE TABLE `acc_ranks` (
 --
 
 INSERT INTO `acc_ranks` (`accounts_id`, `ranks_id`) VALUES
-(1, 2),
+(1, 1),
 (2, 5),
 (3, 1);
 
@@ -167,6 +178,26 @@ INSERT INTO `adverts` (`adverts_id`, `adverts_name`, `adverts_owner`, `adverts_d
 (1, 'Hele jaar aanbieding', 'Jumbo', '2016-11-01 12:54:46', '0000-00-00', 1, 'Heel', 0, '', '', '', '', '', 'jumbo@infofake.nl', '', '', '', '', 'Knab', 'knab05019283957691', NULL),
 (2, 'De vrolijke koe', 'Jumbo', '2016-11-01 14:01:58', '0000-00-00', 1, 'Heel', 1, 'Piet Klaas', 'Hoofdlaan 1', '0000AB', 'Amsterdam', '', 'jumbo@infofake.nl', '', '0638794613', '', '', 'rabo', 'knb', 'jhdgfjkhasgfjkf'),
 (3, 'Mooie advertentie', 'Abc2', '2016-11-01 14:01:28', '0000-00-00', 1, 'Heel', 1, '', '', '', '', '', '', '', '', '', '', 'Knab', 'knab0101930', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `chats`
+--
+
+CREATE TABLE `chats` (
+  `chats_id` int(4) NOT NULL,
+  `chats_name` varchar(64) NOT NULL,
+  `chats_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_group` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `chats`
+--
+
+INSERT INTO `chats` (`chats_id`, `chats_name`, `chats_created_at`, `is_group`) VALUES
+(1, 'Algemene Groep', '2017-05-12 10:30:51', 1);
 
 -- --------------------------------------------------------
 
@@ -462,6 +493,28 @@ INSERT INTO `members_types` (`members_types_id`, `members_types_content`, `membe
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `messages`
+--
+
+CREATE TABLE `messages` (
+  `messages_id` int(10) NOT NULL,
+  `messages_content` varchar(2048) NOT NULL,
+  `messages_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `accounts_id` int(4) NOT NULL,
+  `chats_id` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `messages`
+--
+
+INSERT INTO `messages` (`messages_id`, `messages_content`, `messages_created_at`, `accounts_id`, `chats_id`) VALUES
+(1, 'Test123', '2017-05-12 10:36:21', 1, 1),
+(2, 'Test12345', '2017-05-12 10:36:31', 2, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `notifications`
 --
 
@@ -513,7 +566,8 @@ INSERT INTO `pages` (`pages_id`, `pages_name`, `pages_url`, `pages_parentid`, `p
 (7, 'Logboek', 'log.php', NULL, 0),
 (8, 'Accounts', 'accounts.php', NULL, 1),
 (9, 'Overzicht', 'accounts.php', 8, 0),
-(10, 'Aanmeldingen', 'registrations.php', 2, 0);
+(10, 'Aanmeldingen', 'registrations.php', 2, 0),
+(11, 'Berichtencentrum', 'messages.php', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -581,6 +635,7 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 (1, 8, 1),
 (1, 9, 1),
 (1, 10, 1),
+(1, 11, 1),
 (2, 1, 1),
 (2, 2, 1),
 (2, 3, 1),
@@ -601,6 +656,13 @@ INSERT INTO `ranks_pages` (`ranks_id`, `pages_id`, `permission`) VALUES
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`accounts_id`);
+
+--
+-- Indexen voor tabel `accounts_chats`
+--
+ALTER TABLE `accounts_chats`
+  ADD UNIQUE KEY `accounts_id` (`accounts_id`),
+  ADD UNIQUE KEY `chats_id` (`chats_id`);
 
 --
 -- Indexen voor tabel `accounts_contact_info`
@@ -633,6 +695,12 @@ ALTER TABLE `acc_ranks`
 --
 ALTER TABLE `adverts`
   ADD PRIMARY KEY (`adverts_id`);
+
+--
+-- Indexen voor tabel `chats`
+--
+ALTER TABLE `chats`
+  ADD PRIMARY KEY (`chats_id`);
 
 --
 -- Indexen voor tabel `logs`
@@ -676,6 +744,14 @@ ALTER TABLE `members_titles`
 --
 ALTER TABLE `members_types`
   ADD PRIMARY KEY (`members_types_id`);
+
+--
+-- Indexen voor tabel `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`messages_id`),
+  ADD UNIQUE KEY `accounts_id` (`accounts_id`) USING BTREE,
+  ADD KEY `chats_id` (`chats_id`);
 
 --
 -- Indexen voor tabel `notifications`
@@ -728,6 +804,11 @@ ALTER TABLE `accounts_titles`
 ALTER TABLE `adverts`
   MODIFY `adverts_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT voor een tabel `chats`
+--
+ALTER TABLE `chats`
+  MODIFY `chats_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT voor een tabel `logs`
 --
 ALTER TABLE `logs`
@@ -748,6 +829,11 @@ ALTER TABLE `members_titles`
 ALTER TABLE `members_types`
   MODIFY `members_types_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT voor een tabel `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `messages_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT voor een tabel `notifications`
 --
 ALTER TABLE `notifications`
@@ -756,7 +842,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT voor een tabel `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `pages_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT voor een tabel `payment_requests`
 --
@@ -770,6 +856,13 @@ ALTER TABLE `ranks`
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
+
+--
+-- Beperkingen voor tabel `accounts_chats`
+--
+ALTER TABLE `accounts_chats`
+  ADD CONSTRAINT `accounts_id` FOREIGN KEY (`accounts_id`) REFERENCES `accounts` (`accounts_id`),
+  ADD CONSTRAINT `chats_id` FOREIGN KEY (`chats_id`) REFERENCES `chats` (`chats_id`);
 
 --
 -- Beperkingen voor tabel `accounts_titles`
@@ -814,6 +907,13 @@ ALTER TABLE `members_residence_info`
 --
 ALTER TABLE `members_titles`
   ADD CONSTRAINT `mem_titles_mem` FOREIGN KEY (`members_id`) REFERENCES `members` (`members_id`) ON DELETE CASCADE;
+
+--
+-- Beperkingen voor tabel `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `accounts_id_2` FOREIGN KEY (`accounts_id`) REFERENCES `accounts` (`accounts_id`),
+  ADD CONSTRAINT `chats_id_2` FOREIGN KEY (`chats_id`) REFERENCES `chats` (`chats_id`);
 
 --
 -- Beperkingen voor tabel `ranks_pages`

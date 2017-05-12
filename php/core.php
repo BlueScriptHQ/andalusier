@@ -38,6 +38,7 @@
       require "functions/old_adverts.php";
       require "functions/members_accept.php";
       require "functions/newsletters.php";
+      require "functions/messages.php";
 
       require "functions/tutorial.php";
       // require functions/register.php <- not being used atm
