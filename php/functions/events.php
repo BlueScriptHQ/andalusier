@@ -21,12 +21,6 @@
     return $structure;
   }
 
-
-
-
-
-
-
   if(isset($_GET["requestEventsDownload"])){
 
 
@@ -55,6 +49,10 @@
       fputcsv($output, $row, ';', ' ');
     }
 
+  }
+
+  if(isset($_GET["requestEventsTXTDownload"])){
+    echo 123; exit;
   }
 
   function emptyLog($dbHandler){

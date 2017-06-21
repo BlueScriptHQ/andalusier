@@ -48,7 +48,7 @@
       }
       foreach ($hierarchy as $parentKey => $parentValue) {
         if($hierarchy[$parentKey]["pages_iscontroller"] != 0){
-          $structure.= "<li id='".strtolower($hierarchy[$parentKey]["pages_name"])."-toggler' class='sub-menu-toggler' onclick='openMenu".$hierarchy[$parentKey]["pages_name"]."()'>
+          $structure.= "<li id='".strtolower($hierarchy[$parentKey]["pages_name"])."-toggler' class='sub-menu-toggler'>
                 <img src='img/side-menu/".strtolower($hierarchy[$parentKey]["pages_name"]).".png'>
                 <a href='#'>".$hierarchy[$parentKey]["pages_name"]."</a>
                 <img id='".strtolower($hierarchy[$parentKey]["pages_name"])."-dropdown-indicator' class='dropdown-indicator' src='img/side-menu/arrow-down.png'>

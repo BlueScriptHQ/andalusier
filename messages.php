@@ -180,7 +180,7 @@ require "optional/comments.php";
         </div>
         <div id="content">
             <div id="chatBoxHead">
-                <h2>Chat: Algemene groep</h2>
+                <h2>{{ chat_name }}</h2>
             </div>
 
             <div id="chatsActiveContainer">
@@ -192,13 +192,10 @@ require "optional/comments.php";
             <div id="chatBox">
                 <div class="chats">
                     <div class="row">
-                        <div class="message in">Hallo Bert, hoe gaat het?<div class="date">11-5-2017 | 15:08</div></div>
-
+                        <div class="message in">{{ message_content }}<div class="date">{{ message_date || message_time }}</div></div>
                     </div>
-
                     <div class="row">
-                        <div class=" message out">Het gaat goed!<div class="date">11-5-2017 | 15:09</div></div>
-
+                        <div class="message out">{{ message_content }}<div class="date">{{ message_date || message_time }}</div></div>
                     </div>
                 </div>
 
